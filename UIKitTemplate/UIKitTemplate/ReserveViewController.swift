@@ -5,8 +5,11 @@ import UIKit
 
 /// контроллер экрана с резервированием стола
 class ReserveViewController: UIViewController {
+    
+    // MARK: - Constants
     let storyboardInstance = UIStoryboard(name: "Main", bundle: nil)
 
+    // MARK: - Public Methods
     @IBAction func showAlert(_ sender: Any) {
         let alert = UIAlertController(title: "Выставить счёт?", message: nil, preferredStyle: .alert)
         let actionCheck = UIAlertAction(title: "Чек", style: .default) { _ in
