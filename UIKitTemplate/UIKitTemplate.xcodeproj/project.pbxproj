@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A7D98AB2B72CFBA002C7FD9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7D98AA2B72CFBA002C7FD9 /* HomeView.swift */; };
+		0A7D98AD2B736C6A002C7FD9 /* CalculateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7D98AC2B736C6A002C7FD9 /* CalculateModel.swift */; };
 		0A9D77A92B71282000774B49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D77A82B71282000774B49 /* AppDelegate.swift */; };
 		0A9D77AB2B71282000774B49 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D77AA2B71282000774B49 /* SceneDelegate.swift */; };
 		0A9D77AD2B71282000774B49 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D77AC2B71282000774B49 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		0A7D98AA2B72CFBA002C7FD9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		0A7D98AC2B736C6A002C7FD9 /* CalculateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateModel.swift; sourceTree = "<group>"; };
 		0A9D77A52B71282000774B49 /* UIKitTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A9D77A82B71282000774B49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A9D77AA2B71282000774B49 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				0A9D77A82B71282000774B49 /* AppDelegate.swift */,
 				0A9D77AA2B71282000774B49 /* SceneDelegate.swift */,
 				0A9D77AC2B71282000774B49 /* ViewController.swift */,
+				0A7D98AC2B736C6A002C7FD9 /* CalculateModel.swift */,
 				0A7D98AA2B72CFBA002C7FD9 /* HomeView.swift */,
 				0A9D77B12B71282100774B49 /* Assets.xcassets */,
 				0A9D77B32B71282100774B49 /* LaunchScreen.storyboard */,
@@ -186,6 +189,7 @@
 				0A7D98AB2B72CFBA002C7FD9 /* HomeView.swift in Sources */,
 				0A9D77A92B71282000774B49 /* AppDelegate.swift in Sources */,
 				0A9D77AB2B71282000774B49 /* SceneDelegate.swift in Sources */,
+				0A7D98AD2B736C6A002C7FD9 /* CalculateModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

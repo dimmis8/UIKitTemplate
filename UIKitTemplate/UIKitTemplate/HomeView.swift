@@ -3,12 +3,15 @@
 
 import UIKit
 
+protocol CalculateDelegate: AnyObject {
+    func calculate()
+}
+
 /// Вью домашней страницы
 class HomeView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         createView()
-        createButtons()
     }
 
     @available(*, unavailable)
@@ -16,13 +19,9 @@ class HomeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func createView() {
-        let backgroundImageView = UIImageView(image: UIImage(named: "bacgroundImage"))
-        backgroundImageView.frame = frame(forAlignmentRect: CGRect(x: 0, y: 37, width: 375, height: 775))
-        addSubview(backgroundImageView)
-    }
+    weak var delegateCalculate: CalculateDelegate?
 
-    private func createButtons() {
+    var buttonGuessTheNumber: UIButton {
         let buttonGuessTheNumber = UIButton(frame: CGRect(
             origin: CGPoint(x: 82, y: 302),
             size: CGSize(width: 150, height: 150)
@@ -35,8 +34,10 @@ class HomeView: UIView {
         buttonGuessTheNumber.titleLabel?.font = .boldSystemFont(ofSize: 25)
         buttonGuessTheNumber.titleLabel?.numberOfLines = 2
         buttonGuessTheNumber.titleLabel?.textAlignment = .center
-        addSubview(buttonGuessTheNumber)
+        return buttonGuessTheNumber
+    }
 
+    var buttonCalculator: UIButton {
         let buttonCalculator = UIButton(frame: CGRect(
             origin: CGPoint(x: 132, y: 507),
             size: CGSize(width: 200, height: 200)
@@ -48,6 +49,15 @@ class HomeView: UIView {
         buttonCalculator.setTitle("Калькулятор", for: .normal)
         buttonCalculator.titleLabel?.font = .boldSystemFont(ofSize: 25)
         buttonCalculator.titleLabel?.textAlignment = .center
+        buttonCalculator.addTarget(self, action: #selector(calculate), for: .touchUpInside)
+        return buttonCalculator
+    }
+
+    private func createView() {
+        let backgroundImageView = UIImageView(image: UIImage(named: "bacgroundImage"))
+        backgroundImageView.frame = frame(forAlignmentRect: CGRect(x: 0, y: 37, width: 375, height: 775))
+        addSubview(backgroundImageView)
+        addSubview(buttonGuessTheNumber)
         addSubview(buttonCalculator)
     }
 
@@ -62,5 +72,9 @@ class HomeView: UIView {
         greetingLabel.font = .boldSystemFont(ofSize: 25)
         greetingLabel.text = "Приветствую, \n \(name.uppercased())!"
         addSubview(greetingLabel)
+    }
+
+    @objc func calculate() {
+        delegateCalculate?.calculate()
     }
 }
