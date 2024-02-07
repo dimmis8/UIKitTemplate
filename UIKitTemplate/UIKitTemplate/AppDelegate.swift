@@ -12,7 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         true
     }
 
-    // MARK: UISceneSession Lifecycle
+    // MARK: - UISceneSession Lifecycle
 
     func application(
         _: UIApplication,
