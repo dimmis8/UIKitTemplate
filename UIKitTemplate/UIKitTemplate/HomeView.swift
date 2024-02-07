@@ -5,6 +5,7 @@ import UIKit
 
 protocol CalculateDelegate: AnyObject {
     func calculate()
+    func guessTheNumber()
 }
 
 /// Вью домашней страницы
@@ -34,6 +35,7 @@ class HomeView: UIView {
         buttonGuessTheNumber.titleLabel?.font = .boldSystemFont(ofSize: 25)
         buttonGuessTheNumber.titleLabel?.numberOfLines = 2
         buttonGuessTheNumber.titleLabel?.textAlignment = .center
+        buttonGuessTheNumber.addTarget(self, action: #selector(guessTheNumber), for: .touchUpInside)
         return buttonGuessTheNumber
     }
 
@@ -76,5 +78,9 @@ class HomeView: UIView {
 
     @objc func calculate() {
         delegateCalculate?.calculate()
+    }
+
+    @objc func guessTheNumber() {
+        delegateCalculate?.guessTheNumber()
     }
 }

@@ -34,8 +34,8 @@ class ViewController: UIViewController {
         alertControllerForName.addAction(actionOk)
         present(alertControllerForName, animated: true)
     }
-    
-    private func showAlert(withTitle title: String, description: String) {
+
+    private func showAlert(withTitle title: String, description: String?) {
         let alertControllerForName = UIAlertController(
             title: title,
             message: description,
@@ -50,13 +50,50 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: CalculateDelegate {
+    
+    func guessTheNumber() {
+        let game = GuessNumberModel()
+        startNewRound(withState: nil)
+
+        func startNewRound(withState state: AnswerOfGuess?) {
+            var textForAlert: (title: String?, message: String?)
+            switch state {
+            case .none:
+                textForAlert = ("Угадай число от 1 до 10", nil)
+            case .larger:
+                textForAlert = ("Попоробуйте еще раз", "Вы ввели слишком большое число")
+            case .less:
+                textForAlert = ("Попоробуйте еще раз", "Вы ввели слишком маленькое число")
+            case .error:
+                textForAlert = ("Ошибка", "Для ввода разрешены только числла")
+            case .equals:
+                showAlert(withTitle: "Поздравляем!", description: "Вы угадали")
+            }
+
+            let alertForGuess = UIAlertController(
+                title: textForAlert.title,
+                message: textForAlert.message,
+                preferredStyle: .alert
+            )
+            let actionOk = UIAlertAction(title: "OK", style: .default) { _ in
+                startNewRound(withState: game.compareNumberWithHidden(alertForGuess.textFields?.first?.text))
+            }
+            let actionClose = UIAlertAction(title: "Отмена", style: .cancel)
+            alertForGuess.addTextField { textField in
+                textField.placeholder = "Введите ваше число"
+            }
+            alertForGuess.addAction(actionOk)
+            alertForGuess.addAction(actionClose)
+            present(alertForGuess, animated: true)
+        }
+    }
+
     func calculate() {
         let alertForCalculate = UIAlertController(
             title: "Введите ваши числа",
             message: nil,
             preferredStyle: .alert
         )
-
         let actionSum = UIAlertAction(title: "Сложить", style: .default) { _ in
             sum()
         }
@@ -85,7 +122,6 @@ extension ViewController: CalculateDelegate {
         }
         alertForCalculate.addAction(actionSum)
         alertForCalculate.addAction(actionClose)
-
         present(alertForCalculate, animated: true)
     }
 }
