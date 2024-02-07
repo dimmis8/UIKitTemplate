@@ -50,4 +50,17 @@ class HomeView: UIView {
         buttonCalculator.titleLabel?.textAlignment = .center
         addSubview(buttonCalculator)
     }
+
+    func createGreet(forName nameForGreet: String?) {
+        guard let name = nameForGreet, !name.isEmpty else { return }
+        let greetingLabel = UILabel(frame: CGRect(origin: CGPoint(x: 0, y: 37), size: CGSize(width: 375, height: 82)))
+        greetingLabel.backgroundColor = UIColor(red: 151 / 255, green: 203 / 255, blue: 229 / 255, alpha: 1)
+        greetingLabel.layer.borderWidth = 3
+        greetingLabel.layer.borderColor = CGColor(gray: 1, alpha: 0.8)
+        greetingLabel.textAlignment = .center
+        greetingLabel.numberOfLines = 2
+        greetingLabel.font = .boldSystemFont(ofSize: 25)
+        greetingLabel.text = "Приветствую, \n \(name.uppercased())!"
+        addSubview(greetingLabel)
+    }
 }
