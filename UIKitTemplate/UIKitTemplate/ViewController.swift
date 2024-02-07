@@ -4,8 +4,12 @@
 import UIKit
 
 /// ViewController
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
+    // MARK: - Private Properties
+
     private lazy var homeView = HomeView(frame: view.frame)
+
+    // MARK: - Life Cycle
 
     override func loadView() {
         super.loadView()
@@ -17,6 +21,8 @@ class ViewController: UIViewController {
         showAlertForName()
         homeView.delegateCalculate = self
     }
+
+    // MARK: - Private Methods
 
     private func showAlertForName() {
         let alertControllerForName = UIAlertController(
@@ -49,8 +55,11 @@ class ViewController: UIViewController {
     }
 }
 
+// MARK: - CalculateDelegate
+
 extension ViewController: CalculateDelegate {
-    
+    // MARK: - Public Methods
+
     func guessTheNumber() {
         let game = GuessNumberModel()
         startNewRound(withState: nil)
@@ -94,16 +103,55 @@ extension ViewController: CalculateDelegate {
             message: nil,
             preferredStyle: .alert
         )
-        let actionSum = UIAlertAction(title: "Сложить", style: .default) { _ in
-            sum()
+        let choseOperation = UIAlertAction(title: "Выбрать операцию", style: .default) { _ in
+            choseOperation()
         }
         let actionClose = UIAlertAction(title: "Отмена", style: .cancel)
 
-        func sum() {
+        alertForCalculate.addTextField { textField in
+            textField.placeholder = "Число 1"
+        }
+        alertForCalculate.addTextField { textField in
+            textField.placeholder = "Число 2"
+        }
+        alertForCalculate.addAction(choseOperation)
+        alertForCalculate.addAction(actionClose)
+        present(alertForCalculate, animated: true)
+
+        func choseOperation() {
+            let alertChoseOperation = UIAlertController(
+                title: "Выберете математическую операцию",
+                message: nil,
+                preferredStyle: .actionSheet
+            )
+            let actionSum = UIAlertAction(title: "Сложить", style: .default) { _ in
+                calculate(withOperation: .sum)
+            }
+            let actionDifference = UIAlertAction(title: "Вычесть", style: .default) { _ in
+                calculate(withOperation: .difference)
+            }
+            let actionMultiply = UIAlertAction(title: "Умножить", style: .default) { _ in
+                calculate(withOperation: .multiply)
+            }
+            let actionDevide = UIAlertAction(title: "Разделить", style: .default) { _ in
+                calculate(withOperation: .devide)
+            }
+            let actionClose = UIAlertAction(title: "Отмена", style: .cancel)
+
+            alertChoseOperation.addAction(actionSum)
+            alertChoseOperation.addAction(actionDifference)
+            alertChoseOperation.addAction(actionMultiply)
+            alertChoseOperation.addAction(actionDevide)
+            alertChoseOperation.addAction(actionClose)
+            present(alertChoseOperation, animated: true)
+        }
+
+        func calculate(withOperation operation: Operation) {
             do {
-                let answer = try CalculateModel().summ(
+                let answer = try CalculateModel().solve(
                     alertForCalculate.textFields?.first?.text,
-                    alertForCalculate.textFields?.last?.text
+                    alertForCalculate.textFields?.last?.text,
+                    operation: operation
                 )
                 showAlert(withTitle: "Результат", description: String(answer))
             } catch CalculateEror.notAllValuesExist {
@@ -114,14 +162,5 @@ extension ViewController: CalculateDelegate {
                 showAlert(withTitle: "Ошибка", description: "Произошла неизвестная ошибка")
             }
         }
-        alertForCalculate.addTextField { textField in
-            textField.placeholder = "Число 1"
-        }
-        alertForCalculate.addTextField { textField in
-            textField.placeholder = "Число 2"
-        }
-        alertForCalculate.addAction(actionSum)
-        alertForCalculate.addAction(actionClose)
-        present(alertForCalculate, animated: true)
     }
 }

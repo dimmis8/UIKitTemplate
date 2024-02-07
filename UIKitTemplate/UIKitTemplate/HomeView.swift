@@ -9,16 +9,8 @@ protocol CalculateDelegate: AnyObject {
 }
 
 /// Вью домашней страницы
-class HomeView: UIView {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        createView()
-    }
-
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+final class HomeView: UIView {
+    // MARK: - Public Properties
 
     weak var delegateCalculate: CalculateDelegate?
 
@@ -55,13 +47,19 @@ class HomeView: UIView {
         return buttonCalculator
     }
 
-    private func createView() {
-        let backgroundImageView = UIImageView(image: UIImage(named: "bacgroundImage"))
-        backgroundImageView.frame = frame(forAlignmentRect: CGRect(x: 0, y: 37, width: 375, height: 775))
-        addSubview(backgroundImageView)
-        addSubview(buttonGuessTheNumber)
-        addSubview(buttonCalculator)
+    // MARK: - Life Cycle
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        createView()
     }
+
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    // MARK: - Public Methods
 
     func createGreet(forName nameForGreet: String?) {
         guard let name = nameForGreet, !name.isEmpty else { return }
@@ -82,5 +80,15 @@ class HomeView: UIView {
 
     @objc func guessTheNumber() {
         delegateCalculate?.guessTheNumber()
+    }
+
+    // MARK: - Private Methods
+
+    private func createView() {
+        let backgroundImageView = UIImageView(image: UIImage(named: "bacgroundImage"))
+        backgroundImageView.frame = frame(forAlignmentRect: CGRect(x: 0, y: 37, width: 375, height: 775))
+        addSubview(backgroundImageView)
+        addSubview(buttonGuessTheNumber)
+        addSubview(buttonCalculator)
     }
 }

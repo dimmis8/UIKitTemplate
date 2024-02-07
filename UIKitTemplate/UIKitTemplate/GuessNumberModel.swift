@@ -13,7 +13,11 @@ enum AnswerOfGuess {
 
 /// Модель для калькулятора
 struct GuessNumberModel {
+    // MARK: - Constants
+
     let hiddenNnumber = Int.random(in: 1 ... 10)
+
+    // MARK: - Public Methods
 
     func compareNumberWithHidden(_ enteredNumber: String?) -> AnswerOfGuess {
         guard enteredNumber != nil else { return .error }
