@@ -4,4 +4,4 @@
 import UIKit
 
 /// ThanksViewController
-class ThanksViewController: UIViewController {}
+final class ThanksViewController: UIViewController {}

@@ -4,9 +4,13 @@
 import UIKit
 
 /// ViewController авторизациия
-class AutorizationViewController: UIViewController {
+final class AutorizationViewController: UIViewController {
+    // MARK: - IBOutlet
+
     @IBOutlet var passwordHideButton: UIButton!
     @IBOutlet var passwordHolder: UITextField!
+
+    // MARK: - IBAction
 
     @IBAction func showPassword(_ sender: Any) {
         passwordHolder.isSecureTextEntry = !passwordHolder.isSecureTextEntry
