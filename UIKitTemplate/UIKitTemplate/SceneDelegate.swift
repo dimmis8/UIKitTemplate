@@ -7,17 +7,24 @@
 //
 //  Created by Дмитрий Логвинов on 05.02.2024.
 //
+
 import UIKit
 
-/// SceneDelegate class
+/// Scene Delegate
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(
         _ scene: UIScene,
-        willConnectTo _: UISceneSession,
-        options _: UIScene.ConnectionOptions
+        willConnectTo session: UISceneSession,
+        options connectionOptions: UIScene.ConnectionOptions
     ) {
-        guard (scene as? UIWindowScene) != nil else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+
+        window = UIWindow(windowScene: windowScene)
+        let viewController = AutorizationViewController()
+        viewController.view.backgroundColor = .white
+        window?.rootViewController = viewController
+        window?.makeKeyAndVisible()
     }
 }
