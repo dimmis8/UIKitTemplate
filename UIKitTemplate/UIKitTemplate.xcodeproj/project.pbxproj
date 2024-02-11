@@ -13,6 +13,7 @@
 		0A9D77B22B71282100774B49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D77B12B71282100774B49 /* Assets.xcassets */; };
 		0A9D77B52B71282100774B49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D77B32B71282100774B49 /* LaunchScreen.storyboard */; };
 		0AED42DE2B76B51B0090DD9C /* AutorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AED42DD2B76B51B0090DD9C /* AutorizationView.swift */; };
+		0AED42E02B78EA3F0090DD9C /* BirthdayListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AED42DF2B78EA3F0090DD9C /* BirthdayListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		0A9D77B42B71282100774B49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A9D77B62B71282100774B49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AED42DD2B76B51B0090DD9C /* AutorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutorizationView.swift; sourceTree = "<group>"; };
+		0AED42DF2B78EA3F0090DD9C /* BirthdayListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				0A9D77A82B71282000774B49 /* AppDelegate.swift */,
 				0A9D77AA2B71282000774B49 /* SceneDelegate.swift */,
 				0A9D77AC2B71282000774B49 /* AutorizationViewController.swift */,
+				0AED42DF2B78EA3F0090DD9C /* BirthdayListViewController.swift */,
 				0AED42DD2B76B51B0090DD9C /* AutorizationView.swift */,
 				0A9D77B12B71282100774B49 /* Assets.xcassets */,
 				0A9D77B32B71282100774B49 /* LaunchScreen.storyboard */,
@@ -185,6 +188,7 @@
 				0A9D77AD2B71282000774B49 /* AutorizationViewController.swift in Sources */,
 				0AED42DE2B76B51B0090DD9C /* AutorizationView.swift in Sources */,
 				0A9D77A92B71282000774B49 /* AppDelegate.swift in Sources */,
+				0AED42E02B78EA3F0090DD9C /* BirthdayListViewController.swift in Sources */,
 				0A9D77AB2B71282000774B49 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
