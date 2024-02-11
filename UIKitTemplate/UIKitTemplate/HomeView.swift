@@ -74,11 +74,11 @@ final class HomeView: UIView {
         addSubview(greetingLabel)
     }
 
-    @objc func calculate() {
+    @objc private func calculate() {
         delegateCalculate?.calculate()
     }
 
-    @objc func guessTheNumber() {
+    @objc private func guessTheNumber() {
         delegateCalculate?.guessTheNumber()
     }
 
