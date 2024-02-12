@@ -14,6 +14,11 @@
 		0A9D77B52B71282100774B49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D77B32B71282100774B49 /* LaunchScreen.storyboard */; };
 		0AED42DE2B76B51B0090DD9C /* AutorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AED42DD2B76B51B0090DD9C /* AutorizationView.swift */; };
 		0AED42E02B78EA3F0090DD9C /* BirthdayListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AED42DF2B78EA3F0090DD9C /* BirthdayListViewController.swift */; };
+		0AED42E22B78F8D10090DD9C /* BirthdayListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AED42E12B78F8D10090DD9C /* BirthdayListView.swift */; };
+		0AED42E42B7922170090DD9C /* BirthdayCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AED42E32B7922170090DD9C /* BirthdayCellView.swift */; };
+		0AED42E72B7938700090DD9C /* BirthdayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AED42E62B7938700090DD9C /* BirthdayModel.swift */; };
+		0AED42E92B795B490090DD9C /* AddNewBirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AED42E82B795B490090DD9C /* AddNewBirthdayView.swift */; };
+		0AED42EC2B79612A0090DD9C /* AddBirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AED42EB2B79612A0090DD9C /* AddBirthdayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		0A9D77B62B71282100774B49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AED42DD2B76B51B0090DD9C /* AutorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutorizationView.swift; sourceTree = "<group>"; };
 		0AED42DF2B78EA3F0090DD9C /* BirthdayListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayListViewController.swift; sourceTree = "<group>"; };
+		0AED42E12B78F8D10090DD9C /* BirthdayListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayListView.swift; sourceTree = "<group>"; };
+		0AED42E32B7922170090DD9C /* BirthdayCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayCellView.swift; sourceTree = "<group>"; };
+		0AED42E62B7938700090DD9C /* BirthdayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayModel.swift; sourceTree = "<group>"; };
+		0AED42E82B795B490090DD9C /* AddNewBirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewBirthdayView.swift; sourceTree = "<group>"; };
+		0AED42EB2B79612A0090DD9C /* AddBirthdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBirthdayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +68,37 @@
 		0A9D77A72B71282000774B49 /* UIKitTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				0A9D77A82B71282000774B49 /* AppDelegate.swift */,
+				0AED42E52B7924090090DD9C /* Views */,
+				0AED42EA2B7960FB0090DD9C /* Controllers */,
 				0A9D77AA2B71282000774B49 /* SceneDelegate.swift */,
-				0A9D77AC2B71282000774B49 /* AutorizationViewController.swift */,
-				0AED42DF2B78EA3F0090DD9C /* BirthdayListViewController.swift */,
-				0AED42DD2B76B51B0090DD9C /* AutorizationView.swift */,
+				0A9D77A82B71282000774B49 /* AppDelegate.swift */,
+				0AED42E62B7938700090DD9C /* BirthdayModel.swift */,
 				0A9D77B12B71282100774B49 /* Assets.xcassets */,
 				0A9D77B32B71282100774B49 /* LaunchScreen.storyboard */,
 				0A9D77B62B71282100774B49 /* Info.plist */,
 			);
 			path = UIKitTemplate;
+			sourceTree = "<group>";
+		};
+		0AED42E52B7924090090DD9C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0AED42DD2B76B51B0090DD9C /* AutorizationView.swift */,
+				0AED42E12B78F8D10090DD9C /* BirthdayListView.swift */,
+				0AED42E32B7922170090DD9C /* BirthdayCellView.swift */,
+				0AED42E82B795B490090DD9C /* AddNewBirthdayView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0AED42EA2B7960FB0090DD9C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0A9D77AC2B71282000774B49 /* AutorizationViewController.swift */,
+				0AED42DF2B78EA3F0090DD9C /* BirthdayListViewController.swift */,
+				0AED42EB2B79612A0090DD9C /* AddBirthdayViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,9 +217,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A9D77AD2B71282000774B49 /* AutorizationViewController.swift in Sources */,
+				0AED42EC2B79612A0090DD9C /* AddBirthdayViewController.swift in Sources */,
+				0AED42E42B7922170090DD9C /* BirthdayCellView.swift in Sources */,
+				0AED42E92B795B490090DD9C /* AddNewBirthdayView.swift in Sources */,
 				0AED42DE2B76B51B0090DD9C /* AutorizationView.swift in Sources */,
 				0A9D77A92B71282000774B49 /* AppDelegate.swift in Sources */,
+				0AED42E22B78F8D10090DD9C /* BirthdayListView.swift in Sources */,
 				0AED42E02B78EA3F0090DD9C /* BirthdayListViewController.swift in Sources */,
+				0AED42E72B7938700090DD9C /* BirthdayModel.swift in Sources */,
 				0A9D77AB2B71282000774B49 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
