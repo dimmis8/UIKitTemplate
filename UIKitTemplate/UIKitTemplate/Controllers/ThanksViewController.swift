@@ -5,7 +5,12 @@ import UIKit
 
 /// Контроллер успешного заказа
 final class ThanksViewController: UIViewController {
+    // MARK: - Public Properties
+
     weak var delegate: MuveToFirstDelegate?
+
+    // MARK: - Visual Components
+
     private lazy var cancellationButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "xmark"), for: .normal)
@@ -54,6 +59,7 @@ final class ThanksViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Хорошо", for: .normal)
         button.titleLabel?.font = UIFont(name: "Verdana-Bold", size: 18)
+        /// Значение 255 обозначает максимально возможную интенсивность выбранного цвета в RGB-модели.
         button.backgroundColor = UIColor(red: 89.0 / 255.0, green: 190.0 / 255.0, blue: 199.0 / 255.0, alpha: 1)
         button.layer.cornerRadius = 12
         button.frame = CGRect(x: 20, y: 632, width: 345, height: 53)
@@ -76,7 +82,7 @@ final class ThanksViewController: UIViewController {
         dismiss(animated: true)
     }
 
-    @objc func returnStart() {
+    @objc private func returnStart() {
         delegate?.goBack()
         dismiss(animated: true)
     }

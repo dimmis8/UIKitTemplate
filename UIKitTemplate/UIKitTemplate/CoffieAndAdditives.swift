@@ -24,6 +24,7 @@ struct CoffieAndAdditives {
     let aditives = ["Молоко": 50, "Сироп": 20, "Молоко соевое": 50, "Молоко миндальное": 70, "Эспрессо 50мл": 50]
     /// Выбранное кофе
     let coffie: Coffie
+    /// Получения названия выбраного кофе
     var discriptionCoffie: String {
         switch coffie {
         case .americano:

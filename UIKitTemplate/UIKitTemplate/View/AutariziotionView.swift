@@ -1,14 +1,13 @@
 // AutariziotionView.swift
 // Copyright © RoadMap. All rights reserved.
 
-import Foundation
 import UIKit
 
 /// Вью для контроллера регистрации
 final class AutariziotionView: UIView {
     // MARK: - Visual Components
 
-    let autariziotionLabel: UILabel = {
+    private let autariziotionLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Verdana-Bold", size: 26)
         label.frame = CGRect(x: 20, y: 32, width: 195, height: 31)
@@ -16,7 +15,7 @@ final class AutariziotionView: UIView {
         return label
     }()
 
-    let loginTitleLabel: UILabel = {
+    private let loginTitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Verdana-Bold", size: 16)
         label.frame = CGRect(x: 20, y: 84, width: 175, height: 19)
@@ -32,7 +31,7 @@ final class AutariziotionView: UIView {
         return textField
     }()
 
-    let passwordTitleLabel: UILabel = {
+    private let passwordTitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Verdana-Bold", size: 16)
         label.frame = CGRect(x: 20, y: 159, width: 175, height: 19)
@@ -61,6 +60,7 @@ final class AutariziotionView: UIView {
         let button = UIButton()
         button.setTitle("Войти", for: .normal)
         button.titleLabel?.font = UIFont(name: "Verdana", size: 16)
+        /// Значение 255 обозначает максимально возможную интенсивность выбранного цвета в RGB-модели.
         button.backgroundColor = UIColor(red: 89.0 / 255.0, green: 190.0 / 255.0, blue: 199.0 / 255.0, alpha: 1)
         button.layer.cornerRadius = 12
         button.frame = CGRect(x: 20, y: 416, width: 335, height: 44)
@@ -68,8 +68,8 @@ final class AutariziotionView: UIView {
         return button
     }()
 
-    let lineOne = UIView()
-    let lineTwo = UIView()
+    private let lineOne = UIView()
+    private let lineTwo = UIView()
 
     // MARK: - Initializers
 
@@ -86,6 +86,7 @@ final class AutariziotionView: UIView {
 
     // MARK: - Private Methods
 
+    /// добавление элементов на вью
     private func setupView() {
         backgroundColor = .white
         addSubview(autariziotionLabel)

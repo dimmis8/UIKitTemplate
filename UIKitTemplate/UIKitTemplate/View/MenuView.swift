@@ -1,14 +1,14 @@
 // MenuView.swift
 // Copyright © RoadMap. All rights reserved.
 
-import Foundation
 import UIKit
 
-/// вью для меню вью контроллера
+/// вью для меню вью контроллера с меню
 final class MenuView: UIView {
     // MARK: - Visual Components
 
-    var adressView = AdressView()
+    /// кастомная вью с локацией заведения
+    private var adressView = AdressView()
 
     lazy var coffeButton = CustomButton(
         name: "Кофий",
@@ -31,14 +31,7 @@ final class MenuView: UIView {
         frame: CGRect(x: 20, y: 316, width: 335, height: 80)
     )
 
-    let menuImage: UIImageView = {
-        let image = UIImageView()
-        image.image = UIImage(named: "location")
-        image.frame = CGRect(x: 289, y: 20, width: 21, height: 30)
-        return image
-    }()
-
-    let navigtionLabel: UILabel = {
+    private let navigtionLabel: UILabel = {
         let label = UILabel()
         label.text = "Mинью"
         label.frame = CGRect(x: 125, y: 122, width: 125, height: 40)
@@ -48,12 +41,12 @@ final class MenuView: UIView {
         return label
     }()
 
-    let iconImage: UIImageView = {
-        let image = UIImageView()
-        image.image = UIImage(named: "gravira")
-        image.frame = CGRect(x: 137, y: 162, width: 100, height: 40)
-        image.sizeToFit()
-        return image
+    private let iconImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "gravira")
+        imageView.frame = CGRect(x: 137, y: 162, width: 100, height: 40)
+        imageView.sizeToFit()
+        return imageView
     }()
 
     // MARK: - Initializers
@@ -71,12 +64,13 @@ final class MenuView: UIView {
 
     // MARK: - Private Methods
 
+    /// добавление элементов на вью
     private func setupView() {
         backgroundColor = .white
         addSubview(coffeButton)
         addSubview(adressView)
         addSubview(adressView)
-        addSubview(iconImage)
+        addSubview(iconImageView)
         addSubview(pieButton)
         addSubview(hotDrinkButton)
         addSubview(navigtionLabel)

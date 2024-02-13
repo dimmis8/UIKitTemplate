@@ -3,6 +3,7 @@
 
 import UIKit
 
+/// протокол для перемещения пользователя на главный экран
 protocol MuveToFirstDelegate: AnyObject {
     func goBack()
 }
@@ -12,27 +13,27 @@ final class CheckViewController: UIViewController {
     // MARK: - Visual Components
 
     private let leftCornerImage: UIImageView = {
-        let image = UIImageView()
-        image.image = UIImage(named: "left")
-        image.frame = CGRect(x: 20, y: 47, width: 100, height: 73)
-        image.sizeToFit()
-        return image
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "left")
+        imageView.frame = CGRect(x: 20, y: 47, width: 100, height: 73)
+        imageView.sizeToFit()
+        return imageView
     }()
 
     private let rightCornerImage: UIImageView = {
-        let image = UIImageView()
-        image.image = UIImage(named: "right")
-        image.frame = CGRect(x: 260, y: 47, width: 100, height: 73)
-        image.sizeToFit()
-        return image
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "right")
+        imageView.frame = CGRect(x: 260, y: 47, width: 100, height: 73)
+        imageView.sizeToFit()
+        return imageView
     }()
 
     private let iconImage: UIImageView = {
-        let image = UIImageView()
-        image.image = UIImage(named: "gravira")
-        image.frame = CGRect(x: 145, y: 472, width: 100, height: 40)
-        image.sizeToFit()
-        return image
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "gravira")
+        imageView.frame = CGRect(x: 145, y: 472, width: 100, height: 40)
+        imageView.sizeToFit()
+        return imageView
     }()
 
     private let yourOrderLabel: UILabel = {
@@ -48,7 +49,6 @@ final class CheckViewController: UIViewController {
         label.font = UIFont(name: "Verdana-Bold", size: 18)
         label.frame = CGRect(x: 80, y: 433, width: 231, height: 30)
         label.textAlignment = .center
-        label.text = "Цѣна - 100 руб"
         return label
     }()
 
@@ -56,7 +56,8 @@ final class CheckViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Оплатить", for: .normal)
         button.titleLabel?.font = UIFont(name: "Verdana-Bold", size: 18)
-        button.backgroundColor = UIColor(red: 89.0 / 255.0, green: 190.0 / 255.0, blue: 199.0 / 255.0, alpha: 0.3)
+        /// Значение 255 обозначает максимально возможную интенсивность выбранного цвета в RGB-модели.
+        button.backgroundColor = UIColor(red: 89.0 / 255.0, green: 190.0 / 255.0, blue: 199.0 / 255.0, alpha: 1)
         button.layer.cornerRadius = 12
         button.frame = CGRect(x: 20, y: 632, width: 345, height: 53)
         button.addTarget(self, action: #selector(sellComform), for: .touchUpInside)
@@ -116,6 +117,7 @@ final class CheckViewController: UIViewController {
     }
 
     private func additives() {
+        /// переменная yFrame используется для смещения лейблов в низ
         var yFrame = 191
         guard !coffieAndAddivities.selectedAditives.isEmpty else { return }
         for value in coffieAndAddivities.selectedAditives {
@@ -159,6 +161,9 @@ final class CheckViewController: UIViewController {
     }
 }
 
+// MARK: - Extension
+
+/// убрает все экраны и возвращет пользователя на главный экран
 extension CheckViewController: MuveToFirstDelegate {
     func goBack() {
         if let navigVC = presentingViewController as? UINavigationController {

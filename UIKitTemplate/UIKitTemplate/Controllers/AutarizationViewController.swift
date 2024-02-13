@@ -3,7 +3,7 @@
 
 import UIKit
 
-/// ViewController
+/// Вью контроллер для авторизации пользователя
 final class AutarizationViewController: UIViewController {
     // MARK: - Visual Components
 
@@ -14,11 +14,12 @@ final class AutarizationViewController: UIViewController {
         label.text = "Кофеиновъ"
         label.frame = CGRect(x: 100, y: 103, width: 175, height: 76)
         label.font = UIFont(name: "AmaticSC-Bold", size: 55)
+        /// Значение 255 обозначает максимально возможную интенсивность выбранного цвета в RGB-модели.
         label.textColor = UIColor(red: 207 / 255.0, green: 180 / 255.0, blue: 150 / 255.0, alpha: 1)
         return label
     }()
 
-    // MARK: - Visual Components
+    // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +56,9 @@ final class AutarizationViewController: UIViewController {
     }
 }
 
+// MARK: - Extension
+
+/// проверка логина и пароля на валидность
 extension AutarizationViewController: UITextFieldDelegate {
     func textField(
         _ textField: UITextField,

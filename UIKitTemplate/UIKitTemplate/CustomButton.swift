@@ -4,7 +4,7 @@
 import UIKit
 
 /// кастомная кнопка для 2 го вью контроллера
-class CustomButton: UIButton {
+final class CustomButton: UIButton {
     convenience init(name: String, nameImage: String, right: Int, frame: CGRect) {
         self.init(frame: frame)
         layer.cornerRadius = 16
@@ -15,6 +15,7 @@ class CustomButton: UIButton {
         contentHorizontalAlignment = .right
         titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: CGFloat(right))
         semanticContentAttribute = .forceRightToLeft
+        /// Значение 255 обозначает максимально возможную интенсивность выбранного цвета в RGB-модели.
         backgroundColor = UIColor(red: 225.0 / 255.0, green: 194.0 / 255.0, blue: 160.0 / 255.0, alpha: 0.7)
     }
 }

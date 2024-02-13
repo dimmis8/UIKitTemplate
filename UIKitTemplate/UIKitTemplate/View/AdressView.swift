@@ -1,7 +1,6 @@
 // AdressView.swift
 // Copyright © RoadMap. All rights reserved.
 
-import Foundation
 import UIKit
 
 /// вью с адресами кофеен
@@ -26,11 +25,11 @@ final class AdressView: UIView {
         return label
     }()
 
-    private let navigtionImage: UIImageView = {
-        let image = UIImageView()
-        image.image = UIImage(named: "location")
-        image.frame = CGRect(x: 289, y: 20, width: 21, height: 30)
-        return image
+    private let navigtionImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "location")
+        imageView.frame = CGRect(x: 289, y: 20, width: 21, height: 30)
+        return imageView
     }()
 
     // MARK: - Initializers
@@ -49,7 +48,8 @@ final class AdressView: UIView {
     // MARK: - Private Methods
 
     private func setupView() {
+        /// Значение 255 обозначает максимально возможную интенсивность выбранного цвета в RGB-модели.
         backgroundColor = UIColor(red: 235 / 255.0, green: 246 / 255.0, blue: 247 / 255.0, alpha: 1)
-        [navigtionImage, adressInfoLabel, adressTitleLabel].forEach { addSubview($0) }
+        [navigtionImageView, adressInfoLabel, adressTitleLabel].forEach { addSubview($0) }
     }
 }
