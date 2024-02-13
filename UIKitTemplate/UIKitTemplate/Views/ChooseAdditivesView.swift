@@ -11,6 +11,13 @@ protocol ChooseAdditivesDelegate: AnyObject {
 
 /// Вью экана выбора добавок в кофе
 class ChooseAdditivesView: UIView {
+    // MARK: - Constants
+
+    private enum Constants {
+        /// Расстояние между двумя добавками
+        static let distanceBetweenAdditives: CGFloat = 50
+    }
+
     // MARK: - Public Properties
 
     /// Ссылка на делегата
@@ -77,7 +84,7 @@ class ChooseAdditivesView: UIView {
             let additionNameLabel: UILabel = {
                 let label = UILabel(frame: CGRect(
                     x: 20,
-                    y: 124 + CGFloat(additivies.count - numberOfAvalableAdditives) * 50,
+                    y: 124 + CGFloat(additivies.count - numberOfAvalableAdditives) * Constants.distanceBetweenAdditives,
                     width: 275,
                     height: 35
                 ))
@@ -100,7 +107,7 @@ class ChooseAdditivesView: UIView {
             let additionSwitch: UISwitch = {
                 let switcher = UISwitch(frame: CGRect(
                     x: 301,
-                    y: 124 + CGFloat(additivies.count - numberOfAvalableAdditives) * 50,
+                    y: 124 + CGFloat(additivies.count - numberOfAvalableAdditives) * Constants.distanceBetweenAdditives,
                     width: 54,
                     height: 35
                 ))

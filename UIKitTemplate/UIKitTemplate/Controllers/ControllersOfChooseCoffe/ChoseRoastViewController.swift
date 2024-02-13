@@ -3,8 +3,15 @@
 
 import UIKit
 
-/// Контроллер экрана выбора прожарки зерен
+/// Экран выбора прожарки зерен
 final class ChoseRoastViewController: UIViewController {
+    // MARK: - Constants
+
+    private enum Color {
+        /// Цвет обводки для выбранной обжарки
+        static let borderColor = CGColor(red: 89 / 255, green: 190 / 255, blue: 199 / 255, alpha: 1)
+    }
+
     // MARK: - Public Properties
 
     /// Прожарка кофе
@@ -44,24 +51,14 @@ final class ChoseRoastViewController: UIViewController {
 extension ChoseRoastViewController: ChooseRoastDelegate {
     /// Функция обработки нажатия кнопки темной прожарки кофе
     func darkRoastButtonAction() {
-        chooseRoastOfCoffeView.darkRoastButton.layer.borderColor = CGColor(
-            red: 89 / 255,
-            green: 190 / 255,
-            blue: 199 / 255,
-            alpha: 1
-        )
+        chooseRoastOfCoffeView.darkRoastButton.layer.borderColor = Color.borderColor
         chooseRoastOfCoffeView.lightRoastButton.layer.borderColor = CGColor(gray: 0, alpha: 0)
         chosenRoast = .dark
     }
 
     /// Функция обработки нажатия кнопки светлой прожарки кофе
     func lightRoastButtoAction() {
-        chooseRoastOfCoffeView.lightRoastButton.layer.borderColor = CGColor(
-            red: 89 / 255,
-            green: 190 / 255,
-            blue: 199 / 255,
-            alpha: 1
-        )
+        chooseRoastOfCoffeView.lightRoastButton.layer.borderColor = Color.borderColor
         chooseRoastOfCoffeView.darkRoastButton.layer.borderColor = CGColor(gray: 0, alpha: 0)
         chosenRoast = .light
     }

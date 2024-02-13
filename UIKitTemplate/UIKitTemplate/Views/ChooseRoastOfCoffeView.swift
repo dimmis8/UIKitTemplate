@@ -12,6 +12,13 @@ protocol ChooseRoastDelegate: AnyObject {
 
 /// Вью экрана выбора прожарки кофе
 class ChooseRoastOfCoffeView: UIView {
+    // MARK: - Constants
+
+    private enum Color {
+        /// Цвет обводки для выбранной обжарки
+        static let borderColor = CGColor(red: 89 / 255, green: 190 / 255, blue: 199 / 255, alpha: 1)
+    }
+
     // MARK: - Public Properties
 
     /// Ссылка на делегата
@@ -108,7 +115,7 @@ class ChooseRoastOfCoffeView: UIView {
     /// Метод установки таргетов для элементов UIControl
     private func setTergetsForUIControl() {
         darkRoastButton.addTarget(self, action: #selector(darkRoastButtonAction), for: .touchUpInside)
-        darkRoastButton.layer.borderColor = CGColor(red: 89 / 255, green: 190 / 255, blue: 199 / 255, alpha: 1)
+        darkRoastButton.layer.borderColor = Color.borderColor
         lightRoastButton.addTarget(self, action: #selector(lightRoastButtonAction), for: .touchUpInside)
         closeViewButton.addTarget(self, action: #selector(closeViewButtonAction), for: .touchUpInside)
     }

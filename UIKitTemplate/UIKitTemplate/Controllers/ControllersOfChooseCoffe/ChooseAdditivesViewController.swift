@@ -3,7 +3,7 @@
 
 import UIKit
 
-/// Вью контроллер выбора добавок кофе
+/// Экран выбора добавок кофе
 final class ChooseAdditivesViewController: UIViewController {
     // MARK: - Public Properties
 
@@ -60,7 +60,7 @@ extension ChooseAdditivesViewController: ChooseAdditivesDelegate {
             chosenAdditives.append(addition)
         } else {
             guard (chosenAdditives.contains { $0 == addition }) else { return }
-            chosenAdditives.remove(at: chosenAdditives.firstIndex(of: addition) ?? 1000)
+            chosenAdditives.remove(at: chosenAdditives.firstIndex(of: addition) ?? Int())
         }
     }
 

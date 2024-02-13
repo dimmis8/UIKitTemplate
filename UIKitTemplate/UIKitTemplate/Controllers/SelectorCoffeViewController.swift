@@ -3,18 +3,26 @@
 
 import UIKit
 
-/// Контроллер вью выбора кофе
+/// Экран выбора кофе
 final class SelectorCoffeViewController: UIViewController {
+    // MARK: - Constants
+
+    private enum Constant {
+        /// Текст для шеринга
+        static let shareText = "Лови промокод roadmaplove на любой напиток из Кофейнов"
+    }
+
     // MARK: - Public Properties
 
-    /// Текст для шеринга
-    let shareText = "Лови промокод roadmaplove на любой напиток из Кофейнов"
     /// Выбранный кофе
     var chodenCoffe = CoffieAndAdditives()
     /// Выбранная прожарка
     var chosenRoast: RoastOfCoffe = .dark
     /// Вью контроллер меню шеринга
-    lazy var shareViewController = UIActivityViewController(activityItems: [shareText], applicationActivities: nil)
+    lazy var shareViewController = UIActivityViewController(
+        activityItems: [Constant.shareText],
+        applicationActivities: nil
+    )
 
     // MARK: - Private Properties
 
