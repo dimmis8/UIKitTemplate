@@ -5,9 +5,10 @@ import UIKit
 
 ///  Контроллер вью чека
 class CheckViewController: UIViewController {
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        // Do any additional setup after loading the view.
-//    }
+    var coffieAndAddivities = CoffieAndAdditives()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+        // Do any additional setup after loading the view.
+    }
 }

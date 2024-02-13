@@ -12,6 +12,7 @@ import UIKit
 /// SceneDelegate class
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
+    var navController = UINavigationController()
 
     func scene(
         _ scene: UIScene,
@@ -21,9 +22,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         window = UIWindow(windowScene: windowScene)
-        let viewController = AutarizationViewController()
+        let viewController = MenuViewController()
+        navController = UINavigationController(rootViewController: viewController)
         viewController.view.backgroundColor = .white
-        window?.rootViewController = viewController
+        window?.rootViewController = navController
         window?.makeKeyAndVisible()
     }
 }
