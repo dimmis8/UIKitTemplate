@@ -32,6 +32,8 @@ struct CoffieAndAdditives {
         selectedAditives = []
     }
 
+    // MARK: - Public Methods
+
     /// Сумма
     func sum() -> Int {
         var sum = coffie.rawValue

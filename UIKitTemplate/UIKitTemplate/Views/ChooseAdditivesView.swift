@@ -81,8 +81,6 @@ class ChooseAdditivesView: UIView {
                     width: 275,
                     height: 35
                 ))
-
-                //
                 let attributedString = NSMutableAttributedString(
                     string: "\(addition.key)",
                     attributes: [NSAttributedString.Key.font: UIFont(name: "Verdana", size: 16) ?? UIFont()]
@@ -96,8 +94,6 @@ class ChooseAdditivesView: UIView {
                 )
                 attributedString.append(greenText)
                 label.attributedText = attributedString
-
-                // label.text = addition.key + "  +\(addition.value) руб"
                 return label
             }()
             ///  Свитчер добавки
