@@ -24,15 +24,32 @@ struct CoffieAndAdditives {
     let aditives = ["Молоко": 50, "Сироп": 20, "Молоко соевое": 50, "Молоко миндальное": 70, "Эспрессо 50мл": 50]
     /// Выбранное кофе
     let coffie: Coffie
+    var discriptionCoffie: String {
+        switch coffie {
+        case .americano:
+            return "Американо"
+        case .cappuccino:
+            return "Капучино"
+        case .latte:
+            return "Латте"
+        }
+    }
+
     /// Выбранные добавки
     let selectedAditives: [String]
+
+    init() {
+        coffie = .americano
+        selectedAditives = []
+    }
+
     /// Сумма
-    lazy var sum: Int = {
+    func sum() -> Int {
         var sum = coffie.rawValue
         guard !selectedAditives.isEmpty else { return sum }
         for aditive in selectedAditives {
             sum += aditives[aditive] ?? 0
         }
         return sum
-    }()
+    }
 }

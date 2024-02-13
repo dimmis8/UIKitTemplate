@@ -22,7 +22,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window = UIWindow(windowScene: windowScene)
         let viewController = AutarizationViewController()
-        viewController.view.backgroundColor = .white
+        viewController.view.backgroundColor = UIColor(
+            red: 120.0 / 255.0,
+            green: 84.0 / 255.0,
+            blue: 49.0 / 255.0,
+            alpha: 1
+        )
         window?.rootViewController = viewController
         window?.makeKeyAndVisible()
     }
