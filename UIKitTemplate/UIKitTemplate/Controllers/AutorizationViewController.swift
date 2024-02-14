@@ -16,6 +16,7 @@ final class AutorizationViewController: UIViewController {
     }
 }
 
+/// Подписание на делегат кнопок экрана для передачи экшена перехода на следующий экран
 extension AutorizationViewController: EnterButtonDelegate {
     func showNextView() {
         let birthdayListViewController = BirthdayListViewController()

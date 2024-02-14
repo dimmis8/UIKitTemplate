@@ -14,6 +14,7 @@ final class AddBirthdayViewController: UIViewController {
     }
 }
 
+/// Подписание на делегат кнопок экрана для передачи экшена
 extension AddBirthdayViewController: CancelButtonDelegate {
     func cancelView() {
         dismiss(animated: true, completion: nil)
