@@ -27,6 +27,8 @@ struct CoffieAndAdditives {
     /// Выбранные добавки
     var selectedAditives: [String]
 
+    // MARK: - Initializers
+
     init() {
         coffie = .americano
         selectedAditives = []
@@ -34,7 +36,9 @@ struct CoffieAndAdditives {
 
     // MARK: - Public Methods
 
-    /// Сумма
+    /// Функция подсчета сумма
+    /// - Returns:
+    ///  - sum: сумма заказа
     func sum() -> Int {
         var sum = coffie.rawValue
         guard !selectedAditives.isEmpty else { return sum }
