@@ -23,6 +23,18 @@
 		0A9D77AB2B71282000774B49 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D77AA2B71282000774B49 /* SceneDelegate.swift */; };
 		0A9D77AD2B71282000774B49 /* AutarizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D77AC2B71282000774B49 /* AutarizationViewController.swift */; };
 		0A9D77B52B71282100774B49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D77B32B71282100774B49 /* LaunchScreen.storyboard */; };
+		1BA584272B7A65120004FF0B /* AutariziotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA584262B7A65120004FF0B /* AutariziotionView.swift */; };
+		1BA5842A2B7A8A3E0004FF0B /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA584292B7A8A3E0004FF0B /* MenuView.swift */; };
+		1BA584322B7A96C50004FF0B /* Verdana-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1BA5842D2B7A96C50004FF0B /* Verdana-Italic.ttf */; };
+		1BA584332B7A96C50004FF0B /* COPYRIGHT.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1BA5842E2B7A96C50004FF0B /* COPYRIGHT.txt */; };
+		1BA584342B7A96C50004FF0B /* Verdana-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1BA5842F2B7A96C50004FF0B /* Verdana-Bold.ttf */; };
+		1BA584352B7A96C50004FF0B /* Verdana-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1BA584302B7A96C50004FF0B /* Verdana-BoldItalic.ttf */; };
+		1BA584362B7A96C50004FF0B /* Verdana.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1BA584312B7A96C50004FF0B /* Verdana.ttf */; };
+		1BA584382B7A9FEA0004FF0B /* AdressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA584372B7A9FEA0004FF0B /* AdressView.swift */; };
+		1BA5843C2B7AAB520004FF0B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA5843B2B7AAB520004FF0B /* CustomButton.swift */; };
+		1BA584412B7AC53D0004FF0B /* AmaticSC-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1BA5843E2B7AC53D0004FF0B /* AmaticSC-Regular.ttf */; };
+		1BA584422B7AC53D0004FF0B /* AmaticSC-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1BA5843F2B7AC53D0004FF0B /* AmaticSC-Bold.ttf */; };
+		1BA584432B7AC53D0004FF0B /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1BA584402B7AC53D0004FF0B /* OFL.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +56,18 @@
 		0A9D77AC2B71282000774B49 /* AutarizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutarizationViewController.swift; sourceTree = "<group>"; };
 		0A9D77B42B71282100774B49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A9D77B62B71282100774B49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BA584262B7A65120004FF0B /* AutariziotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutariziotionView.swift; sourceTree = "<group>"; };
+		1BA584292B7A8A3E0004FF0B /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		1BA5842D2B7A96C50004FF0B /* Verdana-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Verdana-Italic.ttf"; sourceTree = "<group>"; };
+		1BA5842E2B7A96C50004FF0B /* COPYRIGHT.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYRIGHT.txt; sourceTree = "<group>"; };
+		1BA5842F2B7A96C50004FF0B /* Verdana-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Verdana-Bold.ttf"; sourceTree = "<group>"; };
+		1BA584302B7A96C50004FF0B /* Verdana-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Verdana-BoldItalic.ttf"; sourceTree = "<group>"; };
+		1BA584312B7A96C50004FF0B /* Verdana.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Verdana.ttf; sourceTree = "<group>"; };
+		1BA584372B7A9FEA0004FF0B /* AdressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdressView.swift; sourceTree = "<group>"; };
+		1BA5843B2B7AAB520004FF0B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		1BA5843E2B7AC53D0004FF0B /* AmaticSC-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AmaticSC-Regular.ttf"; sourceTree = "<group>"; };
+		1BA5843F2B7AC53D0004FF0B /* AmaticSC-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AmaticSC-Bold.ttf"; sourceTree = "<group>"; };
+		1BA584402B7AC53D0004FF0B /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +132,7 @@
 		0A9D77A72B71282000774B49 /* UIKitTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				1BA584282B7A6DE90004FF0B /* View */,
 				0A0CD1332B7A4BE500687F75 /* Controllers */,
 				0A17A43A2B7B7BDC0028B15E /* Views */,
 				0A9D77A82B71282000774B49 /* AppDelegate.swift */,
@@ -116,9 +141,47 @@
 				0A17A4352B7B55B10028B15E /* Assets.xcassets */,
 				0A9D77B62B71282100774B49 /* Info.plist */,
 				0A0CD1382B7A4DC200687F75 /* CoffieAndAdditives.swift */,
+
 				0A17A4412B7CA0F20028B15E /* ButtonForSelectors.swift */,
+
+				1BA5843B2B7AAB520004FF0B /* CustomButton.swift */,
+				1BA5842C2B7A96C50004FF0B /* Verdana */,
+				1BA5843D2B7AC53D0004FF0B /* Amatic_SC 2 */,
+
 			);
 			path = UIKitTemplate;
+			sourceTree = "<group>";
+		};
+		1BA584282B7A6DE90004FF0B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1BA584262B7A65120004FF0B /* AutariziotionView.swift */,
+				1BA584292B7A8A3E0004FF0B /* MenuView.swift */,
+				1BA584372B7A9FEA0004FF0B /* AdressView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1BA5842C2B7A96C50004FF0B /* Verdana */ = {
+			isa = PBXGroup;
+			children = (
+				1BA5842D2B7A96C50004FF0B /* Verdana-Italic.ttf */,
+				1BA5842E2B7A96C50004FF0B /* COPYRIGHT.txt */,
+				1BA5842F2B7A96C50004FF0B /* Verdana-Bold.ttf */,
+				1BA584302B7A96C50004FF0B /* Verdana-BoldItalic.ttf */,
+				1BA584312B7A96C50004FF0B /* Verdana.ttf */,
+			);
+			path = Verdana;
+			sourceTree = "<group>";
+		};
+		1BA5843D2B7AC53D0004FF0B /* Amatic_SC 2 */ = {
+			isa = PBXGroup;
+			children = (
+				1BA5843E2B7AC53D0004FF0B /* AmaticSC-Regular.ttf */,
+				1BA5843F2B7AC53D0004FF0B /* AmaticSC-Bold.ttf */,
+				1BA584402B7AC53D0004FF0B /* OFL.txt */,
+			);
+			path = "Amatic_SC 2";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,8 +244,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
 				0A17A4362B7B55B10028B15E /* Assets.xcassets in Resources */,
 				0A9D77B52B71282100774B49 /* LaunchScreen.storyboard in Resources */,
+
+				1BA584432B7AC53D0004FF0B /* OFL.txt in Resources */,
+				1BA584332B7A96C50004FF0B /* COPYRIGHT.txt in Resources */,
+				0A9D77B52B71282100774B49 /* LaunchScreen.storyboard in Resources */,
+				1BA584362B7A96C50004FF0B /* Verdana.ttf in Resources */,
+				0A9D77B22B71282100774B49 /* Assets.xcassets in Resources */,
+				1BA584412B7AC53D0004FF0B /* AmaticSC-Regular.ttf in Resources */,
+				1BA584322B7A96C50004FF0B /* Verdana-Italic.ttf in Resources */,
+				1BA584342B7A96C50004FF0B /* Verdana-Bold.ttf in Resources */,
+				1BA584422B7AC53D0004FF0B /* AmaticSC-Bold.ttf in Resources */,
+				1BA584352B7A96C50004FF0B /* Verdana-BoldItalic.ttf in Resources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,11 +320,15 @@
 				0A17A4382B7B7B370028B15E /* ChoseRoastViewController.swift in Sources */,
 				0A0CD1392B7A4DC200687F75 /* CoffieAndAdditives.swift in Sources */,
 				0A0CD1372B7A4CC500687F75 /* CheckViewController.swift in Sources */,
+				1BA5842A2B7A8A3E0004FF0B /* MenuView.swift in Sources */,
 				0A0CD13B2B7A543C00687F75 /* ThanksViewController.swift in Sources */,
 				0A17A4402B7B9EAB0028B15E /* ChooseAdditivesView.swift in Sources */,
 				0A17A43C2B7B7C1D0028B15E /* ChooseRoastOfCoffeView.swift in Sources */,
 				0A0CD13D2B7B36A700687F75 /* SelectorCoffeView.swift in Sources */,
 				0A9D77AB2B71282000774B49 /* SceneDelegate.swift in Sources */,
+				1BA5843C2B7AAB520004FF0B /* CustomButton.swift in Sources */,
+				1BA584272B7A65120004FF0B /* AutariziotionView.swift in Sources */,
+				1BA584382B7A9FEA0004FF0B /* AdressView.swift in Sources */,
 				0A0CD1322B7A4B9900687F75 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

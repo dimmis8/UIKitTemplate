@@ -25,10 +25,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     private func createRootViewController(_ windowScene: UIWindowScene) {
         window = UIWindow(windowScene: windowScene)
-        let viewController = MenuViewController()
-        navController = UINavigationController(rootViewController: viewController)
-        viewController.view.backgroundColor = .white
-        window?.rootViewController = navController
+
+        setupWindowScene()
+    }
+
+    private func setupWindowScene() {
+        let viewController = AutarizationViewController()
+        /// Значение 255 обозначает максимально возможную интенсивность выбранного цвета в RGB-модели.
+        viewController.view.backgroundColor = UIColor(
+            red: 120.0 / 255.0,
+            green: 84.0 / 255.0,
+            blue: 49.0 / 255.0,
+            alpha: 1
+        )
+        window?.rootViewController = viewController
         window?.makeKeyAndVisible()
     }
 }

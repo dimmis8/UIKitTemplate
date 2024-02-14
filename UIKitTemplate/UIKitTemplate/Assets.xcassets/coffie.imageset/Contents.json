@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "coffie.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
