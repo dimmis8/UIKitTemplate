@@ -9,19 +9,38 @@ protocol ShopingCartDelegate: AnyObject {
 
 /// Экран корзины
 final class ShopingCartViewContoller: UIViewController {
-    lazy var shopingCartView = ShopingCartView()
-    weak var delegate: ShopingCartDelegate?
+    // MARK: - Constants
+
+    enum Constants {
+        /// Текст для названия вкладки вью
+        static let viewTitleName = "Корзина"
+    }
+
+    // MARK: - Public Properties
+
     var cartMap: [StoreItem: Int] = [:]
+    weak var delegate: ShopingCartDelegate?
+    lazy var shopingCartView = ShopingCartView()
+
+    // MARK: - Life Cycle
 
     override func loadView() {
         super.loadView()
         view = shopingCartView
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupViewTitle()
+    }
+
+    // MARK: - Public Methods
+
     func addItemToCart(item: StoreItem) {}
 
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        title = "Корзина"
-//    }
+    // MARK: - Private Methods
+
+    private func setupViewTitle() {
+        title = Constants.viewTitleName
+    }
 }

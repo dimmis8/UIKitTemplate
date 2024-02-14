@@ -3,8 +3,10 @@
 
 import UIKit
 
-/// Вью экрана корзины
+/// Экран корзины
 class ShopingCartView: UIView {
+    // MARK: - Initializers
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadView()
@@ -13,6 +15,8 @@ class ShopingCartView: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
+
+    // MARK: - Private Methods
 
     private func loadView() {
         backgroundColor = .gray
