@@ -13,7 +13,7 @@ protocol ChooseRoastDelegate: AnyObject {
     func closeView()
 }
 
-/// Вью экрана выбора прожарки кофе
+/// Экран выбора прожарки кофе
 class ChooseRoastOfCoffeView: UIView {
     // MARK: - Constants
 
@@ -30,20 +30,17 @@ class ChooseRoastOfCoffeView: UIView {
 
     // MARK: - Visual Components
 
-    /// Кнопка выбора темной обжарки кофе
-    lazy var darkRoastButton = CustomUIButton().createButton(
+    lazy var darkRoastButton = ButtonForSelectors().createButton(
         withImageName: "darkRost",
         labelText: Constants.darkRoastLabelText,
         position: CGPoint(x: 15, y: 102)
     )
-    /// Кнопка выбора светолой обжарки кофе
-    lazy var lightRoastButton = CustomUIButton().createButton(
+    lazy var lightRoastButton = ButtonForSelectors().createButton(
         withImageName: "lightRoast",
         labelText: Constants.lightRoastLabelText,
         position: CGPoint(x: 195, y: 102)
     )
 
-    /// Надпись "Уточните прожарку зерен"
     private let chooseRoastLabel = {
         let label = UILabel(frame: CGRect(x: 40, y: 53, width: 295, height: 30))
         label.text = Constants.selectRoastLabelText
@@ -52,7 +49,6 @@ class ChooseRoastOfCoffeView: UIView {
         return label
     }()
 
-    /// Кнопка закрытия вью
     private let closeViewButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 20, y: 26, width: 14, height: 14))
         button.setImage(UIImage(systemName: "xmark"), for: .normal)
@@ -62,7 +58,6 @@ class ChooseRoastOfCoffeView: UIView {
 
     // MARK: - Public Properties
 
-    /// Ссылка на делегата
     weak var delegate: ChooseRoastDelegate?
 
     // MARK: - Initializers
@@ -79,7 +74,6 @@ class ChooseRoastOfCoffeView: UIView {
 
     // MARK: - Private Methods
 
-    /// Метод создания вью
     private func createView() {
         backgroundColor = .white
         addSubview(chooseRoastLabel)
@@ -89,7 +83,6 @@ class ChooseRoastOfCoffeView: UIView {
         setTergetsForUIControl()
     }
 
-    /// Метод установки таргетов для элементов UIControl
     private func setTergetsForUIControl() {
         darkRoastButton.addTarget(self, action: #selector(darkRoastButtonAction), for: .touchUpInside)
         darkRoastButton.layer.borderColor = Constants.borderColor
@@ -97,17 +90,14 @@ class ChooseRoastOfCoffeView: UIView {
         closeViewButton.addTarget(self, action: #selector(closeViewButtonAction), for: .touchUpInside)
     }
 
-    /// Метод передачи таргета кнопки выбора темной обжарки делегату
     @objc private func darkRoastButtonAction() {
         delegate?.darkRoastButtonAction()
     }
 
-    /// Метод передачи таргета кнопки выбора светлой обжарки делегату
     @objc private func lightRoastButtonAction() {
         delegate?.lightRoastButtoAction()
     }
 
-    /// Метод передачи таргета кнопки закрытия экрана делегату
     @objc private func closeViewButtonAction() {
         delegate?.closeView()
     }

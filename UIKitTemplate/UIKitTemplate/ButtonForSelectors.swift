@@ -1,10 +1,10 @@
-// CustomUIButton.swift
+// ButtonForSelectors.swift
 // Copyright © RoadMap. All rights reserved.
 
 import UIKit
 
-/// Кастомная кнопка для главного экрана и экрана выбора прожарки зерен
-struct CustomUIButton {
+/// Кнопка для главного экрана и экрана выбора прожарки зерен
+struct ButtonForSelectors {
     /// Метод для создания новой кнопки со своим изображением, лейблом и позицией
     /// - Parameters:
     ///   - withImageName: имя изображения для кнопки
@@ -30,6 +30,8 @@ struct CustomUIButton {
         button.addSubview(imageView)
         button.addSubview(labelView)
         button.layer.cornerRadius = 12
+        button.layer.borderWidth = 1
+        button.layer.borderColor = CGColor(gray: 0, alpha: 0)
         button.backgroundColor = UIColor(named: "backgroundButtonColor")
         return button
     }

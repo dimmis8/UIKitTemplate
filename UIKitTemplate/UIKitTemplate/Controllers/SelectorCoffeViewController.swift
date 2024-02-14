@@ -8,17 +8,13 @@ final class SelectorCoffeViewController: UIViewController {
     // MARK: - Constants
 
     private enum Constant {
-        /// Текст для шеринга
         static let shareText = "Лови промокод roadmaplove на любой напиток из Кофейнов"
     }
 
     // MARK: - Public Properties
 
-    /// Выбранный кофе
     var chodenCoffe = CoffieAndAdditives()
-    /// Выбранная прожарка
     var chosenRoast: RoastOfCoffe = .dark
-    /// Вью контроллер меню шеринга
     lazy var shareViewController = UIActivityViewController(
         activityItems: [Constant.shareText],
         applicationActivities: nil
@@ -26,7 +22,6 @@ final class SelectorCoffeViewController: UIViewController {
 
     // MARK: - Private Properties
 
-    /// Вью экрана выбора кофе
     private lazy var selectorCoffeView = SelectorCoffeView(frame: view.frame)
 
     // MARK: - loadView
@@ -41,47 +36,43 @@ final class SelectorCoffeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBar()
-        selectorCoffeView.delegate = self
+        giveDelegateToSelectorCoffeView()
     }
 
     // MARK: - Public Methods
 
-    /// Метод обновления прожарки кофе
     func reloadRoastOfCoffe(withRoast chosenRoast: RoastOfCoffe) {
         self.chosenRoast = chosenRoast
         selectorCoffeView.reloadRoastButton(withRoast: chosenRoast)
     }
 
-    /// Метод обновления кнопки добавок кофе
     func reloadAdditiviewsButton(additivesIsChosen: Bool) {
         selectorCoffeView.reloadAdditives(isAdditionChoosen: additivesIsChosen)
-        selectorCoffeView.reloadPriceLabel(sum: chodenCoffe.sum())
+        selectorCoffeView.reloadPriceLabel(sum: chodenCoffe.calculateSum())
     }
 
     // MARK: - Private Methods
 
-    /// Метод настройки навигейшн бара
     private func setupNavBar() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: selectorCoffeView.leftNavBarButton)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: selectorCoffeView.rightNavBarButton)
+    }
+
+    private func giveDelegateToSelectorCoffeView() {
+        selectorCoffeView.delegate = self
     }
 }
 
 /// Подписание на делегат вью для выбора действия при нажатии на кнопки
 extension SelectorCoffeViewController: SelectorCoffeDelegate {
-    /// Функция обработки нажатия кнопки "назад"
     func backButton() {
         navigationController?.popViewController(animated: true)
     }
 
-    /// Функция обработки нажатия кнопки "поделиться"
     func shareButton() {
         present(shareViewController, animated: true)
     }
 
-    /// Функция обработки выбора сегмент контроллера с кофе
-    /// - Parameters:
-    ///   - state: номер состояния сегмент контроллера
     func segmentControllerChange(state: Int) {
         selectorCoffeView.reloadView(withState: state)
         switch state {
@@ -94,10 +85,9 @@ extension SelectorCoffeViewController: SelectorCoffeDelegate {
         default:
             break
         }
-        selectorCoffeView.reloadPriceLabel(sum: chodenCoffe.sum())
+        selectorCoffeView.reloadPriceLabel(sum: chodenCoffe.calculateSum())
     }
 
-    /// Функция обработки нажатия кнопки выбора степени обжарки
     func roastButtonAction() {
         let choseRoastViewController = ChoseRoastViewController()
         choseRoastViewController.selectorCoffeViewController = self
@@ -105,14 +95,12 @@ extension SelectorCoffeViewController: SelectorCoffeDelegate {
         present(choseRoastViewController, animated: true)
     }
 
-    /// Функция обработки нажатия кнопки выбора дополнений к кофе
     func aditivesButtonAction() {
         let chooseAdditivesViewController = ChooseAdditivesViewController(chosenAdditives: chodenCoffe.selectedAditives)
         chooseAdditivesViewController.selectorCoffeViewController = self
         present(chooseAdditivesViewController, animated: true)
     }
 
-    /// Функция обработки нажатия кнопки "Заказать"
     func makeOrderButtonAction() {
         let checkViewController = CheckViewController()
         checkViewController.coffieAndAddivities = chodenCoffe

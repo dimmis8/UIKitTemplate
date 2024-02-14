@@ -7,9 +7,7 @@ import UIKit
 final class ChooseAdditivesViewController: UIViewController {
     // MARK: - Public Properties
 
-    /// Ссылка на контроллер экрана выбора кофе
     weak var selectorCoffeViewController: SelectorCoffeViewController?
-    /// Выбранные добавки
     var chosenAdditives: [String] {
         didSet {
             selectorCoffeViewController?.chodenCoffe.selectedAditives = chosenAdditives
@@ -19,7 +17,6 @@ final class ChooseAdditivesViewController: UIViewController {
 
     // MARK: - Private Properties
 
-    /// Вью экрана выбора добавок в кофе
     private lazy var chooseAdditivesView = ChooseAdditivesView(frame: view.frame, choosenAdditives: chosenAdditives)
 
     // MARK: - Initializers
@@ -51,10 +48,6 @@ final class ChooseAdditivesViewController: UIViewController {
 
 // Подписание на делегат вью выбора добавок для получения экшенов контрол-элементов
 extension ChooseAdditivesViewController: ChooseAdditivesDelegate {
-    /// Функция обработки выбора добавок
-    /// - Parameters:
-    ///   - addition: выбранная добавка
-    ///   - isAdd: состояние добавленности
     func chooseAddition(addition: String, isAdd: Bool) {
         if isAdd {
             chosenAdditives.append(addition)
@@ -64,7 +57,6 @@ extension ChooseAdditivesViewController: ChooseAdditivesDelegate {
         }
     }
 
-    /// Функция обработки нажатия кнопки закрытия экрана
     func closeView() {
         dismiss(animated: true)
     }

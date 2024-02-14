@@ -40,27 +40,34 @@ final class SelectorCoffeView: UIView {
         static let makeOrderButtonLabel = "Заказать"
         /// Текст кнопки дополнительных элементов
         static let aditivesButtonLabel = "Дополнительные \nингредіенты"
+        /// Словарь состояний селектора и изображений для каждого состояния
+        static let existedCoffeMap = [0: "americano", 1: "cappuccino", 2: "latte"]
+        /// Название изображения кофе темной прожарки
+        static let darkRoastImageName = "darkRost"
+        /// Название изображения кофе светлой прожарки
+        static let lightRoastImageName = "lightRoast"
+        /// Название изображения плюса
+        static let plusImageName = "plusImage"
+        /// Название изображения галочки
+        static let checkMarkImageName = "checkMarkImage"
     }
 
     // MARK: - Visual Components
 
-    /// Кнопка возврата на предыдущий экран
     let leftNavBarButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
-        button.setImage(UIImage(named: "arrow"), for: .normal)
-        button.backgroundColor = UIColor(named: "buttonBackColor")
+        button.setImage(.arrow, for: .normal)
+        button.backgroundColor = .buttonBack
         button.layer.cornerRadius = 22
         return button
     }()
 
-    /// Кнопка шара промокда
     let rightNavBarButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 21, height: 21))
-        button.setImage(UIImage(named: "shareImage"), for: .normal)
+        button.setImage(.share, for: .normal)
         return button
     }()
 
-    /// Лейбл с ценой
     var priceLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 15, y: 669, width: 345, height: 30))
         label.text = Constants.initOfPriceLabelText
@@ -69,7 +76,6 @@ final class SelectorCoffeView: UIView {
         return label
     }()
 
-    /// Сегмент контроллер выбора кофе
     private let coffeSegmentController = {
         let segmentController = UISegmentedControl(items: Constants.selectorLabels)
         var attribute = [NSAttributedString.Key.font: UIFont(name: "Verdana", size: 13.0)]
@@ -80,7 +86,7 @@ final class SelectorCoffeView: UIView {
         segmentController.selectedSegmentIndex = 0
         segmentController.frame = CGRect(x: 15, y: 368, width: 345, height: 44)
         segmentController.setDividerImage(
-            UIImage(named: "segmentControllerColor"),
+            .segmentController,
             forLeftSegmentState: .selected,
             rightSegmentState: .normal,
             barMetrics: .default
@@ -92,7 +98,6 @@ final class SelectorCoffeView: UIView {
         return segmentController
     }()
 
-    /// Надпись "Модификация"
     private let modificationLabel = {
         let label = UILabel(frame: CGRect(x: 15, y: 432, width: 200, height: 30))
         label.text = Constants.modificationTextLabel
@@ -100,47 +105,41 @@ final class SelectorCoffeView: UIView {
         return label
     }()
 
-    /// Фон для изображения с кофе
     private let backgroundCoffe: UIImageView = {
         let view = UIImageView(frame: CGRect(x: 0, y: 0, width: 375, height: 346))
-        view.image = UIImage(named: "backgroundCoffe")
+        view.image = .backgroundCoffe
         return view
     }()
 
-    /// Кнопка "Заказать"
     private let makeOrderButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 15, y: 717, width: 345, height: 53))
         button.setTitle(Constants.makeOrderButtonLabel, for: .normal)
-        button.backgroundColor = UIColor(named: "orderButtonColor")
+        button.backgroundColor = .orderButton
         button.titleLabel?.font = .init(name: "Verdana-Bold", size: 18)
         button.layer.cornerRadius = 12
         return button
     }()
 
-    /// Вью с кофе
-    private var coffeView: UIImageView = {
+    private var coffeImageView: UIImageView = {
         let view = UIImageView(frame: CGRect(x: 112, y: 128, width: 150, height: 150))
-        view.image = UIImage(named: "americano")
+        view.image = .americano
         return view
     }()
 
-    /// Кнопка выбора обжарки кофе
-    private lazy var roastSelectionButton = CustomUIButton().createButton(
-        withImageName: "darkRost",
+    private lazy var roastSelectionButton = ButtonForSelectors().createButton(
+        withImageName: Constants.darkRoastImageName,
         labelText: Constants.darkOfRoastButtonText,
         position: CGPoint(x: 15, y: 482)
     )
 
-    /// Кнопка дополнительных ингредиентов
-    private lazy var aditivesButton = CustomUIButton().createButton(
-        withImageName: "plusImage",
+    private lazy var aditivesButton = ButtonForSelectors().createButton(
+        withImageName: Constants.plusImageName,
         labelText: Constants.aditivesButtonLabel,
         position: CGPoint(x: 195, y: 482)
     )
 
     // MARK: - Public Properties
 
-    /// Ссылка на делегата
     weak var delegate: SelectorCoffeDelegate?
 
     // MARK: - Initializers
@@ -157,37 +156,22 @@ final class SelectorCoffeView: UIView {
 
     // MARK: - Public Methods
 
-    /// Метод обновления вью в зависимости от выбранного кофе
-    /// - Parameters:
-    ///   - withState: выбранное состояние селект контроллера
-    func reloadView(withState state: Int) {
-        switch state {
-        case 0:
-            coffeView.image = UIImage(named: "americano")
-        case 1:
-            coffeView.image = UIImage(named: "cappuccino")
-        case 2:
-            coffeView.image = UIImage(named: "latte")
-        default:
-            break
-        }
+    func reloadView(withState stateIndex: Int) {
+        coffeImageView.image = UIImage(named: Constants.existedCoffeMap[stateIndex] ?? "")
     }
 
-    /// Метод обновления изображения кнопки выбора прожарки кофе
-    /// - Parameters:
-    ///   - withRoast: выбранная степень прожарки кофе
     func reloadRoastButton(withRoast roast: RoastOfCoffe) {
         roastSelectionButton.removeFromSuperview()
         switch roast {
         case .dark:
-            roastSelectionButton = CustomUIButton().createButton(
-                withImageName: "darkRost",
+            roastSelectionButton = ButtonForSelectors().createButton(
+                withImageName: Constants.darkRoastImageName,
                 labelText: Constants.darkOfRoastButtonText,
                 position: CGPoint(x: 15, y: 482)
             )
         case .light:
-            roastSelectionButton = CustomUIButton().createButton(
-                withImageName: "lightRoast",
+            roastSelectionButton = ButtonForSelectors().createButton(
+                withImageName: Constants.lightRoastImageName,
                 labelText: Constants.lightRoastButtonText,
                 position: CGPoint(x: 15, y: 482)
             )
@@ -196,13 +180,10 @@ final class SelectorCoffeView: UIView {
         setTergetsForUIControl()
     }
 
-    /// Метод обновления изображения кнопки выбора прожарки кофе
-    /// - Parameters:
-    ///   - isAdditionChoosen: выбраны ли лобавки
     func reloadAdditives(isAdditionChoosen: Bool) {
         aditivesButton.removeFromSuperview()
-        let imageName = isAdditionChoosen ? "checkMarkImage" : "plusImage"
-        aditivesButton = CustomUIButton().createButton(
+        let imageName = isAdditionChoosen ? Constants.checkMarkImageName : Constants.plusImageName
+        aditivesButton = ButtonForSelectors().createButton(
             withImageName: imageName,
             labelText: Constants.aditivesButtonLabel,
             position: CGPoint(x: 195, y: 482)
@@ -211,23 +192,17 @@ final class SelectorCoffeView: UIView {
         setTergetsForUIControl()
     }
 
-    /// Метод обновления лейбла с ценой
-    /// - Parameters:
-    ///   - sum: сумма заказа
     func reloadPriceLabel(sum: Int) {
-        priceLabel.removeFromSuperview()
         priceLabel.text = "Цѣна - \(sum) руб"
-        addSubview(priceLabel)
     }
 
     // MARK: - Private Methods
 
-    /// Метод создания вью
     private func createView() {
         backgroundColor = .white
         setTergetsForUIControl()
         addSubview(backgroundCoffe)
-        addSubview(coffeView)
+        addSubview(coffeImageView)
         addSubview(coffeSegmentController)
         addSubview(modificationLabel)
         addSubview(roastSelectionButton)
@@ -236,7 +211,6 @@ final class SelectorCoffeView: UIView {
         addSubview(makeOrderButton)
     }
 
-    /// Метод установки таргетов для элементов UIControl
     private func setTergetsForUIControl() {
         leftNavBarButton.addTarget(self, action: #selector(leftNavBurButtonAction), for: .touchUpInside)
         rightNavBarButton.addTarget(self, action: #selector(rightNavBurButtonAction), for: .touchUpInside)
@@ -250,32 +224,26 @@ final class SelectorCoffeView: UIView {
         makeOrderButton.addTarget(self, action: #selector(makeOrderButtonAction), for: .touchUpInside)
     }
 
-    /// Метод передачи таргета левой кнопки делегату
     @objc private func leftNavBurButtonAction() {
         delegate?.backButton()
     }
 
-    /// Метод передачи таргета правой кнопки делегату
     @objc private func rightNavBurButtonAction() {
         delegate?.shareButton()
     }
 
-    /// Метод передачи таргета сегмент контроллера делегату
     @objc private func actionForSelectorChangedState(state: UISegmentedControl) {
         delegate?.segmentControllerChange(state: state.selectedSegmentIndex)
     }
 
-    /// Метод передачи таргета кнопки выбора прожарки делегату
     @objc private func roastButtonAction() {
         delegate?.roastButtonAction()
     }
 
-    /// Метод передачи таргета кнопки выбора добавок
     @objc private func aditivesButtonAction() {
         delegate?.aditivesButtonAction()
     }
 
-    /// Метод передачи таргета кнопки создания заказа
     @objc private func makeOrderButtonAction() {
         delegate?.makeOrderButtonAction()
     }

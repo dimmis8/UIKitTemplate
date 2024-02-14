@@ -23,23 +23,16 @@ struct CoffieAndAdditives {
     /// Добавки
     let aditives = ["Молоко": 50, "Сироп": 20, "Молоко соевое": 50, "Молоко миндальное": 70, "Эспрессо 50мл": 50]
     /// Выбранное кофе
-    var coffie: Coffie
+    var coffie: Coffie = .americano
     /// Выбранные добавки
-    var selectedAditives: [String]
-
-    // MARK: - Initializers
-
-    init() {
-        coffie = .americano
-        selectedAditives = []
-    }
+    var selectedAditives: [String] = []
 
     // MARK: - Public Methods
 
     /// Функция подсчета сумма
     /// - Returns:
     ///  - sum: сумма заказа
-    func sum() -> Int {
+    func calculateSum() -> Int {
         var sum = coffie.rawValue
         guard !selectedAditives.isEmpty else { return sum }
         for aditive in selectedAditives {
@@ -50,10 +43,9 @@ struct CoffieAndAdditives {
 }
 
 /// Прожарка кофе
-/// - Parameters:
-///  - light: светлая
-///  - dark: темная
 enum RoastOfCoffe {
+    /// Светлая прожарка
     case light
+    /// Темная прожарка
     case dark
 }

@@ -3,11 +3,15 @@
 
 import UIKit
 
-///  Контроллер вью чека (делает коллега)
+///  Экран вью чека (делает коллега)
 class CheckViewController: UIViewController {
     var coffieAndAddivities = CoffieAndAdditives()
     override func viewDidLoad() {
         super.viewDidLoad()
+        changeBackgroundColor()
+    }
+
+    private func changeBackgroundColor() {
         view.backgroundColor = .white
     }
 }

@@ -14,8 +14,8 @@ protocol ChooseAdditivesDelegate: AnyObject {
     func chooseAddition(addition: String, isAdd: Bool)
 }
 
-/// Вью экана выбора добавок в кофе
-class ChooseAdditivesView: UIView {
+/// Экран выбора добавок в кофе
+final class ChooseAdditivesView: UIView {
     // MARK: - Constants
 
     private enum Constants {
@@ -27,7 +27,6 @@ class ChooseAdditivesView: UIView {
 
     // MARK: - Visual Components
 
-    /// Надпись "Выберите дополнительные ингредиенты"
     private let chooseRoastLabel = {
         let label = UILabel(frame: CGRect(x: 40, y: 53, width: 295, height: 44))
         label.text = Constants.chooseRoastLabelText
@@ -37,17 +36,16 @@ class ChooseAdditivesView: UIView {
         return label
     }()
 
-    /// Кнопка закрытия вью
-    private let closeViewButton: UIButton = {
+    private lazy var closeViewButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 20, y: 26, width: 14, height: 14))
         button.setImage(UIImage(systemName: "xmark"), for: .normal)
         button.tintColor = .black
+        button.addTarget(self, action: #selector(closeViewButtonAction), for: .touchUpInside)
         return button
     }()
 
     // MARK: - Public Properties
 
-    /// Ссылка на делегата
     weak var delegate: ChooseAdditivesDelegate?
 
     // MARK: - Initializers
@@ -60,34 +58,25 @@ class ChooseAdditivesView: UIView {
 
     @available(*, unavailable)
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        createView()
     }
 
     // MARK: - Private Methods
 
-    /// Метод установки таргетов для элементов UIControl
-    private func setTergetsForUIControl() {
-        closeViewButton.addTarget(self, action: #selector(closeViewButtonAction), for: .touchUpInside)
-    }
-
-    /// Метод создания вью
     private func createView() {
         backgroundColor = .white
         addSubview(chooseRoastLabel)
         addSubview(closeViewButton)
-        setTergetsForUIControl()
     }
 
-    /// Метод создания надписей со слайдерами
-    /// - Parameters:
-    ///   - choosenAdditives: массив добавок
     private func createViewWithAdditives(choosenAdditives: [String]) {
-        /// Словарь с доступными добавками
+        // Словарь с доступными добавками
         let additivies = CoffieAndAdditives().aditives.sorted(by: <)
-        ///  Число оставшихся добавок для размещения на вью
+        //  Число оставшихся добавок для размещения на вью
         var numberOfAvalableAdditives = additivies.count
         for addition in additivies {
-            /// Лейбл добавки
+            // Лейбл добавки
             let additionNameLabel: UILabel = {
                 let label = UILabel(frame: CGRect(
                     x: 20,
@@ -110,7 +99,7 @@ class ChooseAdditivesView: UIView {
                 label.attributedText = attributedString
                 return label
             }()
-            ///  Свитчер добавки
+            //  Свитчер добавки
             let additionSwitch: UISwitch = {
                 let switcher = UISwitch(frame: CGRect(
                     x: 301,
@@ -131,14 +120,11 @@ class ChooseAdditivesView: UIView {
         }
     }
 
-    /// Метод передачи таргета кнопки закрытия экрана делегату
     @objc private func closeViewButtonAction() {
         delegate?.closeView()
     }
 
-    /// Метод передачи таргета свичей экрана делегату
     @objc private func choseAddition(switcher: UISwitch) {
-        /// Массив имеющихся добавок
         let additives = CoffieAndAdditives().aditives.keys.sorted()
         delegate?.chooseAddition(addition: additives[switcher.tag], isAdd: switcher.isOn)
     }
