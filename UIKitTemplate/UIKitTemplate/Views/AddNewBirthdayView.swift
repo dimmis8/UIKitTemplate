@@ -261,7 +261,7 @@ final class AddNewBirthdayView: UIView {
 }
 
 // MARK: - Extensions
-
+/// Подписание на делегат передачи экшена редактирования текстового поля телегармма
 extension AddNewBirthdayView: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == telegramPlaceholder {
@@ -270,6 +270,7 @@ extension AddNewBirthdayView: UITextFieldDelegate {
     }
 }
 
+/// Подписание на делегат передачи экшена редактирования строк возраста и гендера
 extension AddNewBirthdayView: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch pickerView {
@@ -282,6 +283,7 @@ extension AddNewBirthdayView: UIPickerViewDelegate {
     }
 }
 
+/// Подписание на делегат дата сорса пикера для его конфигурирования
 extension AddNewBirthdayView: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
