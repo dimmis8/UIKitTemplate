@@ -1,17 +1,27 @@
-// PlayerViewController.swift
+// PlayeerViewController.swift
 // Copyright © RoadMap. All rights reserved.
 
 import AVFAudio
 import UIKit
 
 /// вью контроллера плеера
-class PlayerViewController: UIViewController {
-    private var player = AVAudioPlayer()
+class ViewController: UIViewController {
+    // MARK: - IBOutlets
+
     @IBOutlet var volumeSlider: UISlider!
     @IBOutlet var playButtonOutlet: UIButton!
     @IBOutlet var slider: UISlider!
     @IBOutlet var timeLabel: UILabel!
+
+    // MARK: - Public Properties
+
     var timer: Timer?
+
+    // MARK: - Private Properties
+
+    private var player = AVAudioPlayer()
+
+    // MARK: - viewDidLoad
 
     override func viewDidLoad() {
         volumeSlider.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi / 2))
@@ -33,6 +43,8 @@ class PlayerViewController: UIViewController {
         player.play()
         playButtonOutlet.setImage(UIImage(named: "pause"), for: .normal)
     }
+
+    // MARK: - Private Methods
 
     @IBAction func playButton(_ sender: Any) {
         if player.isPlaying {

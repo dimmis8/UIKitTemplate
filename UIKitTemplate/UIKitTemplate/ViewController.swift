@@ -4,11 +4,17 @@
 import AVFoundation
 import UIKit
 
-/// ViewController
+/// Вью контроллера плеера
 final class ViewController: UIViewController {
-    private var player = AVAudioPlayer()
+    
+    // MARK: - IBOutlets
     @IBOutlet var durationLabelLetItBe: UILabel!
     @IBOutlet var durationLabelYesterday: UILabel!
+    
+    // MARK: - Private Properties
+    private var player = AVAudioPlayer()
+    
+    // MARK: - Initializers
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,6 +45,7 @@ final class ViewController: UIViewController {
         }
     }
 
+    // MARK: - Public Methods
     @IBAction func letItBeButton(_ sender: Any) {}
 
     @IBAction func yesterdayButton(_ sender: Any) {}
