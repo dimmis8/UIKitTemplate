@@ -5,20 +5,29 @@ import UIKit
 
 /// Контроллер экрана меню
 final class MenuViewController: UIViewController {
+    // MARK: - Constants
+
+    enum Constant {
+        static let nameCafeLabelText = "Кофеиновъ"
+        static let welcomeLabelText = "Добро пожаловать, Гость"
+        static let avatarLabelText = "Г"
+    }
+
     // MARK: - Visual Components
 
     private let nameCafeLabel: UILabel = {
         let label = UILabel()
-        label.text = "Кофеиновъ"
+        label.text = Constant.nameCafeLabelText
         label.frame = CGRect(x: 100, y: 49, width: 175, height: 76)
         label.font = UIFont(name: "AmaticSC-Bold", size: 55)
+        /// Значение 255 обозначает максимально возможную интенсивность выбранного цвета в RGB-модели.
         label.textColor = UIColor(red: 207 / 255.0, green: 180 / 255.0, blue: 150 / 255.0, alpha: 1)
         return label
     }()
 
     private let welcomeLabel: UILabel = {
         let label = UILabel()
-        label.text = "Добро пожаловать, Гость"
+        label.text = Constant.welcomeLabelText
         label.frame = CGRect(x: 20, y: 147, width: 185, height: 44)
         label.font = UIFont(name: "Verdana-Bold", size: 16)
         label.numberOfLines = 0
@@ -28,7 +37,7 @@ final class MenuViewController: UIViewController {
 
     private let avatarLabel: UILabel = {
         let label = UILabel()
-        label.text = "Г"
+        label.text = Constant.avatarLabelText
         label.frame = CGRect(x: 311, y: 147, width: 44, height: 44)
         label.font = UIFont(name: "Verdana-Bold", size: 16)
         label.textColor = .white

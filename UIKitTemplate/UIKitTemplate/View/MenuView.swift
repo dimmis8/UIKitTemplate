@@ -5,27 +5,36 @@ import UIKit
 
 /// вью для меню вью контроллера с меню
 final class MenuView: UIView {
+    // MARK: - Constants
+
+    enum Constant {
+        static let coffeButtonText = "Кофий"
+        static let pieButtonText = "Пти пате аля «РюсЪ»"
+        static let hotDrinkButtonText = "Горячiя напитки"
+        static let navigtionLabelText = "Mинью"
+    }
+
     // MARK: - Visual Components
 
     /// кастомная вью с локацией заведения
     private var adressView = AdressView()
 
     lazy var coffeButton = CustomButton(
-        name: "Кофий",
+        name: Constant.coffeButtonText,
         nameImage: "кофе",
         right: 190,
         frame: CGRect(x: 20, y: 416, width: 335, height: 80)
     )
 
     lazy var pieButton = CustomButton(
-        name: "Пти пате аля «РюсЪ»",
+        name: Constant.pieButtonText,
         nameImage: "pae",
         right: 50,
         frame: CGRect(x: 20, y: 216, width: 335, height: 80)
     )
 
     lazy var hotDrinkButton = CustomButton(
-        name: "Горячiя напитки",
+        name: Constant.hotDrinkButtonText,
         nameImage: "image",
         right: 100,
         frame: CGRect(x: 20, y: 316, width: 335, height: 80)
@@ -33,7 +42,7 @@ final class MenuView: UIView {
 
     private let navigtionLabel: UILabel = {
         let label = UILabel()
-        label.text = "Mинью"
+        label.text = Constant.navigtionLabelText
         label.frame = CGRect(x: 125, y: 122, width: 125, height: 40)
         label.textAlignment = .center
         label.font = UIFont(name: "AmaticSC-Bold", size: 25)

@@ -5,13 +5,19 @@ import UIKit
 
 /// Вью контроллер для авторизации пользователя
 final class AutarizationViewController: UIViewController {
+    // MARK: - Constants
+
+    enum Constant {
+        static let nameCafeLabelText = "Кофеиновъ"
+    }
+
     // MARK: - Visual Components
 
     private let startView = AutariziotionView()
     private let nameImageview = UIImageView()
     private let nameCafeLabel: UILabel = {
         let label = UILabel()
-        label.text = "Кофеиновъ"
+        label.text = Constant.nameCafeLabelText
         label.frame = CGRect(x: 100, y: 103, width: 175, height: 76)
         label.font = UIFont(name: "AmaticSC-Bold", size: 55)
         /// Значение 255 обозначает максимально возможную интенсивность выбранного цвета в RGB-модели.

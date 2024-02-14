@@ -10,6 +10,13 @@ protocol MuveToFirstDelegate: AnyObject {
 
 ///  Контроллер вью чека
 final class CheckViewController: UIViewController {
+    // MARK: - Constants
+
+    enum Constant {
+        static let yourOrderLabelText = "Вашъ Заказъ"
+        static let sellButtonText = "Оплатить"
+    }
+
     // MARK: - Visual Components
 
     private let leftCornerImage: UIImageView = {
@@ -40,7 +47,7 @@ final class CheckViewController: UIViewController {
         let label = UILabel()
         label.font = UIFont(name: "Verdana-Bold", size: 18)
         label.frame = CGRect(x: 120, y: 100, width: 175, height: 19)
-        label.text = "Вашъ Заказъ"
+        label.text = Constant.yourOrderLabelText
         return label
     }()
 
@@ -54,7 +61,7 @@ final class CheckViewController: UIViewController {
 
     private lazy var sellButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Оплатить", for: .normal)
+        button.setTitle(Constant.sellButtonText, for: .normal)
         button.titleLabel?.font = UIFont(name: "Verdana-Bold", size: 18)
         /// Значение 255 обозначает максимально возможную интенсивность выбранного цвета в RGB-модели.
         button.backgroundColor = UIColor(red: 89.0 / 255.0, green: 190.0 / 255.0, blue: 199.0 / 255.0, alpha: 1)
@@ -68,7 +75,6 @@ final class CheckViewController: UIViewController {
         let label = UILabel()
         label.font = UIFont(name: "Verdana-Bold", size: 16)
         label.frame = CGRect(x: 20, y: 155, width: 150, height: 30)
-        label.text = "Americano"
         return label
     }()
 
@@ -77,7 +83,6 @@ final class CheckViewController: UIViewController {
         label.font = UIFont(name: "Verdana-Bold", size: 18)
         label.frame = CGRect(x: 225, y: 155, width: 130, height: 30)
         label.textAlignment = .right
-        label.text = "Цѣна - 100 руб"
         return label
     }()
 

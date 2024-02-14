@@ -5,11 +5,18 @@ import UIKit
 
 /// вью с адресами кофеен
 final class AdressView: UIView {
+    // MARK: - Constants
+
+    enum Constant {
+        static let adressTitleLabelText = "Адреса кофеен"
+        static let adressInfoLabelText = "Разрѣшите доступъ къ ​геолокаціи для поиска ближайшей кофейни "
+    }
+
     // MARK: - Visual Components
 
     private let adressTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Адреса кофеен"
+        label.text = Constant.adressTitleLabelText
         label.frame = CGRect(x: 15, y: 12, width: 150, height: 15)
         label.font = UIFont(name: "Verdana-Bold", size: 12)
         return label
@@ -17,7 +24,7 @@ final class AdressView: UIView {
 
     private let adressInfoLabel: UILabel = {
         let label = UILabel()
-        label.text = "Разрѣшите доступъ къ ​геолокаціи для поиска ближайшей кофейни "
+        label.text = Constant.adressTitleLabelText
         label.numberOfLines = 0
         label.textColor = .gray
         label.frame = CGRect(x: 15, y: 30, width: 260, height: 30)

@@ -5,13 +5,24 @@ import UIKit
 
 /// Вью для контроллера регистрации
 final class AutariziotionView: UIView {
+    // MARK: - Constants
+
+    enum Constant {
+        static let aufLabelText = "Авторизация"
+        static let loginLabelText = "Логин"
+        static let loginTextPlaysholder = "Введите почту"
+        static let passwordLabelText = "Пароль"
+        static let passwordTextPlaysholder = "Введите пароль"
+        static let loginTextButton = "Войти"
+    }
+
     // MARK: - Visual Components
 
     private let autariziotionLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Verdana-Bold", size: 26)
         label.frame = CGRect(x: 20, y: 32, width: 195, height: 31)
-        label.text = "Авторизация"
+        label.text = Constant.aufLabelText
         return label
     }()
 
@@ -19,13 +30,13 @@ final class AutariziotionView: UIView {
         let label = UILabel()
         label.font = UIFont(name: "Verdana-Bold", size: 16)
         label.frame = CGRect(x: 20, y: 84, width: 175, height: 19)
-        label.text = "Логин"
+        label.text = Constant.loginLabelText
         return label
     }()
 
     let loginTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Введите почту"
+        textField.placeholder = Constant.loginTextPlaysholder
         textField.frame = CGRect(x: 20, y: 113, width: 175, height: 17)
         textField.font = UIFont(name: "Verdana", size: 14)
         return textField
@@ -35,13 +46,13 @@ final class AutariziotionView: UIView {
         let label = UILabel()
         label.font = UIFont(name: "Verdana-Bold", size: 16)
         label.frame = CGRect(x: 20, y: 159, width: 175, height: 19)
-        label.text = "Пароль"
+        label.text = Constant.passwordLabelText
         return label
     }()
 
     let passwordTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Введите пароль"
+        textField.placeholder = Constant.passwordTextPlaysholder
         textField.frame = CGRect(x: 20, y: 188, width: 175, height: 17)
         textField.font = UIFont(name: "Verdana", size: 14)
         textField.isSecureTextEntry = true
@@ -58,7 +69,7 @@ final class AutariziotionView: UIView {
 
     lazy var loginButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Войти", for: .normal)
+        button.setTitle(Constant.loginTextButton, for: .normal)
         button.titleLabel?.font = UIFont(name: "Verdana", size: 16)
         /// Значение 255 обозначает максимально возможную интенсивность выбранного цвета в RGB-модели.
         button.backgroundColor = UIColor(red: 89.0 / 255.0, green: 190.0 / 255.0, blue: 199.0 / 255.0, alpha: 1)

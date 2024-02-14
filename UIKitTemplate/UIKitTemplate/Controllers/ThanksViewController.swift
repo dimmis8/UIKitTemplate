@@ -5,6 +5,19 @@ import UIKit
 
 /// Контроллер успешного заказа
 final class ThanksViewController: UIViewController {
+    // MARK: - Constants
+
+    enum Constant {
+        static let nameCafeLabelText = "СПАСИБО \nЗА ЗАКАЗ"
+        static let adressInfoLabelText = """
+        Разскажи о насъ другу, отправь ему
+        промокодъ
+        на безплатный напитокъ и получи
+        скидку 10% на слѣдующій заказъ.
+        """
+        static let returnBackButtonText = "Хорошо"
+    }
+
     // MARK: - Public Properties
 
     weak var delegate: MuveToFirstDelegate?
@@ -29,7 +42,7 @@ final class ThanksViewController: UIViewController {
 
     private let nameCafeLabel: UILabel = {
         let label = UILabel()
-        label.text = "СПАСИБО \nЗА ЗАКАЗ"
+        label.text = Constant.nameCafeLabelText
         label.textAlignment = .center
         label.numberOfLines = 0
         label.frame = CGRect(x: 75, y: 184, width: 235, height: 128)
@@ -40,13 +53,7 @@ final class ThanksViewController: UIViewController {
 
     private let adressInfoLabel: UILabel = {
         let label = UILabel()
-        label
-            .text = """
-            Разскажи о насъ другу, отправь ему
-            промокодъ
-            на безплатный напитокъ и получи
-            скидку 10% на слѣдующій заказъ.
-            """
+        label.text = Constant.adressInfoLabelText
         label.numberOfLines = 0
         label.textAlignment = .center
         label.textColor = .gray
@@ -57,7 +64,7 @@ final class ThanksViewController: UIViewController {
 
     private lazy var returnBackButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Хорошо", for: .normal)
+        button.setTitle(Constant.returnBackButtonText, for: .normal)
         button.titleLabel?.font = UIFont(name: "Verdana-Bold", size: 18)
         /// Значение 255 обозначает максимально возможную интенсивность выбранного цвета в RGB-модели.
         button.backgroundColor = UIColor(red: 89.0 / 255.0, green: 190.0 / 255.0, blue: 199.0 / 255.0, alpha: 1)
