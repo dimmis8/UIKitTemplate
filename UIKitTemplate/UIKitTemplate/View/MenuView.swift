@@ -3,7 +3,7 @@
 
 import UIKit
 
-/// вью для меню вью контроллера с меню
+/// Вью для меню вью контроллера с меню
 final class MenuView: UIView {
     // MARK: - Constants
 

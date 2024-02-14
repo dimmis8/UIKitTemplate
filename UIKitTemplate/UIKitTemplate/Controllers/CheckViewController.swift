@@ -3,7 +3,7 @@
 
 import UIKit
 
-/// протокол для перемещения пользователя на главный экран
+/// Протокол для перемещения пользователя на главный экран
 protocol MuveToFirstDelegate: AnyObject {
     func goBack()
 }
@@ -124,7 +124,7 @@ final class CheckViewController: UIViewController {
     }
 
     private func additives() {
-        /// переменная yFrame используется для смещения лейблов в низ
+        /// Переменная yFrame используется для смещения лейблов в низ
         var yFrame = Constant.startYFrame
         guard !coffieAndAddivities.selectedAditives.isEmpty else { return }
         for value in coffieAndAddivities.selectedAditives {
@@ -170,7 +170,7 @@ final class CheckViewController: UIViewController {
 
 // MARK: - Extension
 
-/// убрает все экраны и возвращет пользователя на главный экран
+/// Убрает все экраны и возвращет пользователя на главный экран
 extension CheckViewController: MuveToFirstDelegate {
     func goBack() {
         if let navigVC = presentingViewController as? UINavigationController {

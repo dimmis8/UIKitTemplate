@@ -3,7 +3,7 @@
 
 import UIKit
 
-/// вью с адресами кофеен
+/// Вью с адресами кофеен
 final class AdressView: UIView {
     // MARK: - Constants
 
