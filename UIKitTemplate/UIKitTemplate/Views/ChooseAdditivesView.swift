@@ -5,7 +5,12 @@ import UIKit
 
 /// Протокол делегата экрана выбора добавок в кофе
 protocol ChooseAdditivesDelegate: AnyObject {
+    /// Функция обработки нажатия кнопки закрытия экрана
     func closeView()
+    /// Функция обработки выбора добавок
+    /// - Parameters:
+    ///   - addition: выбранная добавка
+    ///   - isAdd: состояние добавленности
     func chooseAddition(addition: String, isAdd: Bool)
 }
 

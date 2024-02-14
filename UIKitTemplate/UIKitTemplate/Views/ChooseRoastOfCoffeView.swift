@@ -5,8 +5,11 @@ import UIKit
 
 /// Протокол делегата экрана выбора прожарки кофе
 protocol ChooseRoastDelegate: AnyObject {
+    /// Функция обработки нажатия кнопки темной прожарки кофе
     func darkRoastButtonAction()
+    /// Функция обработки нажатия кнопки светлой прожарки кофе
     func lightRoastButtoAction()
+    /// Функция обработки нажатия кнопки закрытия экрана
     func closeView()
 }
 

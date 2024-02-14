@@ -5,11 +5,19 @@ import UIKit
 
 /// Протокол делегата экрана выбора кофе
 protocol SelectorCoffeDelegate: AnyObject {
+    /// Функция обработки нажатия кнопки "назад"
     func backButton()
+    /// Функция обработки нажатия кнопки "поделиться"
     func shareButton()
+    /// Функция обработки выбора сегмент контроллера с кофе
+    /// - Parameters:
+    ///   - state: номер состояния сегмент контроллера
     func segmentControllerChange(state: Int)
+    /// Функция обработки нажатия кнопки выбора степени обжарки
     func roastButtonAction()
+    /// Функция обработки нажатия кнопки выбора дополнений к кофе
     func aditivesButtonAction()
+    /// Функция обработки нажатия кнопки "Заказать"
     func makeOrderButtonAction()
 }
 
