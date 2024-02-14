@@ -3,7 +3,7 @@
 
 import UIKit
 
-/// Контроллер вью выбора кофе
+/// Экран выбора кофе
 class SelectorCoffeViewController: UIViewController {
     var but = UIButton(frame: CGRect(x: 50, y: 300, width: 50, height: 50))
     override func viewDidLoad() {

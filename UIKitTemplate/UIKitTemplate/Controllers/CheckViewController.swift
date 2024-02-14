@@ -8,7 +8,7 @@ protocol MuveToFirstDelegate: AnyObject {
     func goBack()
 }
 
-///  Контроллер вью чека
+///  Экран чека
 final class CheckViewController: UIViewController {
     // MARK: - Constants
 

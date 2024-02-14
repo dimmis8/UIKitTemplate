@@ -3,7 +3,7 @@
 
 import UIKit
 
-/// Вью контроллер для авторизации пользователя
+/// Экран для авторизации пользователя
 final class AutarizationViewController: UIViewController {
     // MARK: - Constants
 

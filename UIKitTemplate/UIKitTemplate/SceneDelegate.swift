@@ -21,6 +21,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         window = UIWindow(windowScene: windowScene)
+        setupWindowScene()
+    }
+
+    private func setupWindowScene() {
         let viewController = AutarizationViewController()
         /// Значение 255 обозначает максимально возможную интенсивность выбранного цвета в RGB-модели.
         viewController.view.backgroundColor = UIColor(
