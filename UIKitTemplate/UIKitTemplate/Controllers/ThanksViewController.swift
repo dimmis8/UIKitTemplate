@@ -3,7 +3,7 @@
 
 import UIKit
 
-/// Контроллер успешного заказа
+/// Контроллер успешного заказа (делает коллега)
 class ThanksViewController: UIViewController {
 //    override func viewDidLoad() {
 //        super.viewDidLoad()

@@ -3,7 +3,7 @@
 
 import UIKit
 
-/// Контроллер экрана меню
+/// Контроллер экрана меню (делает коллега)
 class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()

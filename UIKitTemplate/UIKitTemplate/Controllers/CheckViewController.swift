@@ -3,7 +3,7 @@
 
 import UIKit
 
-///  Контроллер вью чека
+///  Контроллер вью чека (делает коллега)
 class CheckViewController: UIViewController {
     var coffieAndAddivities = CoffieAndAdditives()
     override func viewDidLoad() {
