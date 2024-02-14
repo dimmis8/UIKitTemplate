@@ -4,7 +4,7 @@
 import UIKit
 
 /// Таб бар контроллер приложения
-class ShopTabBarController: UITabBarController {
+final class ShopTabBarController: UITabBarController {
     // MARK: - Constants
 
     enum Constants {

@@ -15,6 +15,6 @@ final class ProfileView: UIView {
     }
 
     private func loadView() {
-        backgroundColor = .blue
+        backgroundColor = .white
     }
 }
