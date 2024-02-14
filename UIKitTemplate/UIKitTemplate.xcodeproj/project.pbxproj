@@ -12,10 +12,16 @@
 		0A0CD1372B7A4CC500687F75 /* CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0CD1362B7A4CC500687F75 /* CheckViewController.swift */; };
 		0A0CD1392B7A4DC200687F75 /* CoffieAndAdditives.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0CD1382B7A4DC200687F75 /* CoffieAndAdditives.swift */; };
 		0A0CD13B2B7A543C00687F75 /* ThanksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0CD13A2B7A543C00687F75 /* ThanksViewController.swift */; };
+		0A0CD13D2B7B36A700687F75 /* SelectorCoffeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0CD13C2B7B36A700687F75 /* SelectorCoffeView.swift */; };
+		0A17A4362B7B55B10028B15E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A17A4352B7B55B10028B15E /* Assets.xcassets */; };
+		0A17A4382B7B7B370028B15E /* ChoseRoastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A17A4372B7B7B370028B15E /* ChoseRoastViewController.swift */; };
+		0A17A43C2B7B7C1D0028B15E /* ChooseRoastOfCoffeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A17A43B2B7B7C1D0028B15E /* ChooseRoastOfCoffeView.swift */; };
+		0A17A43E2B7B9E3D0028B15E /* ChooseAdditivesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A17A43D2B7B9E3D0028B15E /* ChooseAdditivesViewController.swift */; };
+		0A17A4402B7B9EAB0028B15E /* ChooseAdditivesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A17A43F2B7B9EAB0028B15E /* ChooseAdditivesView.swift */; };
+		0A17A4422B7CA0F20028B15E /* ButtonForSelectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A17A4412B7CA0F20028B15E /* ButtonForSelectors.swift */; };
 		0A9D77A92B71282000774B49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D77A82B71282000774B49 /* AppDelegate.swift */; };
 		0A9D77AB2B71282000774B49 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D77AA2B71282000774B49 /* SceneDelegate.swift */; };
 		0A9D77AD2B71282000774B49 /* AutarizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D77AC2B71282000774B49 /* AutarizationViewController.swift */; };
-		0A9D77B22B71282100774B49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D77B12B71282100774B49 /* Assets.xcassets */; };
 		0A9D77B52B71282100774B49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D77B32B71282100774B49 /* LaunchScreen.storyboard */; };
 		1BA584272B7A65120004FF0B /* AutariziotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA584262B7A65120004FF0B /* AutariziotionView.swift */; };
 		1BA5842A2B7A8A3E0004FF0B /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA584292B7A8A3E0004FF0B /* MenuView.swift */; };
@@ -37,11 +43,17 @@
 		0A0CD1362B7A4CC500687F75 /* CheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckViewController.swift; sourceTree = "<group>"; };
 		0A0CD1382B7A4DC200687F75 /* CoffieAndAdditives.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffieAndAdditives.swift; sourceTree = "<group>"; };
 		0A0CD13A2B7A543C00687F75 /* ThanksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanksViewController.swift; sourceTree = "<group>"; };
+		0A0CD13C2B7B36A700687F75 /* SelectorCoffeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorCoffeView.swift; sourceTree = "<group>"; };
+		0A17A4352B7B55B10028B15E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0A17A4372B7B7B370028B15E /* ChoseRoastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoseRoastViewController.swift; sourceTree = "<group>"; };
+		0A17A43B2B7B7C1D0028B15E /* ChooseRoastOfCoffeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRoastOfCoffeView.swift; sourceTree = "<group>"; };
+		0A17A43D2B7B9E3D0028B15E /* ChooseAdditivesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAdditivesViewController.swift; sourceTree = "<group>"; };
+		0A17A43F2B7B9EAB0028B15E /* ChooseAdditivesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAdditivesView.swift; sourceTree = "<group>"; };
+		0A17A4412B7CA0F20028B15E /* ButtonForSelectors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonForSelectors.swift; sourceTree = "<group>"; };
 		0A9D77A52B71282000774B49 /* UIKitTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A9D77A82B71282000774B49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A9D77AA2B71282000774B49 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0A9D77AC2B71282000774B49 /* AutarizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutarizationViewController.swift; sourceTree = "<group>"; };
-		0A9D77B12B71282100774B49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A9D77B42B71282100774B49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A9D77B62B71282100774B49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BA584262B7A65120004FF0B /* AutariziotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutariziotionView.swift; sourceTree = "<group>"; };
@@ -75,10 +87,30 @@
 				0A9D77AC2B71282000774B49 /* AutarizationViewController.swift */,
 				0A0CD1312B7A4B9900687F75 /* MenuViewController.swift */,
 				0A0CD1342B7A4C8600687F75 /* SelectorCoffeViewController.swift */,
+				0A17A4392B7B7B780028B15E /* ControllersOfChooseCoffe */,
 				0A0CD1362B7A4CC500687F75 /* CheckViewController.swift */,
 				0A0CD13A2B7A543C00687F75 /* ThanksViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0A17A4392B7B7B780028B15E /* ControllersOfChooseCoffe */ = {
+			isa = PBXGroup;
+			children = (
+				0A17A4372B7B7B370028B15E /* ChoseRoastViewController.swift */,
+				0A17A43D2B7B9E3D0028B15E /* ChooseAdditivesViewController.swift */,
+			);
+			path = ControllersOfChooseCoffe;
+			sourceTree = "<group>";
+		};
+		0A17A43A2B7B7BDC0028B15E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0A0CD13C2B7B36A700687F75 /* SelectorCoffeView.swift */,
+				0A17A43B2B7B7C1D0028B15E /* ChooseRoastOfCoffeView.swift */,
+				0A17A43F2B7B9EAB0028B15E /* ChooseAdditivesView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		0A9D779C2B71282000774B49 = {
@@ -102,15 +134,20 @@
 			children = (
 				1BA584282B7A6DE90004FF0B /* View */,
 				0A0CD1332B7A4BE500687F75 /* Controllers */,
+				0A17A43A2B7B7BDC0028B15E /* Views */,
 				0A9D77A82B71282000774B49 /* AppDelegate.swift */,
 				0A9D77AA2B71282000774B49 /* SceneDelegate.swift */,
-				0A9D77B12B71282100774B49 /* Assets.xcassets */,
 				0A9D77B32B71282100774B49 /* LaunchScreen.storyboard */,
+				0A17A4352B7B55B10028B15E /* Assets.xcassets */,
 				0A9D77B62B71282100774B49 /* Info.plist */,
 				0A0CD1382B7A4DC200687F75 /* CoffieAndAdditives.swift */,
+
+				0A17A4412B7CA0F20028B15E /* ButtonForSelectors.swift */,
+
 				1BA5843B2B7AAB520004FF0B /* CustomButton.swift */,
 				1BA5842C2B7A96C50004FF0B /* Verdana */,
 				1BA5843D2B7AC53D0004FF0B /* Amatic_SC 2 */,
+
 			);
 			path = UIKitTemplate;
 			sourceTree = "<group>";
@@ -207,6 +244,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
+				0A17A4362B7B55B10028B15E /* Assets.xcassets in Resources */,
+				0A9D77B52B71282100774B49 /* LaunchScreen.storyboard in Resources */,
+
 				1BA584432B7AC53D0004FF0B /* OFL.txt in Resources */,
 				1BA584332B7A96C50004FF0B /* COPYRIGHT.txt in Resources */,
 				0A9D77B52B71282100774B49 /* LaunchScreen.storyboard in Resources */,
@@ -217,6 +258,7 @@
 				1BA584342B7A96C50004FF0B /* Verdana-Bold.ttf in Resources */,
 				1BA584422B7AC53D0004FF0B /* AmaticSC-Bold.ttf in Resources */,
 				1BA584352B7A96C50004FF0B /* Verdana-BoldItalic.ttf in Resources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,13 +312,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A17A4422B7CA0F20028B15E /* ButtonForSelectors.swift in Sources */,
 				0A9D77AD2B71282000774B49 /* AutarizationViewController.swift in Sources */,
 				0A9D77A92B71282000774B49 /* AppDelegate.swift in Sources */,
 				0A0CD1352B7A4C8600687F75 /* SelectorCoffeViewController.swift in Sources */,
+				0A17A43E2B7B9E3D0028B15E /* ChooseAdditivesViewController.swift in Sources */,
+				0A17A4382B7B7B370028B15E /* ChoseRoastViewController.swift in Sources */,
 				0A0CD1392B7A4DC200687F75 /* CoffieAndAdditives.swift in Sources */,
 				0A0CD1372B7A4CC500687F75 /* CheckViewController.swift in Sources */,
 				1BA5842A2B7A8A3E0004FF0B /* MenuView.swift in Sources */,
 				0A0CD13B2B7A543C00687F75 /* ThanksViewController.swift in Sources */,
+				0A17A4402B7B9EAB0028B15E /* ChooseAdditivesView.swift in Sources */,
+				0A17A43C2B7B7C1D0028B15E /* ChooseRoastOfCoffeView.swift in Sources */,
+				0A0CD13D2B7B36A700687F75 /* SelectorCoffeView.swift in Sources */,
 				0A9D77AB2B71282000774B49 /* SceneDelegate.swift in Sources */,
 				1BA5843C2B7AAB520004FF0B /* CustomButton.swift in Sources */,
 				1BA584272B7A65120004FF0B /* AutariziotionView.swift in Sources */,

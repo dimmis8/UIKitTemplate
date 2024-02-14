@@ -3,6 +3,7 @@
 
 import UIKit
 
+
 /// Экран успешного заказа
 final class ThanksViewController: UIViewController {
     // MARK: - Constants

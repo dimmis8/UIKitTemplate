@@ -12,6 +12,7 @@ import UIKit
 /// SceneDelegate class
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
+    var navController = UINavigationController()
 
     func scene(
         _ scene: UIScene,
@@ -19,8 +20,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         options connectionOptions: UIScene.ConnectionOptions
     ) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        createRootViewController(windowScene)
+    }
 
+    private func createRootViewController(_ windowScene: UIWindowScene) {
         window = UIWindow(windowScene: windowScene)
+
         setupWindowScene()
     }
 
