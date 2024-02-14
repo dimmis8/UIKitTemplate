@@ -25,10 +25,8 @@ class ChooseRoastOfCoffeView: UIView {
         static let selectRoastLabelText = "Уточните обжарку зеренъ"
     }
 
-    // MARK: - Public Properties
+    // MARK: - Visual Components
 
-    /// Ссылка на делегата
-    weak var delegate: ChooseRoastDelegate?
     /// Кнопка выбора темной обжарки кофе
     lazy var darkRoastButton = CustomUIButton().createButton(
         withImageName: "darkRost",
@@ -41,8 +39,6 @@ class ChooseRoastOfCoffeView: UIView {
         labelText: Constants.lightRoastLabelText,
         position: CGPoint(x: 195, y: 102)
     )
-
-    // MARK: - Private Properties
 
     /// Надпись "Уточните прожарку зерен"
     private let chooseRoastLabel = {
@@ -60,6 +56,11 @@ class ChooseRoastOfCoffeView: UIView {
         button.tintColor = .black
         return button
     }()
+
+    // MARK: - Public Properties
+
+    /// Ссылка на делегата
+    weak var delegate: ChooseRoastDelegate?
 
     // MARK: - Initializers
 

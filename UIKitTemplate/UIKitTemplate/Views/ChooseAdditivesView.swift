@@ -20,12 +20,7 @@ class ChooseAdditivesView: UIView {
         static let chooseRoastLabelText = "Выберите дополнительные \nингредiенты"
     }
 
-    // MARK: - Public Properties
-
-    /// Ссылка на делегата
-    weak var delegate: ChooseAdditivesDelegate?
-
-    // MARK: - Private Properties
+    // MARK: - Visual Components
 
     /// Надпись "Выберите дополнительные ингредиенты"
     private let chooseRoastLabel = {
@@ -44,6 +39,11 @@ class ChooseAdditivesView: UIView {
         button.tintColor = .black
         return button
     }()
+
+    // MARK: - Public Properties
+
+    /// Ссылка на делегата
+    weak var delegate: ChooseAdditivesDelegate?
 
     // MARK: - Initializers
 

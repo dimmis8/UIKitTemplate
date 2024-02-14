@@ -34,7 +34,7 @@ final class SelectorCoffeView: UIView {
         static let aditivesButtonLabel = "Дополнительные \nингредіенты"
     }
 
-    // MARK: - Public Properties
+    // MARK: - Visual Components
 
     /// Кнопка возврата на предыдущий экран
     let leftNavBarButton: UIButton = {
@@ -52,9 +52,6 @@ final class SelectorCoffeView: UIView {
         return button
     }()
 
-    /// Ссылка на делегата
-    weak var delegate: SelectorCoffeDelegate?
-
     /// Лейбл с ценой
     var priceLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 15, y: 669, width: 345, height: 30))
@@ -63,8 +60,6 @@ final class SelectorCoffeView: UIView {
         label.textAlignment = .right
         return label
     }()
-
-    // MARK: - Private Properties
 
     /// Сегмент контроллер выбора кофе
     private let coffeSegmentController = {
@@ -113,7 +108,7 @@ final class SelectorCoffeView: UIView {
         button.layer.cornerRadius = 12
         return button
     }()
-    
+
     /// Вью с кофе
     private var coffeView: UIImageView = {
         let view = UIImageView(frame: CGRect(x: 112, y: 128, width: 150, height: 150))
@@ -134,6 +129,11 @@ final class SelectorCoffeView: UIView {
         labelText: Constants.aditivesButtonLabel,
         position: CGPoint(x: 195, y: 482)
     )
+
+    // MARK: - Public Properties
+
+    /// Ссылка на делегата
+    weak var delegate: SelectorCoffeDelegate?
 
     // MARK: - Initializers
 
