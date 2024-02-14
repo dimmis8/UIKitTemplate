@@ -5,6 +5,8 @@ import UIKit
 
 /// Контроллер экрана со списком дней рождений
 final class BirthdayListViewController: UIViewController {
+    
+    // MARK: - Private Properties
     private lazy var birthdayListView = BirthdayListView(frame: view.frame, people: people)
     /// Массив с данными о людях
     private var people: [Person] {
@@ -46,6 +48,7 @@ final class BirthdayListViewController: UIViewController {
         ]
     }
 
+    // MARK: - loadView
     override func loadView() {
         super.loadView()
         view.addSubview(birthdayListView)
@@ -57,6 +60,7 @@ final class BirthdayListViewController: UIViewController {
         )
     }
 
+    // MARK: - Public Methods
     @objc func addNewBirthday() {
         present(AddBirthdayViewController(), animated: true)
     }

@@ -6,7 +6,7 @@ import Foundation
 /// Модель, считающая количество дней до дня рождения
 struct BirthdayModel {
     /// Метод, считающий сколько дней осталось до дня рождения
-    func dayToBirthday(dateOfBirthday: Date) -> Int {
+    func countDayToBirthday(dateOfBirthday: Date) -> Int {
         let calendar = Calendar.current
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM"

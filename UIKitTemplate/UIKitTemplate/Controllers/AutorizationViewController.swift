@@ -4,9 +4,11 @@
 import UIKit
 
 /// Вью контроллер экрана авторизации
-class AutorizationViewController: UIViewController {
+final class AutorizationViewController: UIViewController {
+    // MARK: - Private Properties
     private lazy var autorizationView = AutorizationView(frame: view.frame)
 
+    // MARK: - loadView
     override func loadView() {
         super.loadView()
         view.addSubview(autorizationView)
@@ -15,12 +17,10 @@ class AutorizationViewController: UIViewController {
 }
 
 extension AutorizationViewController: EnterButtonDelegate {
-    func nextView() {
+    func showNextView() {
         let birthdayListViewController = BirthdayListViewController()
         birthdayListViewController.view.backgroundColor = .white
         birthdayListViewController.title = "Birthday Reminder"
         navigationController?.pushViewController(birthdayListViewController, animated: true)
     }
-
-//    @objc func ter() {}
 }

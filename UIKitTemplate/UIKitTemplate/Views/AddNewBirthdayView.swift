@@ -9,15 +9,20 @@ protocol CancelButtonDelegate: AnyObject {
 }
 
 /// Вью для добавления дня рожения
-class AddNewBirthdayView: UIView {
+final class AddNewBirthdayView: UIView {
+    
+    // MARK: - Constants
     private let pickerAge = UIPickerView()
     private let pickerGender = UIPickerView()
     private let pickerDate = UIDatePicker()
     private let genders = ["male", "female"]
 
+    // MARK: - Public Properties
     var name: String?
     weak var delegate: CancelButtonDelegate?
 
+    // MARK: - Private Properties
+    
     private var buttonCancel: UIButton {
         let button = UIButton(frame: CGRect(x: 20, y: 15, width: 80, height: 25))
         button.setTitle("Cancel", for: .normal)
@@ -116,6 +121,7 @@ class AddNewBirthdayView: UIView {
         return imageView
     }
 
+    // MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
         createView()
@@ -126,6 +132,7 @@ class AddNewBirthdayView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: - Private Methods
     private func setupAgePicker() {
         pickerAge.delegate = self
         pickerAge.dataSource = self
@@ -252,6 +259,8 @@ class AddNewBirthdayView: UIView {
         telegramPlaceholder.delegate = self
     }
 }
+
+// MARK: - Extensions
 
 extension AddNewBirthdayView: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {

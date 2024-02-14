@@ -4,7 +4,7 @@
 import UIKit
 
 /// Контроллер для добавления новых дней рождений
-class AddBirthdayViewController: UIViewController {
+final class AddBirthdayViewController: UIViewController {
     private lazy var addBirthdayView = AddNewBirthdayView(frame: view.frame)
 
     override func loadView() {

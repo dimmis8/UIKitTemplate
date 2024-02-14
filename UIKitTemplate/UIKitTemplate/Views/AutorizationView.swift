@@ -4,7 +4,7 @@
 import UIKit
 
 protocol EnterButtonDelegate: AnyObject {
-    func nextView()
+    func showNextView()
 }
 
 /// Класс вью экрана авторизации
@@ -151,12 +151,12 @@ final class AutorizationView: UIView {
         enterButton.backgroundColor = UIColor(named: "buttonLightColor")
         enterButton.layer.cornerRadius = 12
         enterButton.isEnabled = false
-        enterButton.addTarget(self, action: #selector(nextView), for: .touchUpInside)
+        enterButton.addTarget(self, action: #selector(showNextView), for: .touchUpInside)
     }
 
     /// Метод вызова функции перехода на следующую страницу у делегата
     @objc private func nextView() {
-        delegate?.nextView()
+        delegate?.showNextView()
     }
 
     /// Метод добавления элементов на вью

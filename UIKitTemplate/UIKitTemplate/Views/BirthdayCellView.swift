@@ -61,7 +61,7 @@ final class BirthdayCellView: UIView {
             return birthdayImage
         } else {
             let birthdayImage = UILabel(frame: CGRect(x: 295, y: 14, width: 44, height: 44))
-            birthdayImage.text = "\(BirthdayModel().dayToBirthday(dateOfBirthday: person.birthday))"
+            birthdayImage.text = "\(BirthdayModel().countDayToBirthday(dateOfBirthday: person.birthday))"
             return birthdayImage
         }
     }
