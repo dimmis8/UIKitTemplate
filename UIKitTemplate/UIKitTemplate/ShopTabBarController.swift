@@ -24,7 +24,7 @@ class ShopTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createTabBar()
-        storeViewController.cart = shopingCartViewContoller as? ShopingCartDelegate
+        storeViewController.cart = shopingCartViewContoller
     }
 
     // MARK: - Private Methods
