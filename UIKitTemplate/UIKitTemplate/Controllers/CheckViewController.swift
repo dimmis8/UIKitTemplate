@@ -5,6 +5,7 @@ import UIKit
 
 /// Протокол для перемещения пользователя на главный экран
 protocol MuveToFirstDelegate: AnyObject {
+    ///  возвращает приложенеие на стартовый экран
     func goBack()
 }
 
@@ -28,7 +29,7 @@ final class CheckViewController: UIViewController {
 
     private let leftCornerImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "left")
+        imageView.image = .left
         imageView.frame = CGRect(x: 20, y: 47, width: 100, height: 73)
         imageView.sizeToFit()
         return imageView
@@ -36,7 +37,7 @@ final class CheckViewController: UIViewController {
 
     private let rightCornerImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "right")
+        imageView.image = .right
         imageView.frame = CGRect(x: 260, y: 47, width: 100, height: 73)
         imageView.sizeToFit()
         return imageView
@@ -44,7 +45,7 @@ final class CheckViewController: UIViewController {
 
     private let iconImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "gravira")
+        imageView.image = .gravira
         imageView.frame = CGRect(x: 145, y: 472, width: 100, height: 40)
         imageView.sizeToFit()
         return imageView
@@ -70,7 +71,6 @@ final class CheckViewController: UIViewController {
         let button = UIButton()
         button.setTitle(Constant.sellButtonText, for: .normal)
         button.titleLabel?.font = UIFont(name: "Verdana-Bold", size: 18)
-        /// Значение 255 обозначает максимально возможную интенсивность выбранного цвета в RGB-модели.
         button.backgroundColor = UIColor(red: 89.0 / 255.0, green: 190.0 / 255.0, blue: 199.0 / 255.0, alpha: 1)
         button.layer.cornerRadius = 12
         button.frame = CGRect(x: 20, y: 632, width: 345, height: 53)
@@ -97,12 +97,17 @@ final class CheckViewController: UIViewController {
         let button = UIButton()
         button.setImage(UIImage(systemName: "xmark"), for: .normal)
         button.frame = CGRect(x: 20, y: 26, width: 14, height: 14)
-        button.addTarget(self, action: #selector(cancellationView), for: .touchUpInside)
+        button.addTarget(self, action: #selector(closeCheckScreen), for: .touchUpInside)
         button.tintColor = .black
         return button
     }()
 
     // MARK: - Life Cycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -110,15 +115,10 @@ final class CheckViewController: UIViewController {
         additives()
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupUI()
-    }
-
     // MARK: - Private Methods
 
     private func setupCheckView() {
-        praceLabel.text = "Цѣна - \(coffieAndAddivities.sum()) руб"
+        praceLabel.text = "Цѣна - \(coffieAndAddivities.calculateSum()) руб"
         currentCoffeLabel.text = coffieAndAddivities.discriptionCoffie
         praceCoffeLabel.text = "\(coffieAndAddivities.coffie.rawValue) руб"
     }
@@ -163,7 +163,7 @@ final class CheckViewController: UIViewController {
         present(newViewController, animated: true, completion: nil)
     }
 
-    @objc private func cancellationView() {
+    @objc private func closeCheckScreen() {
         dismiss(animated: true)
     }
 }

@@ -7,6 +7,12 @@ import Foundation
 struct CoffieAndAdditives {
     // MARK: - Types
 
+    enum Constant {
+        static let americano = "Американо"
+        static let cappuccino = "Капучино"
+        static let latte = "Латте"
+    }
+
     /// Вид кофе
     /// - Parameters:
     ///  - Americano: Американо
@@ -28,11 +34,11 @@ struct CoffieAndAdditives {
     var discriptionCoffie: String {
         switch coffie {
         case .americano:
-            return "Американо"
+            return Constant.americano
         case .cappuccino:
-            return "Капучино"
+            return Constant.cappuccino
         case .latte:
-            return "Латте"
+            return Constant.latte
         }
     }
 
@@ -45,7 +51,7 @@ struct CoffieAndAdditives {
     }
 
     /// Сумма
-    func sum() -> Int {
+    func calculateSum() -> Int {
         var sum = coffie.rawValue
         guard !selectedAditives.isEmpty else { return sum }
         for aditive in selectedAditives {

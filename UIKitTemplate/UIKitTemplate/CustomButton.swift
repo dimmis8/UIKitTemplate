@@ -3,13 +3,15 @@
 
 import UIKit
 
-/// кастомная кнопка для 2 го вью контроллера
+/// кастомная кнопка. Используется во  2ом вью контроллере
 final class CustomButton: UIButton {
-    convenience init(name: String, nameImage: String, right: Int, frame: CGRect) {
+    // MARK: - Initializers
+
+    convenience init(name: String, nameImage: UIImage, right: Int, frame: CGRect) {
         self.init(frame: frame)
         layer.cornerRadius = 16
         setTitle(name, for: .normal)
-        setImage(UIImage(named: nameImage), for: .normal)
+        setImage(nameImage, for: .normal)
         titleLabel?.font = UIFont(name: "Verdana-BoldItalic", size: 16)
         setTitleColor(UIColor.black, for: .normal)
         contentHorizontalAlignment = .right

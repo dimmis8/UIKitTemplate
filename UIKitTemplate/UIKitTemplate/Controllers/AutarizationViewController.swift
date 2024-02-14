@@ -9,6 +9,8 @@ final class AutarizationViewController: UIViewController {
 
     enum Constant {
         static let nameCafeLabelText = "Кофеиновъ"
+        static let eyeElashImage = "eye.slash"
+        static let eyeImage = "eye"
     }
 
     // MARK: - Visual Components
@@ -49,15 +51,15 @@ final class AutarizationViewController: UIViewController {
     }
 
     @objc private func loginComform() {
-        let newViewController = MenuViewController()
-        let navigtionVC = UINavigationController(rootViewController: newViewController)
+        let menuViewController = MenuViewController()
+        let navigtionVC = UINavigationController(rootViewController: menuViewController)
         navigtionVC.modalPresentationStyle = .fullScreen
         present(navigtionVC, animated: true, completion: nil)
     }
 
     @objc private func secureText() {
         startView.passwordTextField.isSecureTextEntry.toggle()
-        let nameImage = startView.passwordTextField.isSecureTextEntry ? "eye.slash" : "eye"
+        let nameImage = startView.passwordTextField.isSecureTextEntry ? Constant.eyeElashImage : Constant.eyeImage
         startView.secureTextButton.setImage(UIImage(systemName: nameImage), for: .normal)
     }
 }
@@ -73,7 +75,7 @@ extension AutarizationViewController: UITextFieldDelegate {
     ) -> Bool {
         let loginText = startView.loginTextField.text ?? ""
         let passwordText = startView.passwordTextField.text ?? ""
-        if loginText.count > 10, passwordText.count > 5 {
+        if !loginText.isEmpty, !passwordText.isEmpty {
             startView.loginButton.alpha = 1
             startView.loginButton.isEnabled = true
         }

@@ -21,21 +21,21 @@ final class MenuView: UIView {
 
     lazy var coffeButton = CustomButton(
         name: Constant.coffeButtonText,
-        nameImage: "кофе",
+        nameImage: .coffie,
         right: 190,
         frame: CGRect(x: 20, y: 416, width: 335, height: 80)
     )
 
-    lazy var pieButton = CustomButton(
+    private lazy var pieButton = CustomButton(
         name: Constant.pieButtonText,
-        nameImage: "pae",
+        nameImage: .pae,
         right: 50,
         frame: CGRect(x: 20, y: 216, width: 335, height: 80)
     )
 
-    lazy var hotDrinkButton = CustomButton(
+    private lazy var hotDrinkButton = CustomButton(
         name: Constant.hotDrinkButtonText,
-        nameImage: "image",
+        nameImage: .image,
         right: 100,
         frame: CGRect(x: 20, y: 316, width: 335, height: 80)
     )
@@ -52,7 +52,7 @@ final class MenuView: UIView {
 
     private let iconImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "gravira")
+        imageView.image = .gravira
         imageView.frame = CGRect(x: 137, y: 162, width: 100, height: 40)
         imageView.sizeToFit()
         return imageView

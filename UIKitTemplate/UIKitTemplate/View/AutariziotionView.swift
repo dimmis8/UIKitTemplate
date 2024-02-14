@@ -3,7 +3,7 @@
 
 import UIKit
 
-/// Вью для контроллера регистрации
+/// Вью регистрации
 final class AutariziotionView: UIView {
     // MARK: - Constants
 
@@ -14,6 +14,7 @@ final class AutariziotionView: UIView {
         static let passwordLabelText = "Пароль"
         static let passwordTextPlaysholder = "Введите пароль"
         static let loginTextButton = "Войти"
+        static let buttonImage = "eye.slash"
     }
 
     // MARK: - Visual Components
@@ -59,9 +60,12 @@ final class AutariziotionView: UIView {
         return textField
     }()
 
+    private let lineOne = UIView()
+    private let lineTwo = UIView()
+
     lazy var secureTextButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+        button.setImage(UIImage(systemName: Constant.buttonImage), for: .normal)
         button.frame = CGRect(x: 332, y: 185, width: 22, height: 22)
         button.tintColor = .gray
         return button
@@ -71,16 +75,12 @@ final class AutariziotionView: UIView {
         let button = UIButton()
         button.setTitle(Constant.loginTextButton, for: .normal)
         button.titleLabel?.font = UIFont(name: "Verdana", size: 16)
-        /// Значение 255 обозначает максимально возможную интенсивность выбранного цвета в RGB-модели.
         button.backgroundColor = UIColor(red: 89.0 / 255.0, green: 190.0 / 255.0, blue: 199.0 / 255.0, alpha: 1)
         button.layer.cornerRadius = 12
         button.frame = CGRect(x: 20, y: 416, width: 335, height: 44)
         button.isEnabled = false
         return button
     }()
-
-    private let lineOne = UIView()
-    private let lineTwo = UIView()
 
     // MARK: - Initializers
 

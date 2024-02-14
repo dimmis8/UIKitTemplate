@@ -24,7 +24,7 @@ final class AdressView: UIView {
 
     private let adressInfoLabel: UILabel = {
         let label = UILabel()
-        label.text = Constant.adressTitleLabelText
+        label.text = Constant.adressInfoLabelText
         label.numberOfLines = 0
         label.textColor = .gray
         label.frame = CGRect(x: 15, y: 30, width: 260, height: 30)
