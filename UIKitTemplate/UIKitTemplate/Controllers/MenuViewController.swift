@@ -3,7 +3,6 @@
 
 import UIKit
 
-
 /// Экран меню
 final class MenuViewController: UIViewController {
     // MARK: - Constants

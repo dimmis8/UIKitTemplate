@@ -33,7 +33,7 @@ struct CoffieAndAdditives {
     var coffie: Coffie = .americano
     /// Выбранные добавки
     var selectedAditives: [String] = []
- 
+
     /// Получения названия выбраного кофе
     var discriptionCoffie: String {
         switch coffie {
@@ -46,7 +46,7 @@ struct CoffieAndAdditives {
         }
     }
 
-  // MARK: - Public Methods
+    // MARK: - Public Methods
 
     /// Функция подсчета сумма
     /// - Returns:
@@ -59,8 +59,8 @@ struct CoffieAndAdditives {
         }
         return sum
     }
-
 }
+
 /// Прожарка кофе
 enum RoastOfCoffe {
     /// Светлая прожарка

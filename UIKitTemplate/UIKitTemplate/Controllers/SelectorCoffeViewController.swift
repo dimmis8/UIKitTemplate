@@ -106,6 +106,5 @@ extension SelectorCoffeViewController: SelectorCoffeDelegate {
         let checkViewController = CheckViewController()
         checkViewController.coffieAndAddivities = chodenCoffe
         present(checkViewController, animated: true)
-
     }
 }

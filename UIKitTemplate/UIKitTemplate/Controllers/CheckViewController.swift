@@ -3,7 +3,6 @@
 
 import UIKit
 
-
 /// Протокол для перемещения пользователя на главный экран
 protocol MuveToFirstDelegate: AnyObject {
     ///  возвращает приложенеие на стартовый экран
