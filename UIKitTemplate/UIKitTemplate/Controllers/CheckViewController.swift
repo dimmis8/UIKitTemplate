@@ -173,10 +173,10 @@ final class CheckViewController: UIViewController {
 /// Убрает все экраны и возвращет пользователя на главный экран
 extension CheckViewController: MuveToFirstDelegate {
     func goBack() {
-        if let navigVC = presentingViewController as? UINavigationController {
+        if let navigationViewController = presentingViewController as? UINavigationController {
             view.isHidden = true
             dismiss(animated: false)
-            navigVC.popViewController(animated: false)
+            navigationViewController.popViewController(animated: false)
         }
 
         dismiss(animated: true)
