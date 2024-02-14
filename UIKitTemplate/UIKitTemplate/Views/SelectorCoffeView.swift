@@ -15,6 +15,19 @@ protocol SelectorCoffeDelegate: AnyObject {
 
 /// Вью экрана выбора кофе
 final class SelectorCoffeView: UIView {
+    // MARK: - Constants
+
+    private enum Constants {
+        /// Лейблы для кнопок селектора
+        static let selectorLabels = ["Американо", "Капучино", "Латте"]
+        /// Инициализированный текст лейбла цены
+        static let initOfPriceLabelText = "Цѣна - 100 руб"
+        /// Текст для лейбла модификации
+        static let modificationTextLabel = "Модификация"
+        /// Инициализированный текст для кнопки выбора прожарки
+        static let initOfRoastButtonText = "Темная \nобжарка"
+    }
+
     // MARK: - Public Properties
 
     /// Кнопка возврата на предыдущий экран
@@ -39,7 +52,7 @@ final class SelectorCoffeView: UIView {
     /// Лейбл с ценой
     var priceLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 15, y: 669, width: 345, height: 30))
-        label.text = "Цѣна - 100 руб"
+        label.text = Constants.initOfPriceLabelText
         label.font = .init(name: "Verdana-Bold", size: 18)
         label.textAlignment = .right
         return label
@@ -49,7 +62,7 @@ final class SelectorCoffeView: UIView {
 
     /// Сегмент контроллер выбора кофе
     private let coffeSegmentController = {
-        let segmentController = UISegmentedControl(items: ["Американо", "Капучино", "Латте"])
+        let segmentController = UISegmentedControl(items: Constants.selectorLabels)
         var attribute = [NSAttributedString.Key.font: UIFont(name: "Verdana", size: 13.0)]
         UISegmentedControl.appearance().setTitleTextAttributes(
             attribute as [NSAttributedString.Key: Any],
@@ -73,7 +86,7 @@ final class SelectorCoffeView: UIView {
     /// Надпись "Модификация"
     private let modificationLabel = {
         let label = UILabel(frame: CGRect(x: 15, y: 432, width: 200, height: 30))
-        label.text = "Модификация"
+        label.text = Constants.modificationTextLabel
         label.font = .init(name: "Verdana-Bold", size: 18)
         return label
     }()
@@ -96,14 +109,14 @@ final class SelectorCoffeView: UIView {
     }()
 
     /// Кнопка выбора обжарки кофе
-    private lazy var roastSelectionButton: UIButton = createButton(
+    private lazy var roastSelectionButton = CustomUIButton().createButton(
         withImageName: "darkRost",
-        labelText: "Темная \nобжарка",
+        labelText: Constants.initOfRoastButtonText,
         position: CGPoint(x: 15, y: 482)
     )
 
     /// Кнопка дополнительных ингредиентов
-    private lazy var aditivesButton: UIButton = createButton(
+    private lazy var aditivesButton = CustomUIButton().createButton(
         withImageName: "plusImage",
         labelText: "Дополнительные \nингредіенты",
         position: CGPoint(x: 195, y: 482)
@@ -153,13 +166,13 @@ final class SelectorCoffeView: UIView {
         roastSelectionButton.removeFromSuperview()
         switch roast {
         case .dark:
-            roastSelectionButton = createButton(
+            roastSelectionButton = CustomUIButton().createButton(
                 withImageName: "darkRost",
                 labelText: "Темная \nобжарка",
                 position: CGPoint(x: 15, y: 482)
             )
         case .light:
-            roastSelectionButton = createButton(
+            roastSelectionButton = CustomUIButton().createButton(
                 withImageName: "lightRoast",
                 labelText: "Свѣтлая \nобжарка",
                 position: CGPoint(x: 15, y: 482)
@@ -175,7 +188,7 @@ final class SelectorCoffeView: UIView {
     func reloadAdditives(isAdditionChoosen: Bool) {
         aditivesButton.removeFromSuperview()
         let imageName = isAdditionChoosen ? "checkMarkImage" : "plusImage"
-        aditivesButton = createButton(
+        aditivesButton = CustomUIButton().createButton(
             withImageName: imageName,
             labelText: "Дополнительные \nингредіенты",
             position: CGPoint(x: 195, y: 482)
@@ -191,35 +204,6 @@ final class SelectorCoffeView: UIView {
         priceLabel.removeFromSuperview()
         priceLabel.text = "Цѣна - \(sum) руб"
         addSubview(priceLabel)
-    }
-
-    /// Метод для создания новой кнопки со своим изображением, лейблом и позицией
-    /// - Parameters:
-    ///   - withImageName: имя изображения для кнопки
-    ///   - labelText: текст лейбла кнопки
-    ///   - position: позиция размещения кнопки
-    /// - Returns: Кнопка
-    func createButton(withImageName imageName: String, labelText: String, position: CGPoint) -> UIButton {
-        let button = UIButton(frame: CGRect(origin: position, size: CGSize(width: 165, height: 165)))
-        let imageView = {
-            let imageView = UIImageView(frame: CGRect(x: 31, y: 17, width: 100, height: 100))
-            imageView.image = UIImage(named: imageName)
-            return imageView
-        }()
-        let labelView = {
-            let labelView = UILabel(frame: CGRect(x: 0, y: 117, width: 165, height: 34))
-            labelView.text = labelText
-            labelView.textAlignment = .center
-            labelView.numberOfLines = 2
-            labelView.textColor = .black
-            labelView.font = .init(name: "Verdana", size: 13)
-            return labelView
-        }()
-        button.addSubview(imageView)
-        button.addSubview(labelView)
-        button.layer.cornerRadius = 12
-        button.backgroundColor = UIColor(named: "backgroundButtonColor")
-        return button
     }
 
     // MARK: - Private Methods

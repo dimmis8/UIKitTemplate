@@ -14,9 +14,15 @@ protocol ChooseRoastDelegate: AnyObject {
 class ChooseRoastOfCoffeView: UIView {
     // MARK: - Constants
 
-    private enum Color {
+    private enum Constants {
         /// Цвет обводки для выбранной обжарки
         static let borderColor = CGColor(red: 89 / 255, green: 190 / 255, blue: 199 / 255, alpha: 1)
+        /// Текст для кнопки темной прожарки
+        static let darkRoastLabelText = "Темная \nобжарка"
+        /// Текст для кнопки светлой прожарки
+        static let lightRoastLabelText = "Свѣтлая \nобжарка"
+        /// Текст для кнопки уточнения степени прожарки
+        static let selectRoastLabelText = "Уточните обжарку зеренъ"
     }
 
     // MARK: - Public Properties
@@ -24,15 +30,15 @@ class ChooseRoastOfCoffeView: UIView {
     /// Ссылка на делегата
     weak var delegate: ChooseRoastDelegate?
     /// Кнопка выбора темной обжарки кофе
-    lazy var darkRoastButton: UIButton = createButton(
+    lazy var darkRoastButton = CustomUIButton().createButton(
         withImageName: "darkRost",
-        labelText: "Темная \nобжарка",
+        labelText: Constants.darkRoastLabelText,
         position: CGPoint(x: 15, y: 102)
     )
     /// Кнопка выбора светолой обжарки кофе
-    lazy var lightRoastButton: UIButton = createButton(
+    lazy var lightRoastButton = CustomUIButton().createButton(
         withImageName: "lightRoast",
-        labelText: "Свѣтлая \nобжарка",
+        labelText: Constants.lightRoastLabelText,
         position: CGPoint(x: 195, y: 102)
     )
 
@@ -41,7 +47,7 @@ class ChooseRoastOfCoffeView: UIView {
     /// Надпись "Уточните прожарку зерен"
     private let chooseRoastLabel = {
         let label = UILabel(frame: CGRect(x: 40, y: 53, width: 295, height: 30))
-        label.text = "Уточните обжарку зеренъ"
+        label.text = Constants.selectRoastLabelText
         label.font = .init(name: "Verdana-Bold", size: 18)
         label.textAlignment = .center
         return label
@@ -67,39 +73,6 @@ class ChooseRoastOfCoffeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Public Methods
-
-    /// Метод для создания новой кнопки со своим изображением, лейблом и позицией
-    /// - Parameters:
-    ///   - withImageName: имя изображения для кнопки
-    ///   - labelText: текст лейбла кнопки
-    ///   - position: позиция размещения кнопки
-    /// - Returns: Кнопка
-    func createButton(withImageName imageName: String, labelText: String, position: CGPoint) -> UIButton {
-        let button = UIButton(frame: CGRect(origin: position, size: CGSize(width: 165, height: 165)))
-        let imageView = {
-            let imageView = UIImageView(frame: CGRect(x: 31, y: 17, width: 100, height: 100))
-            imageView.image = UIImage(named: imageName)
-            return imageView
-        }()
-        let labelView = {
-            let labelView = UILabel(frame: CGRect(x: 0, y: 117, width: 165, height: 34))
-            labelView.text = labelText
-            labelView.textAlignment = .center
-            labelView.numberOfLines = 2
-            labelView.textColor = .black
-            labelView.font = .init(name: "Verdana", size: 13)
-            return labelView
-        }()
-        button.addSubview(imageView)
-        button.addSubview(labelView)
-        button.layer.cornerRadius = 12
-        button.layer.borderColor = CGColor(gray: 0, alpha: 0)
-        button.backgroundColor = UIColor(named: "backgroundButtonColor")
-        button.layer.borderWidth = 1
-        return button
-    }
-
     // MARK: - Private Methods
 
     /// Метод создания вью
@@ -115,7 +88,7 @@ class ChooseRoastOfCoffeView: UIView {
     /// Метод установки таргетов для элементов UIControl
     private func setTergetsForUIControl() {
         darkRoastButton.addTarget(self, action: #selector(darkRoastButtonAction), for: .touchUpInside)
-        darkRoastButton.layer.borderColor = Color.borderColor
+        darkRoastButton.layer.borderColor = Constants.borderColor
         lightRoastButton.addTarget(self, action: #selector(lightRoastButtonAction), for: .touchUpInside)
         closeViewButton.addTarget(self, action: #selector(closeViewButtonAction), for: .touchUpInside)
     }
