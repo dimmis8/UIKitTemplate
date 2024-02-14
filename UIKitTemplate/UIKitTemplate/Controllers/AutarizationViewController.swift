@@ -3,5 +3,5 @@
 
 import UIKit
 
-/// ViewController
+/// Экран авторизации (делает коллега)
 class AutarizationViewController: UIViewController {}
