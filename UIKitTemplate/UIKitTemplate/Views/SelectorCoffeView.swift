@@ -113,6 +113,13 @@ final class SelectorCoffeView: UIView {
         button.layer.cornerRadius = 12
         return button
     }()
+    
+    /// Вью с кофе
+    private var coffeView: UIImageView = {
+        let view = UIImageView(frame: CGRect(x: 112, y: 128, width: 150, height: 150))
+        view.image = UIImage(named: "americano")
+        return view
+    }()
 
     /// Кнопка выбора обжарки кофе
     private lazy var roastSelectionButton = CustomUIButton().createButton(
@@ -127,13 +134,6 @@ final class SelectorCoffeView: UIView {
         labelText: Constants.aditivesButtonLabel,
         position: CGPoint(x: 195, y: 482)
     )
-
-    /// Вью с кофе
-    private var coffeView: UIImageView = {
-        let view = UIImageView(frame: CGRect(x: 112, y: 128, width: 150, height: 150))
-        view.image = UIImage(named: "americano")
-        return view
-    }()
 
     // MARK: - Initializers
 
