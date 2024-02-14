@@ -15,7 +15,14 @@ final class CheckViewController: UIViewController {
     enum Constant {
         static let yourOrderLabelText = "Вашъ Заказъ"
         static let sellButtonText = "Оплатить"
+        static let startYFrame = 191
+        static let accommodationYFrame = 36
     }
+
+    // MARK: - Public Properties
+
+    weak var delegate: MuveToFirstDelegate?
+    var coffieAndAddivities = CoffieAndAdditives()
 
     // MARK: - Visual Components
 
@@ -95,11 +102,6 @@ final class CheckViewController: UIViewController {
         return button
     }()
 
-    // MARK: - Public Properties
-
-    weak var delegate: MuveToFirstDelegate?
-    var coffieAndAddivities = CoffieAndAdditives()
-
     // MARK: - Life Cycle
 
     override func viewWillAppear(_ animated: Bool) {
@@ -123,7 +125,7 @@ final class CheckViewController: UIViewController {
 
     private func additives() {
         /// переменная yFrame используется для смещения лейблов в низ
-        var yFrame = 191
+        var yFrame = Constant.startYFrame
         guard !coffieAndAddivities.selectedAditives.isEmpty else { return }
         for value in coffieAndAddivities.selectedAditives {
             let leftLabel = UILabel(frame: CGRect(x: 20, y: yFrame, width: 150, height: 30))
@@ -135,7 +137,7 @@ final class CheckViewController: UIViewController {
             rightLabel.text = "\(coffieAndAddivities.aditives[value] ?? 0) руб"
             view.addSubview(leftLabel)
             view.addSubview(rightLabel)
-            yFrame += 36
+            yFrame += Constant.accommodationYFrame
         }
     }
 
