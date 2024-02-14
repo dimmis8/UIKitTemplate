@@ -16,6 +16,8 @@ class ChooseAdditivesView: UIView {
     private enum Constants {
         /// Расстояние между двумя добавками
         static let distanceBetweenAdditives: CGFloat = 50
+        /// Текст для лейбла выбора дополнительных элементов
+        static let chooseRoastLabelText = "Выберите дополнительные \nингредiенты"
     }
 
     // MARK: - Public Properties
@@ -28,7 +30,7 @@ class ChooseAdditivesView: UIView {
     /// Надпись "Выберите дополнительные ингредиенты"
     private let chooseRoastLabel = {
         let label = UILabel(frame: CGRect(x: 40, y: 53, width: 295, height: 44))
-        label.text = "Выберите дополнительные \nингредiенты"
+        label.text = Constants.chooseRoastLabelText
         label.font = .init(name: "Verdana-Bold", size: 18)
         label.textAlignment = .center
         label.numberOfLines = 2

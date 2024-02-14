@@ -24,8 +24,14 @@ final class SelectorCoffeView: UIView {
         static let initOfPriceLabelText = "Цѣна - 100 руб"
         /// Текст для лейбла модификации
         static let modificationTextLabel = "Модификация"
-        /// Инициализированный текст для кнопки выбора прожарки
-        static let initOfRoastButtonText = "Темная \nобжарка"
+        /// Текст для кнопки выбора темной прожарки
+        static let darkOfRoastButtonText = "Темная \nобжарка"
+        /// Текст для кнопки выбора светлой прожарки
+        static let lightRoastButtonText = "Свѣтлая \nобжарка"
+        /// Текст кнопки "Заказать"
+        static let makeOrderButtonLabel = "Заказать"
+        /// Текст кнопки дополнительных элементов
+        static let aditivesButtonLabel = "Дополнительные \nингредіенты"
     }
 
     // MARK: - Public Properties
@@ -101,7 +107,7 @@ final class SelectorCoffeView: UIView {
     /// Кнопка "Заказать"
     private let makeOrderButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 15, y: 717, width: 345, height: 53))
-        button.setTitle("Заказать", for: .normal)
+        button.setTitle(Constants.makeOrderButtonLabel, for: .normal)
         button.backgroundColor = UIColor(named: "orderButtonColor")
         button.titleLabel?.font = .init(name: "Verdana-Bold", size: 18)
         button.layer.cornerRadius = 12
@@ -111,14 +117,14 @@ final class SelectorCoffeView: UIView {
     /// Кнопка выбора обжарки кофе
     private lazy var roastSelectionButton = CustomUIButton().createButton(
         withImageName: "darkRost",
-        labelText: Constants.initOfRoastButtonText,
+        labelText: Constants.darkOfRoastButtonText,
         position: CGPoint(x: 15, y: 482)
     )
 
     /// Кнопка дополнительных ингредиентов
     private lazy var aditivesButton = CustomUIButton().createButton(
         withImageName: "plusImage",
-        labelText: "Дополнительные \nингредіенты",
+        labelText: Constants.aditivesButtonLabel,
         position: CGPoint(x: 195, y: 482)
     )
 
@@ -168,13 +174,13 @@ final class SelectorCoffeView: UIView {
         case .dark:
             roastSelectionButton = CustomUIButton().createButton(
                 withImageName: "darkRost",
-                labelText: "Темная \nобжарка",
+                labelText: Constants.darkOfRoastButtonText,
                 position: CGPoint(x: 15, y: 482)
             )
         case .light:
             roastSelectionButton = CustomUIButton().createButton(
                 withImageName: "lightRoast",
-                labelText: "Свѣтлая \nобжарка",
+                labelText: Constants.lightRoastButtonText,
                 position: CGPoint(x: 15, y: 482)
             )
         }
@@ -190,7 +196,7 @@ final class SelectorCoffeView: UIView {
         let imageName = isAdditionChoosen ? "checkMarkImage" : "plusImage"
         aditivesButton = CustomUIButton().createButton(
             withImageName: imageName,
-            labelText: "Дополнительные \nингредіенты",
+            labelText: Constants.aditivesButtonLabel,
             position: CGPoint(x: 195, y: 482)
         )
         addSubview(aditivesButton)
