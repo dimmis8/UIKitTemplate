@@ -17,11 +17,12 @@ final class ShopingCartViewContoller: UIViewController {
         super.loadView()
         view = shopingCartView
     }
-    
-    func addItemToCart(item: StoreItem){}
 
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        title = "Корзина"
-//    }
+    func addItemToCart(item: StoreItem) {}
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "Корзина"
+        print(cartMap)
+    }
 }
