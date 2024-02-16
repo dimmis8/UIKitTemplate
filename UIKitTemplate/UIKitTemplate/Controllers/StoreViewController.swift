@@ -30,12 +30,12 @@ final class StoreViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
+        configureView()
     }
 
     // MARK: - Private Methods
 
-    private func setupView() {
+    private func configureView() {
         let customView = UIView(frame: CGRect(x: 0, y: 0, width: 60, height: 30))
         let cameraButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
         cameraButton.setImage(.camera, for: .normal)

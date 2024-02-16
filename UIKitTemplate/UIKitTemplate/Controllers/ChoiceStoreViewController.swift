@@ -100,7 +100,7 @@ class ChoiceStoreViewController: UIViewController {
 }
 
 // MARK: - Extension
-
+/// Подписываемся на делега экрна выбора размера
 extension ChoiceStoreViewController: SizeDelegate {
     /// добавление в корзину элемента
     /// - Parameters:
@@ -114,7 +114,7 @@ extension ChoiceStoreViewController: SizeDelegate {
 }
 
 // MARK: - Extension
-
+/// Подписываемся на делегат корзины
 extension ChoiceStoreViewController: ShopingCartDelegate {
     /// изменение картинки корзины кнопки
     /// - Parameters:
