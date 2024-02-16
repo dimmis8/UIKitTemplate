@@ -92,8 +92,11 @@ final class StoreView: UIView {
 
     private func activateCellProduct() {
         oneCellProduct.setNameLabel(name: Constants.brendText, image: .brends)
+        oneCellProduct.layer.cornerRadius = 12
         twoCellProduct.setNameLabel(name: Constants.shoesText, image: .shoesMan)
+        twoCellProduct.layer.cornerRadius = 12
         threeCellProduct.setNameLabel(name: Constants.bagText, image: .bagMan)
+        threeCellProduct.layer.cornerRadius = 12
         oneCellProduct.translatesAutoresizingMaskIntoConstraints = false
         twoCellProduct.translatesAutoresizingMaskIntoConstraints = false
         threeCellProduct.translatesAutoresizingMaskIntoConstraints = false

@@ -5,7 +5,6 @@ import UIKit
 
 /// Экран магазина
 final class StoreViewController: UIViewController {
-
     // MARK: - Constants
 
     enum Constants {
@@ -21,6 +20,8 @@ final class StoreViewController: UIViewController {
         1: [.blackChose, .saleSandal, .brends, .whiteSandal, .womenBag],
         2: [.sneakersWhite, .sneakersRed, .brends, .sneakersBlue, .redBag]
     ]
+
+    var cart: ShopingCartViewContoller?
 
     // MARK: - Life Cycle
 
@@ -70,6 +71,7 @@ final class StoreViewController: UIViewController {
 
     @objc private func selectionCatolog() {
         let storeViewController = ChoiceStoreViewController()
+        storeViewController.cart = cart
         navigationController?.pushViewController(storeViewController, animated: true)
     }
 }

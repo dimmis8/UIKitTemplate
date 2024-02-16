@@ -43,7 +43,7 @@ final class ShopTabBarController: UITabBarController {
             image: .one,
             selectedImage: .selectOne
         )
-        shopingCartViewContoller.tabBarItem = UITabBarItem(
+        shopingCartNavController.tabBarItem = UITabBarItem(
             title: Constants.titleCart,
             image: .two,
             selectedImage: .selectTwo
