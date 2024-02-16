@@ -18,9 +18,9 @@ final class ShopingCartViewContoller: UIViewController {
 
     // MARK: - Public Properties
 
-    var cartMap: [StoreItem: Int] = [
-        StoreItem(name: "Имя ботинка", itemImage: .blaachShoes, coast: 3000, size: 35): 1,
-        StoreItem(name: "имяяяя", itemImage: .blackChose, coast: 1300, size: 36): 1
+    var cartMap: [StoreItem: [Characteristics: Int]] = [
+        StoreItem(name: "Имя ботинка", itemImage: .blaachShoes, coast: 3000): [.count: 1, .size: 35],
+        StoreItem(name: "имяяяя", itemImage: .blackChose, coast: 1300): [.count: 1, .size: 38]
     ]
     weak var delegate: ShopingCartDelegate?
     lazy var shopingCartView = ShopingCartView(frame: view.frame, withItems: cartMap)
@@ -39,8 +39,8 @@ final class ShopingCartViewContoller: UIViewController {
 
     // MARK: - Public Methods
 
-    func addItemToCart(item: StoreItem) {
-        cartMap.updateValue(1, forKey: item)
+    func addItemToCart(item: StoreItem, size: Int) {
+        cartMap.updateValue([.count: 1, .size: size], forKey: item)
         shopingCartView.reloadView(withItems: cartMap)
     }
 
@@ -53,10 +53,14 @@ final class ShopingCartViewContoller: UIViewController {
 }
 
 extension ShopingCartViewContoller: CountOfItemDelegate {
-    func changeItemSize(forItem item: StoreItem, newSize: Int) {}
+    func changeItemSize(forItem item: StoreItem, newSize: Int) {
+        let count = cartMap[item]?[.count] ?? 0
+        cartMap.updateValue([.count: count, .size: newSize], forKey: item)
+    }
 
     func changeItemCount(ofItem item: StoreItem, count: Int) {
-        cartMap.updateValue(count, forKey: item)
+        let size = cartMap[item]?[.size] ?? 0
+        cartMap.updateValue([.count: count, .size: size], forKey: item)
         if count == 0 {
             delegate?.reloadCartInformation(deletedItem: item)
             cartMap.removeValue(forKey: item)

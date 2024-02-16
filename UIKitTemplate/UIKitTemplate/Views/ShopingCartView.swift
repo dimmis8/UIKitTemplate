@@ -58,7 +58,7 @@ class ShopingCartView: UIView {
 
     // MARK: - Initializers
 
-    init(frame: CGRect, withItems itemMap: [StoreItem: Int]) {
+    init(frame: CGRect, withItems itemMap: [StoreItem: [Characteristics: Int]]) {
         super.init(frame: frame)
         loadView(withItems: itemMap)
     }
@@ -69,7 +69,7 @@ class ShopingCartView: UIView {
 
     // MARK: - Public Methods
 
-    func reloadView(withItems itemMap: [StoreItem: Int]) {
+    func reloadView(withItems itemMap: [StoreItem: [Characteristics: Int]]) {
         for subview in subviews {
             subview.removeFromSuperview()
         }
@@ -78,7 +78,7 @@ class ShopingCartView: UIView {
 
     // MARK: - Private Methods
 
-    private func loadView(withItems itemMap: [StoreItem: Int]) {
+    private func loadView(withItems itemMap: [StoreItem: [Characteristics: Int]]) {
         backgroundColor = .white
         sumOfCart = countSumOfOrder(itemMap: itemMap)
         makeOrderButton.setTitle("Оформить заказ - \(sumOfCart) р", for: .normal)
@@ -93,17 +93,17 @@ class ShopingCartView: UIView {
         makeOrderButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
     }
 
-    private func countSumOfOrder(itemMap: [StoreItem: Int]) -> Int {
+    private func countSumOfOrder(itemMap: [StoreItem: [Characteristics: Int]]) -> Int {
         var sumOfOrder = 0
-        for (item, count) in itemMap {
-            sumOfOrder += item.coast * count
+        for (item, characteristics) in itemMap {
+            sumOfOrder += item.coast * (characteristics[.count] ?? 0)
         }
         return sumOfOrder
     }
 
-    private func createItemView(withItems itemMap: [StoreItem: Int]) {
+    private func createItemView(withItems itemMap: [StoreItem: [Characteristics: Int]]) {
         var itemCount = 0
-        for (item, count) in itemMap {
+        for (item, characteristic) in itemMap {
             let viewItem = UIView()
             viewItem.translatesAutoresizingMaskIntoConstraints = false
             addSubview(viewItem)
@@ -136,7 +136,7 @@ class ShopingCartView: UIView {
 
             let numberOfItemsLabel = UILabel()
             numberOfItemsLabel.translatesAutoresizingMaskIntoConstraints = false
-            numberOfItemsLabel.text = String(count)
+            numberOfItemsLabel.text = String(characteristic[.count] ?? 0)
             numberOfItemsLabel.textAlignment = .center
             numberOfItemsLabel.font = .init(name: "Verdana", size: 12)
             viewItem.addSubview(numberOfItemsLabel)
@@ -152,7 +152,7 @@ class ShopingCartView: UIView {
                 type: .custom,
                 primaryAction: UIAction(title: Constants.minusChar) { _ in
                     numberOfItemsLabel.text = String((Int(numberOfItemsLabel.text ?? "0") ?? 0) - 1)
-                    self.delegate?.changeItemCount(ofItem: item, count: count - 1)
+                    self.delegate?.changeItemCount(ofItem: item, count: (characteristic[.count] ?? 0) - 1)
                 }
             )
             minusItemButton.translatesAutoresizingMaskIntoConstraints = false
@@ -167,7 +167,7 @@ class ShopingCartView: UIView {
                 type: .custom,
                 primaryAction: UIAction(title: Constants.minusChar) { _ in
                     numberOfItemsLabel.text = String((Int(numberOfItemsLabel.text ?? "0") ?? 0) + 1)
-                    self.delegate?.changeItemCount(ofItem: item, count: count + 1)
+                    self.delegate?.changeItemCount(ofItem: item, count: (characteristic[.count] ?? 0) + 1)
                 }
             )
             plusItemButton.translatesAutoresizingMaskIntoConstraints = false
@@ -198,7 +198,7 @@ class ShopingCartView: UIView {
                 for size in Constants.minSize ... Constants.maxSize {
                     let button = createSizeButton(size: size)
                     button.tag = size
-                    if size == item.size {
+                    if size == characteristic[.size] {
                         button.layer.borderColor = Constants.magentaColor
                     }
                     viewItem.addSubview(button)

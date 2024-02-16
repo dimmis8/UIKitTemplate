@@ -11,6 +11,12 @@ struct StoreItem: Hashable {
     let itemImage: UIImage
     /// Стоимость товара
     let coast: Int
+}
+
+/// Параметры товара
+enum Characteristics {
     /// Размер товара
-    var size: Int
+    case size
+    /// Количество товара
+    case count
 }
