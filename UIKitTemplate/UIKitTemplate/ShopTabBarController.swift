@@ -4,7 +4,7 @@
 import UIKit
 
 /// Таб бар контроллер приложения
-class ShopTabBarController: UITabBarController {
+final class ShopTabBarController: UITabBarController {
     // MARK: - Constants
 
     enum Constants {
@@ -24,17 +24,18 @@ class ShopTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createTabBar()
-//        storeViewController.cart = shopingCartViewContoller as? ShopingCartDelegate
+        storeViewController.cart = shopingCartViewContoller
     }
 
     // MARK: - Private Methods
 
     private func createTabBar() {
         let storeNavController = UINavigationController(rootViewController: storeViewController)
+        let shopingCartNavController = UINavigationController(rootViewController: shopingCartViewContoller)
         let profileNavController = UINavigationController(rootViewController: profileViewController)
 
         setViewControllers(
-            [storeNavController, shopingCartViewContoller, profileNavController],
+            [storeNavController, shopingCartNavController, profileNavController],
             animated: true
         )
         storeNavController.tabBarItem = UITabBarItem(
@@ -42,7 +43,7 @@ class ShopTabBarController: UITabBarController {
             image: .one,
             selectedImage: .selectOne
         )
-        shopingCartViewContoller.tabBarItem = UITabBarItem(
+        shopingCartNavController.tabBarItem = UITabBarItem(
             title: Constants.titleCart,
             image: .two,
             selectedImage: .selectTwo

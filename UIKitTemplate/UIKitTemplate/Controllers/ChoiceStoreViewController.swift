@@ -14,7 +14,7 @@ class ChoiceStoreViewController: UIViewController {
         static let stepX = 178
         static let stepY = 173
         static let ratioWight = 2.2
-        static let ratioHeiht = 2.9
+        static let ratioHeiht = 2.4
     }
 
     var cart: ShopingCartViewContoller?
@@ -70,6 +70,7 @@ class ChoiceStoreViewController: UIViewController {
             cellItemsView.basketButton.tag = index
             cellItemsView.translatesAutoresizingMaskIntoConstraints = false
             cellItemsView.nameImageView.image = allCellStroreItem[index].itemImage
+            cellItemsView.layer.cornerRadius = 20
             cellItemsView.nameLabel.text = "\(allCellStroreItem[index].coast) ₽"
             view.addSubview(cellItemsView)
             cellItemsView.widthAnchor.constraint(equalToConstant: view.bounds.width / Constants.ratioWight)
@@ -100,20 +101,20 @@ class ChoiceStoreViewController: UIViewController {
 }
 
 // MARK: - Extension
+
 /// Подписываемся на делега экрна выбора размера
 extension ChoiceStoreViewController: SizeDelegate {
     /// добавление в корзину элемента
     /// - Parameters:
     ///    - size: размер обуви
     func sendSize(size: Int) {
-        let shopingCartViewContoller = ShopingCartViewContoller()
-        shopingCartViewContoller.delegate = self
-        shopingCartViewContoller.addItemToCart(item: selectedItem, size: size)
-        print(shopingCartViewContoller.cartMap)
+        cart?.delegate = self
+        cart?.addItemToCart(item: selectedItem, size: size)
     }
 }
 
 // MARK: - Extension
+
 /// Подписываемся на делегат корзины
 extension ChoiceStoreViewController: ShopingCartDelegate {
     /// изменение картинки корзины кнопки

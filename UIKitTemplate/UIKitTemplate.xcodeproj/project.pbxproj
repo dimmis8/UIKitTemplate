@@ -18,6 +18,8 @@
 		0A9D77AB2B71282000774B49 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D77AA2B71282000774B49 /* SceneDelegate.swift */; };
 		0A9D77AD2B71282000774B49 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D77AC2B71282000774B49 /* StoreViewController.swift */; };
 		0A9D77B22B71282100774B49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D77B12B71282100774B49 /* Assets.xcassets */; };
+		0AFF20DA2B7E2F8900AA02CB /* ProfileInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF20D92B7E2F8900AA02CB /* ProfileInfoViewController.swift */; };
+		0AFF20DC2B7E2FA100AA02CB /* ProfileInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF20DB2B7E2FA100AA02CB /* ProfileInfoView.swift */; };
 		1BA584452B7D499D0004FF0B /* SegmentCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA584442B7D499D0004FF0B /* SegmentCellView.swift */; };
 		1BA584472B7D4FFE0004FF0B /* StoriesImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA584462B7D4FFE0004FF0B /* StoriesImageView.swift */; };
 		1BA584492B7D64B40004FF0B /* SectionsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA584482B7D64B40004FF0B /* SectionsCellView.swift */; };
@@ -40,6 +42,8 @@
 		0A9D77AC2B71282000774B49 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		0A9D77B12B71282100774B49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A9D77B62B71282100774B49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AFF20D92B7E2F8900AA02CB /* ProfileInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoViewController.swift; sourceTree = "<group>"; };
+		0AFF20DB2B7E2FA100AA02CB /* ProfileInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoView.swift; sourceTree = "<group>"; };
 		1BA584442B7D499D0004FF0B /* SegmentCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentCellView.swift; sourceTree = "<group>"; };
 		1BA584462B7D4FFE0004FF0B /* StoriesImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesImageView.swift; sourceTree = "<group>"; };
 		1BA584482B7D64B40004FF0B /* SectionsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsCellView.swift; sourceTree = "<group>"; };
@@ -65,6 +69,7 @@
 				0A9D77AC2B71282000774B49 /* StoreViewController.swift */,
 				1BA5844E2B7E23540004FF0B /* ChoiceStoreViewController.swift */,
 				0A17A4462B7CC9340028B15E /* ProfileViewController.swift */,
+				0AFF20D92B7E2F8900AA02CB /* ProfileInfoViewController.swift */,
 				0A17A4482B7CCB160028B15E /* ShopingCartViewContoller.swift */,
 			);
 			path = Controllers;
@@ -75,6 +80,7 @@
 			children = (
 				0A17A44C2B7CCB830028B15E /* StoreView.swift */,
 				0A17A44E2B7CCC270028B15E /* ProfileView.swift */,
+				0AFF20DB2B7E2FA100AA02CB /* ProfileInfoView.swift */,
 				0A17A4502B7CCC5C0028B15E /* ShopingCartView.swift */,
 			);
 			path = Views;
@@ -230,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AFF20DC2B7E2FA100AA02CB /* ProfileInfoView.swift in Sources */,
 				0A17A4492B7CCB160028B15E /* ShopingCartViewContoller.swift in Sources */,
 				1BA584472B7D4FFE0004FF0B /* StoriesImageView.swift in Sources */,
 				1BA584492B7D64B40004FF0B /* SectionsCellView.swift in Sources */,
@@ -244,6 +251,7 @@
 				0A17A4552B7CD3860028B15E /* StoreItem.swift in Sources */,
 				0A17A4512B7CCC5C0028B15E /* ShopingCartView.swift in Sources */,
 				0A17A44F2B7CCC270028B15E /* ProfileView.swift in Sources */,
+				0AFF20DA2B7E2F8900AA02CB /* ProfileInfoViewController.swift in Sources */,
 				0A9D77AB2B71282000774B49 /* SceneDelegate.swift in Sources */,
 				1BA5844F2B7E23540004FF0B /* ChoiceStoreViewController.swift in Sources */,
 			);

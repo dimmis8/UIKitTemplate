@@ -21,6 +21,8 @@ final class StoreViewController: UIViewController {
         2: [.sneakersWhite, .sneakersRed, .brends, .sneakersBlue, .redBag]
     ]
 
+    var cart: ShopingCartViewContoller?
+
     // MARK: - Life Cycle
 
     override func loadView() {
@@ -69,6 +71,7 @@ final class StoreViewController: UIViewController {
 
     @objc private func selectionCatolog() {
         let storeViewController = ChoiceStoreViewController()
+        storeViewController.cart = cart
         navigationController?.pushViewController(storeViewController, animated: true)
     }
 }
