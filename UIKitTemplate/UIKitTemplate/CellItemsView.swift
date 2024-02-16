@@ -3,7 +3,7 @@
 
 import UIKit
 
-/// adwdaw
+///  Ячейка товара в магазине
 final class CellItemsView: UIView {
     // MARK: - Constants
 
@@ -51,7 +51,7 @@ final class CellItemsView: UIView {
         activateConstraint()
     }
 
-    // MARK: - Private Properties
+    // MARK: - Private Methods
 
     private func setupView() {
         addSubview(nameLabel)

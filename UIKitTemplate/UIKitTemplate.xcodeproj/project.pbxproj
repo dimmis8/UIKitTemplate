@@ -99,7 +99,6 @@
 		0A9D77A72B71282000774B49 /* UIKitTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				1BA584502B7E2A710004FF0B /* New Group */,
 				0A17A4542B7CD3860028B15E /* StoreItem.swift */,
 				0A17A4522B7CCEA70028B15E /* ShopTabBarController.swift */,
 				0A17A4432B7CC8CF0028B15E /* Controllers */,
@@ -115,13 +114,6 @@
 				1BA584532B7E58330004FF0B /* ChooseSizeViewController.swift */,
 			);
 			path = UIKitTemplate;
-			sourceTree = "<group>";
-		};
-		1BA584502B7E2A710004FF0B /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

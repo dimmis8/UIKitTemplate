@@ -3,17 +3,17 @@
 
 import UIKit
 
-///  asddadw
+///  Кастомное Имадж Вью для более удобной настройки установлено закругление и тень
 final class CustomImageView: UIImageView {
     convenience init(image: UIImage) {
         self.init()
         self.image = image
         layer.cornerRadius = 12
         translatesAutoresizingMaskIntoConstraints = false
-        layer.shadowColor = UIColor.gray.cgColor
+        layer.shadowColor = UIColor.black.cgColor
         layer.shadowOffset = CGSize(width: 0, height: 4)
         layer.shadowOpacity = 0.5
-        layer.shadowRadius = 4
+        layer.shadowRadius = 7
         layer.masksToBounds = false
     }
 }

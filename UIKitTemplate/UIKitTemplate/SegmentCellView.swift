@@ -1,10 +1,9 @@
 // SegmentCellView.swift
 // Copyright © RoadMap. All rights reserved.
 
-import Foundation
 import UIKit
 
-/// wadawdawd
+/// Экран магазина
 final class SegmentCellView: UIView {
     // MARK: - Constants
 
@@ -30,7 +29,7 @@ final class SegmentCellView: UIView {
     var twoCellProduct = SectionsCellView()
     var threeCellProduct = SectionsCellView()
 
-    var newItemsLabel: UILabel = {
+    private let newItemsLabel: UILabel = {
         let label = UILabel()
         label.text = Constants.newItemsLabelText
         label.font = UIFont(name: Constants.nameFont, size: CGFloat(Constants.newItemsLabelSize))
@@ -40,7 +39,7 @@ final class SegmentCellView: UIView {
         return label
     }()
 
-    var saleItemsLabel: UILabel = {
+    private let saleItemsLabel: UILabel = {
         let label = UILabel()
         label.text = Constants.saleItemsLabelText
         label.font = UIFont(name: Constants.nameFont, size: CGFloat(Constants.newItemsLabelSize))
@@ -57,9 +56,11 @@ final class SegmentCellView: UIView {
         return segment
     }()
 
+    // MARK: - Public Properties
+
     let selectionGestureRecogniser = UITapGestureRecognizer()
 
-    // MARK: - Life Cycle
+    // MARK: - Initializers
 
     override init(frame: CGRect) {
         super.init(frame: frame)

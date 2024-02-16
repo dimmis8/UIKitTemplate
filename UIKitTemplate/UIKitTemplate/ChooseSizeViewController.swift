@@ -4,21 +4,32 @@
 import UIKit
 
 protocol SizeDelegate: AnyObject {
+    /// передача размера обуви в корзину
     func sendSize(size: Int)
 }
 
-/// adwd2eaw
+///  Экран для выбора размера обуви
 final class ChooseSizeViewController: UIViewController {
-    weak var delegate: SizeDelegate?
+    // MARK: - Constants
 
     enum Constants {
         static let xmarkImage = "xmark"
         static let titleText = "Выберете размер"
         static let nameFont = "Verdana-Bold"
         static let newItemsLabelSize = 16
+        static let startYButton = 77
+        static let startYView = 103
+        static let stepY = 37
     }
 
-    lazy var sizeSelection = [35, 36, 37, 38, 39]
+    private let sizeSelection = [35, 36, 37, 38, 39]
+
+    // MARK: - Public Properties
+
+    weak var delegate: SizeDelegate?
+
+    // MARK: - Visual Components
+
     private lazy var cancelViewButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: Constants.xmarkImage), for: .normal)
@@ -37,12 +48,16 @@ final class ChooseSizeViewController: UIViewController {
         return label
     }()
 
+    // MARK: - Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         addButton()
         setupView()
         setupConstraint()
     }
+
+    // MARK: - Private Methods
 
     private func setupView() {
         view.backgroundColor = .white
@@ -58,8 +73,8 @@ final class ChooseSizeViewController: UIViewController {
     }
 
     private func addButton() {
-        var topAnchorButton: CGFloat = 77
-        var topAnchorLine: CGFloat = 103
+        var topAnchorButton = CGFloat(Constants.startYButton)
+        var topAnchorLine = CGFloat(Constants.startYView)
         for index in 0 ..< sizeSelection.count {
             let button = UIButton()
             let lineView = UIView()
@@ -81,8 +96,8 @@ final class ChooseSizeViewController: UIViewController {
             lineView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
             lineView.topAnchor.constraint(equalTo: view.topAnchor, constant: topAnchorLine).isActive = true
             lineView.heightAnchor.constraint(equalToConstant: 1).isActive = true
-            topAnchorButton += 37
-            topAnchorLine += 37
+            topAnchorButton += CGFloat(Constants.stepY)
+            topAnchorLine += CGFloat(Constants.stepY)
         }
     }
 

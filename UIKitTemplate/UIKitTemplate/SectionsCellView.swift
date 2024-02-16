@@ -1,10 +1,9 @@
 // SectionsCellView.swift
 // Copyright © RoadMap. All rights reserved.
 
-import Foundation
 import UIKit
 
-/// adwdaw
+/// Кастомная вью с лейблом и картинкой
 final class SectionsCellView: UIView {
     // MARK: - Constants
 
@@ -55,7 +54,7 @@ final class SectionsCellView: UIView {
         nameImageView.image = image
     }
 
-    // MARK: - Private Properties
+    // MARK: - Private Methods
 
     private func setupView() {
         addSubview(nameLabel)

@@ -3,73 +3,118 @@
 
 import UIKit
 
-/// gcfvghjvjh
+/// 'Экран выбраной категори товара в магазине'
 class ChoiceStoreViewController: UIViewController {
-    var selectedItem = StoreItem(name: "Черные туфли", imageName: .blackSandal, coast: 2250, size: 39)
-    var blackSandalStoreItem = StoreItem(name: "Черные туфли", imageName: .blackSandal, coast: 2250, size: 39)
-    var blackBootStoreItem = StoreItem(name: "Черные ботинки", imageName: .blaachShoes, coast: 4250, size: 39)
-    var redSneakerCellStoreItem = StoreItem(name: "Розовые кросовки", imageName: .gradSneakers, coast: 5750, size: 39)
-    var yellowSandalStoreItem = StoreItem(name: "Желтые туфли", imageName: .yellowSandal, coast: 3500, size: 39)
-    var whiteSneakerStoreItem = StoreItem(name: "Белые кросовки", imageName: .sneakersWhite, coast: 5750, size: 39)
-    lazy var allCellStroreItem: [StoreItem] = [
+    // MARK: - Constants
+
+    enum Constants {
+        static let textTitle = "Обувь"
+        static let startYTop = 130
+        static let startYLeft = 5
+        static let stepX = 178
+        static let stepY = 173
+    }
+
+    var cart: ShopingCartViewContoller?
+
+    // MARK: - Private Properties
+
+    private var selectedItem = StoreItem(name: "Белые кросовки", itemImage: .sneakersWhite, coast: 5750)
+    private var blackSandalStoreItem = StoreItem(name: "Черные туфли", itemImage: .blackSandal, coast: 2250)
+    private var blackBootStoreItem = StoreItem(name: "Черные ботинки", itemImage: .blaachShoes, coast: 4250)
+    private var redSneakerCellStoreItem = StoreItem(
+        name: "Розовые кросовки",
+        itemImage: .gradSneakers,
+        coast: 5750
+    )
+    private var yellowSandalStoreItem = StoreItem(name: "Желтые туфли", itemImage: .yellowSandal, coast: 3500)
+    private var whiteSneakerStoreItem = StoreItem(name: "Белые кросовки", itemImage: .whiteShoes, coast: 5750)
+    private lazy var allCellStroreItem: [StoreItem] = [
         blackSandalStoreItem,
         blackBootStoreItem,
         redSneakerCellStoreItem,
         yellowSandalStoreItem,
         whiteSneakerStoreItem
     ]
+
+    // MARK: - Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupStore()
         setupView()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        setupStore()
-    }
+    // MARK: - Private Methods
 
     private func setupView() {
         view.backgroundColor = .white
+        title = Constants.textTitle
+        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(
+            title: "",
+            style: .plain,
+            target: nil,
+            action: nil
+        )
     }
 
     private func setupStore() {
-        var top: CGFloat = 130
-        var left: CGFloat = 20
+        var top = CGFloat(Constants.startYTop)
+        var left = CGFloat(Constants.startYLeft)
         for index in 0 ..< allCellStroreItem.count {
             let cellItemsView = CellItemsView()
             cellItemsView.basketButton.addTarget(self, action: #selector(addBasket(button:)), for: .touchUpInside)
             cellItemsView.basketButton.tag = index
             cellItemsView.translatesAutoresizingMaskIntoConstraints = false
-            cellItemsView.nameImageView.image = allCellStroreItem[index].imageName
+            cellItemsView.nameImageView.image = allCellStroreItem[index].itemImage
             cellItemsView.nameLabel.text = "\(allCellStroreItem[index].coast) ₽"
             view.addSubview(cellItemsView)
-            cellItemsView.widthAnchor.constraint(equalToConstant: view.bounds.width / 2.3).isActive = true
-            cellItemsView.heightAnchor.constraint(equalTo: cellItemsView.widthAnchor).isActive = true
+            cellItemsView.widthAnchor.constraint(equalToConstant: view.bounds.width / 2.2).isActive = true
+            cellItemsView.heightAnchor.constraint(equalToConstant: view.bounds.width / 2.9).isActive = true
             if index % 2 == 0 {
                 cellItemsView.topAnchor.constraint(equalTo: view.topAnchor, constant: top).isActive = true
                 cellItemsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: left).isActive = true
-                left += 178
+                left += CGFloat(Constants.stepX)
             } else {
                 cellItemsView.topAnchor.constraint(equalTo: view.topAnchor, constant: top).isActive = true
                 cellItemsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: left).isActive = true
-                left -= 178
-                top += 173
+                left -= CGFloat(Constants.stepX)
+                top += CGFloat(Constants.stepY)
             }
         }
     }
 
     @objc private func addBasket(button: UIButton) {
+        selectedItem = allCellStroreItem[button.tag]
+        button.setImage(.redBasket, for: .normal)
         let chooseSizeViewController = ChooseSizeViewController()
         chooseSizeViewController.delegate = self
         present(chooseSizeViewController, animated: true)
     }
 }
 
+// MARK: - Extension
+
 extension ChoiceStoreViewController: SizeDelegate {
+    /// добавление в корзину элемента
     func sendSize(size: Int) {
-        selectedItem.size = size
         let shopingCartViewContoller = ShopingCartViewContoller()
-        shopingCartViewContoller.cartMap = [selectedItem: 1]
+        shopingCartViewContoller.delegate = self
+        shopingCartViewContoller.addItemToCart(item: selectedItem, size: size)
+        print(shopingCartViewContoller.cartMap)
+    }
+}
+
+// MARK: - Extension
+
+extension ChoiceStoreViewController: ShopingCartDelegate {
+    /// изменение картинки корзины кнопки
+    func reloadCartInformation(deletedItem: StoreItem) {
+        for (index, item) in allCellStroreItem.enumerated() where item.name == deletedItem.name {
+            if let button = view.viewWithTag(index) as? UIButton {
+                button.setImage(.grayBasket, for: .normal)
+            }
+        }
     }
 }
