@@ -34,13 +34,26 @@ final class ShopTabBarController: UITabBarController {
         let shopingCartNavController = UINavigationController(rootViewController: shopingCartViewContoller)
         let profileNavController = UINavigationController(rootViewController: profileViewController)
 
-        storeNavController.title = Constants.titleStore
-        shopingCartNavController.title = Constants.titleCart
-        profileNavController.title = Constants.titleProfile
-
         setViewControllers(
             [storeNavController, shopingCartNavController, profileNavController],
             animated: true
         )
+        storeNavController.tabBarItem = UITabBarItem(
+            title: Constants.titleStore,
+            image: .one,
+            selectedImage: .selectOne
+        )
+        shopingCartViewContoller.tabBarItem = UITabBarItem(
+            title: Constants.titleCart,
+            image: .two,
+            selectedImage: .selectTwo
+        )
+        profileNavController.tabBarItem = UITabBarItem(
+            title: Constants.titleProfile,
+            image: .there,
+            selectedImage: .selectedThere
+        )
+        tabBar.tintColor = .systemPink
+        tabBar.unselectedItemTintColor = .black
     }
 }

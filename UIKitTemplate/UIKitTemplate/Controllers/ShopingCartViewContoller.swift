@@ -18,10 +18,7 @@ final class ShopingCartViewContoller: UIViewController {
 
     // MARK: - Public Properties
 
-    var cartMap: [StoreItem: [Characteristics: Int]] = [
-        StoreItem(name: "Имя ботинка", itemImage: .blaachShoes, coast: 3000): [.count: 1, .size: 35],
-        StoreItem(name: "имяяяя", itemImage: .blackChose, coast: 1300): [.count: 1, .size: 38]
-    ]
+    var cartMap: [StoreItem: [Characteristics: Int]] = [:]
     weak var delegate: ShopingCartDelegate?
     lazy var shopingCartView = ShopingCartView(frame: view.frame, withItems: cartMap)
 
