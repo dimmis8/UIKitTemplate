@@ -1,10 +1,12 @@
-// CustomImageView.swift
+// StoriesImageView.swift
 // Copyright © RoadMap. All rights reserved.
 
 import UIKit
 
 ///  Кастомное Имадж Вью для более удобной настройки установлено закругление и тень
-final class CustomImageView: UIImageView {
+final class StoriesImageView: UIImageView {
+    // MARK: - Initializers
+
     convenience init(image: UIImage) {
         self.init()
         self.image = image

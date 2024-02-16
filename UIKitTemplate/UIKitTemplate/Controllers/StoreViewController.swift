@@ -46,7 +46,6 @@ final class StoreViewController: UIViewController {
         customView.addSubview(codeBut)
         let customItem = UIBarButtonItem(customView: customView)
         navigationItem.rightBarButtonItem = customItem
-//        navigationItem.rightBarButtonItems = [codeButton, spaceButton, cameraButton]
         view.backgroundColor = .white
         title = Constants.textTitle
 

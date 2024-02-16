@@ -3,8 +3,11 @@
 
 import UIKit
 
+/// протокол передачи информации на предыдущий ВС
 protocol SizeDelegate: AnyObject {
     /// передача размера обуви в корзину
+    /// - Parameters:
+    ///    - size: размер обуви
     func sendSize(size: Int)
 }
 
@@ -22,7 +25,7 @@ final class ChooseSizeViewController: UIViewController {
         static let stepY = 37
     }
 
-    private let sizeSelection = [35, 36, 37, 38, 39]
+    private let availableSizes = [35, 36, 37, 38, 39]
 
     // MARK: - Public Properties
 
@@ -53,19 +56,19 @@ final class ChooseSizeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addButton()
-        setupView()
-        setupConstraint()
+        configureView()
+        createConstraint()
     }
 
     // MARK: - Private Methods
 
-    private func setupView() {
+    private func configureView() {
         view.backgroundColor = .white
         view.addSubview(cancelViewButton)
         view.addSubview(setSizeLabel)
     }
 
-    private func setupConstraint() {
+    private func createConstraint() {
         cancelViewButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 26).isActive = true
         cancelViewButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         setSizeLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -75,13 +78,13 @@ final class ChooseSizeViewController: UIViewController {
     private func addButton() {
         var topAnchorButton = CGFloat(Constants.startYButton)
         var topAnchorLine = CGFloat(Constants.startYView)
-        for index in 0 ..< sizeSelection.count {
+        for index in 0 ..< availableSizes.count {
             let button = UIButton()
             let lineView = UIView()
             lineView.backgroundColor = .systemGray3
             lineView.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(lineView)
-            button.setTitle("\(sizeSelection[index]) EU", for: .normal)
+            button.setTitle("\(availableSizes[index]) EU", for: .normal)
             button.setTitleColor(UIColor.black, for: .normal)
             button.tag = index
             button.titleLabel?.textAlignment = .left
@@ -102,7 +105,7 @@ final class ChooseSizeViewController: UIViewController {
     }
 
     @objc private func setSize(sender: UIButton) {
-        delegate?.sendSize(size: sizeSelection[sender.tag])
+        delegate?.sendSize(size: availableSizes[sender.tag])
         dismiss(animated: true)
     }
 

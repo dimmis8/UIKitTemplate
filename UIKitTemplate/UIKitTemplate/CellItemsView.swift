@@ -40,20 +40,20 @@ final class CellItemsView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupView()
+        configureView()
         activateConstraint()
     }
 
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setupView()
+        configureView()
         activateConstraint()
     }
 
     // MARK: - Private Methods
 
-    private func setupView() {
+    private func configureView() {
         addSubview(nameLabel)
         addSubview(nameImageView)
         addSubview(basketButton)

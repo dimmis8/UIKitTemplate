@@ -13,6 +13,8 @@ class ChoiceStoreViewController: UIViewController {
         static let startYLeft = 5
         static let stepX = 178
         static let stepY = 173
+        static let ratioWight = 2.2
+        static let ratioHeiht = 2.9
     }
 
     var cart: ShopingCartViewContoller?
@@ -41,13 +43,13 @@ class ChoiceStoreViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupStore()
-        setupView()
+        createStore()
+        configureView()
     }
 
     // MARK: - Private Methods
 
-    private func setupView() {
+    private func configureView() {
         view.backgroundColor = .white
         title = Constants.textTitle
         navigationController?.navigationBar.tintColor = .black
@@ -59,7 +61,7 @@ class ChoiceStoreViewController: UIViewController {
         )
     }
 
-    private func setupStore() {
+    private func createStore() {
         var top = CGFloat(Constants.startYTop)
         var left = CGFloat(Constants.startYLeft)
         for index in 0 ..< allCellStroreItem.count {
@@ -70,8 +72,10 @@ class ChoiceStoreViewController: UIViewController {
             cellItemsView.nameImageView.image = allCellStroreItem[index].itemImage
             cellItemsView.nameLabel.text = "\(allCellStroreItem[index].coast) ₽"
             view.addSubview(cellItemsView)
-            cellItemsView.widthAnchor.constraint(equalToConstant: view.bounds.width / 2.2).isActive = true
-            cellItemsView.heightAnchor.constraint(equalToConstant: view.bounds.width / 2.9).isActive = true
+            cellItemsView.widthAnchor.constraint(equalToConstant: view.bounds.width / Constants.ratioWight)
+                .isActive = true
+            cellItemsView.heightAnchor.constraint(equalToConstant: view.bounds.width / Constants.ratioHeiht)
+                .isActive = true
             if index % 2 == 0 {
                 cellItemsView.topAnchor.constraint(equalTo: view.topAnchor, constant: top).isActive = true
                 cellItemsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: left).isActive = true
@@ -88,6 +92,7 @@ class ChoiceStoreViewController: UIViewController {
     @objc private func addBasket(button: UIButton) {
         selectedItem = allCellStroreItem[button.tag]
         button.setImage(.redBasket, for: .normal)
+        button.isEnabled = false
         let chooseSizeViewController = ChooseSizeViewController()
         chooseSizeViewController.delegate = self
         present(chooseSizeViewController, animated: true)
@@ -98,6 +103,8 @@ class ChoiceStoreViewController: UIViewController {
 
 extension ChoiceStoreViewController: SizeDelegate {
     /// добавление в корзину элемента
+    /// - Parameters:
+    ///    - size: размер обуви
     func sendSize(size: Int) {
         let shopingCartViewContoller = ShopingCartViewContoller()
         shopingCartViewContoller.delegate = self
@@ -110,10 +117,13 @@ extension ChoiceStoreViewController: SizeDelegate {
 
 extension ChoiceStoreViewController: ShopingCartDelegate {
     /// изменение картинки корзины кнопки
+    /// - Parameters:
+    ///    - deletedItem: принимаемый параметр экзнмпляр StoreItem
     func reloadCartInformation(deletedItem: StoreItem) {
         for (index, item) in allCellStroreItem.enumerated() where item.name == deletedItem.name {
             if let button = view.viewWithTag(index) as? UIButton {
                 button.setImage(.grayBasket, for: .normal)
+                button.isEnabled = true
             }
         }
     }

@@ -22,8 +22,8 @@ final class StoreView: UIView {
 
     // MARK: - Visual Components
 
-    var newItemsImageView = CustomImageView(image: .manNews)
-    var saleItemsImageView = CustomImageView(image: .manSales)
+    var newItemsImageView = StoriesImageView(image: .manNews)
+    var saleItemsImageView = StoriesImageView(image: .manSales)
 
     var oneCellProduct = SectionsCellView()
     var twoCellProduct = SectionsCellView()
@@ -64,7 +64,7 @@ final class StoreView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupView()
+        configureView()
         activateConstraint()
         activateCellProduct()
     }
@@ -72,14 +72,14 @@ final class StoreView: UIView {
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setupView()
+        configureView()
         activateConstraint()
         activateCellProduct()
     }
 
     // MARK: - Private Methods
 
-    private func setupView() {
+    private func configureView() {
         addSubview(newItemsImageView)
         addSubview(saleItemsImageView)
         addSubview(newItemsLabel)
