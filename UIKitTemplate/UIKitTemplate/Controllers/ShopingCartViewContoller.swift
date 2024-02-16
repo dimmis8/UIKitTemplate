@@ -18,9 +18,12 @@ final class ShopingCartViewContoller: UIViewController {
 
     // MARK: - Public Properties
 
-    var cartMap: [StoreItem: Int] = [:]
+    var cartMap: [StoreItem: Int] = [
+        StoreItem(name: "Имя ботинка", itemImage: .blaachShoes, coast: 3000, size: 35): 1,
+        StoreItem(name: "имяяяя", itemImage: .blackChose, coast: 1300, size: 36): 1
+    ]
     weak var delegate: ShopingCartDelegate?
-    lazy var shopingCartView = ShopingCartView()
+    lazy var shopingCartView = ShopingCartView(frame: view.frame, withItems: cartMap)
 
     // MARK: - Life Cycle
 
@@ -31,16 +34,33 @@ final class ShopingCartViewContoller: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViewTitle()
+        configureView()
     }
 
     // MARK: - Public Methods
 
-    func addItemToCart(item: StoreItem) {}
+    func addItemToCart(item: StoreItem) {
+        cartMap.updateValue(1, forKey: item)
+        shopingCartView.reloadView(withItems: cartMap)
+    }
 
     // MARK: - Private Methods
 
-    private func setupViewTitle() {
+    private func configureView() {
         title = Constants.viewTitleName
+        shopingCartView.delegate = self
+    }
+}
+
+extension ShopingCartViewContoller: CountOfItemDelegate {
+    func changeItemSize(forItem item: StoreItem, newSize: Int) {}
+
+    func changeItemCount(ofItem item: StoreItem, count: Int) {
+        cartMap.updateValue(count, forKey: item)
+        if count == 0 {
+            delegate?.reloadCartInformation(deletedItem: item)
+            cartMap.removeValue(forKey: item)
+        }
+        shopingCartView.reloadView(withItems: cartMap)
     }
 }

@@ -8,7 +8,7 @@ struct StoreItem: Hashable {
     /// Имя товара
     let name: String
     /// Имя изображения товара
-    let imageName: String
+    let itemImage: UIImage
     /// Стоимость товара
     let coast: Int
     /// Размер товара

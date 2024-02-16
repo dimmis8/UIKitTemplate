@@ -31,14 +31,15 @@ final class ShopTabBarController: UITabBarController {
 
     private func createTabBar() {
         let storeNavController = UINavigationController(rootViewController: storeViewController)
+        let shopingCartNavController = UINavigationController(rootViewController: shopingCartViewContoller)
         let profileNavController = UINavigationController(rootViewController: profileViewController)
 
         storeNavController.title = Constants.titleStore
-        shopingCartViewContoller.title = Constants.titleCart
+        shopingCartNavController.title = Constants.titleCart
         profileNavController.title = Constants.titleProfile
 
         setViewControllers(
-            [storeNavController, shopingCartViewContoller, profileNavController],
+            [storeNavController, shopingCartNavController, profileNavController],
             animated: true
         )
     }

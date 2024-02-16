@@ -14,6 +14,8 @@ final class ProfileViewController: UIViewController {
 
     // MARK: - Private Properties
 
+    let profileInfoViewController = ProfileInfoViewController()
+
     private lazy var profileView = ProfileView()
 
     // MARK: - Life Cycle
@@ -25,12 +27,20 @@ final class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViewTitle()
+        configureController()
     }
 
     // MARK: - Private Methods
 
-    private func setupViewTitle() {
+    private func configureController() {
         title = Constants.viewTitleName
+        navigationItem.backButtonTitle = ""
+        profileView.delegate = self
+    }
+}
+
+extension ProfileViewController: ProfileButtonsActionDelegate {
+    func myInfoButtonAction() {
+        navigationController?.pushViewController(profileInfoViewController, animated: true)
     }
 }
