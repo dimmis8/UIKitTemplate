@@ -1,10 +1,10 @@
-// StoreView.swift
+// SegmentCellView.swift
 // Copyright © RoadMap. All rights reserved.
 
 import UIKit
 
-/// Вью экрана магазина
-final class StoreView: UIView {
+/// Экран магазина
+final class SegmentCellView: UIView {
     // MARK: - Constants
 
     enum Constants {

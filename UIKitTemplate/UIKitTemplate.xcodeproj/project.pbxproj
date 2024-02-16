@@ -18,6 +18,12 @@
 		0A9D77AB2B71282000774B49 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D77AA2B71282000774B49 /* SceneDelegate.swift */; };
 		0A9D77AD2B71282000774B49 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D77AC2B71282000774B49 /* StoreViewController.swift */; };
 		0A9D77B22B71282100774B49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D77B12B71282100774B49 /* Assets.xcassets */; };
+		1BA584452B7D499D0004FF0B /* SegmentCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA584442B7D499D0004FF0B /* SegmentCellView.swift */; };
+		1BA584472B7D4FFE0004FF0B /* StoriesImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA584462B7D4FFE0004FF0B /* StoriesImageView.swift */; };
+		1BA584492B7D64B40004FF0B /* SectionsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA584482B7D64B40004FF0B /* SectionsCellView.swift */; };
+		1BA5844F2B7E23540004FF0B /* ChoiceStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA5844E2B7E23540004FF0B /* ChoiceStoreViewController.swift */; };
+		1BA584522B7E2AC20004FF0B /* CellItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA584512B7E2AC20004FF0B /* CellItemsView.swift */; };
+		1BA584542B7E58330004FF0B /* ChooseSizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA584532B7E58330004FF0B /* ChooseSizeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +40,12 @@
 		0A9D77AC2B71282000774B49 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		0A9D77B12B71282100774B49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A9D77B62B71282100774B49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BA584442B7D499D0004FF0B /* SegmentCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentCellView.swift; sourceTree = "<group>"; };
+		1BA584462B7D4FFE0004FF0B /* StoriesImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesImageView.swift; sourceTree = "<group>"; };
+		1BA584482B7D64B40004FF0B /* SectionsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsCellView.swift; sourceTree = "<group>"; };
+		1BA5844E2B7E23540004FF0B /* ChoiceStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceStoreViewController.swift; sourceTree = "<group>"; };
+		1BA584512B7E2AC20004FF0B /* CellItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellItemsView.swift; sourceTree = "<group>"; };
+		1BA584532B7E58330004FF0B /* ChooseSizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseSizeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				0A9D77AC2B71282000774B49 /* StoreViewController.swift */,
+				1BA5844E2B7E23540004FF0B /* ChoiceStoreViewController.swift */,
 				0A17A4462B7CC9340028B15E /* ProfileViewController.swift */,
 				0A17A4482B7CCB160028B15E /* ShopingCartViewContoller.swift */,
 			);
@@ -70,7 +83,6 @@
 		0A9D779C2B71282000774B49 = {
 			isa = PBXGroup;
 			children = (
-				0A17A4542B7CD3860028B15E /* StoreItem.swift */,
 				0A9D77A72B71282000774B49 /* UIKitTemplate */,
 				0A9D77A62B71282000774B49 /* Products */,
 			);
@@ -87,6 +99,7 @@
 		0A9D77A72B71282000774B49 /* UIKitTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				0A17A4542B7CD3860028B15E /* StoreItem.swift */,
 				0A17A4522B7CCEA70028B15E /* ShopTabBarController.swift */,
 				0A17A4432B7CC8CF0028B15E /* Controllers */,
 				0A17A44A2B7CCB5D0028B15E /* Views */,
@@ -94,6 +107,11 @@
 				0A9D77B62B71282100774B49 /* Info.plist */,
 				0A9D77AA2B71282000774B49 /* SceneDelegate.swift */,
 				0A9D77A82B71282000774B49 /* AppDelegate.swift */,
+				1BA584442B7D499D0004FF0B /* SegmentCellView.swift */,
+				1BA584462B7D4FFE0004FF0B /* StoriesImageView.swift */,
+				1BA584482B7D64B40004FF0B /* SectionsCellView.swift */,
+				1BA584512B7E2AC20004FF0B /* CellItemsView.swift */,
+				1BA584532B7E58330004FF0B /* ChooseSizeViewController.swift */,
 			);
 			path = UIKitTemplate;
 			sourceTree = "<group>";
@@ -213,15 +231,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A17A4492B7CCB160028B15E /* ShopingCartViewContoller.swift in Sources */,
+				1BA584472B7D4FFE0004FF0B /* StoriesImageView.swift in Sources */,
+				1BA584492B7D64B40004FF0B /* SectionsCellView.swift in Sources */,
 				0A9D77AD2B71282000774B49 /* StoreViewController.swift in Sources */,
+				1BA584542B7E58330004FF0B /* ChooseSizeViewController.swift in Sources */,
 				0A17A4472B7CC9340028B15E /* ProfileViewController.swift in Sources */,
+				1BA584522B7E2AC20004FF0B /* CellItemsView.swift in Sources */,
 				0A9D77A92B71282000774B49 /* AppDelegate.swift in Sources */,
 				0A17A4532B7CCEA70028B15E /* ShopTabBarController.swift in Sources */,
+				1BA584452B7D499D0004FF0B /* SegmentCellView.swift in Sources */,
 				0A17A44D2B7CCB830028B15E /* StoreView.swift in Sources */,
 				0A17A4552B7CD3860028B15E /* StoreItem.swift in Sources */,
 				0A17A4512B7CCC5C0028B15E /* ShopingCartView.swift in Sources */,
 				0A17A44F2B7CCC270028B15E /* ProfileView.swift in Sources */,
 				0A9D77AB2B71282000774B49 /* SceneDelegate.swift in Sources */,
+				1BA5844F2B7E23540004FF0B /* ChoiceStoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

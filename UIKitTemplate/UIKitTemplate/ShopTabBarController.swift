@@ -24,7 +24,7 @@ class ShopTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createTabBar()
-        storeViewController.cart = shopingCartViewContoller as? ShopingCartDelegate
+//        storeViewController.cart = shopingCartViewContoller as? ShopingCartDelegate
     }
 
     // MARK: - Private Methods
@@ -33,13 +33,26 @@ class ShopTabBarController: UITabBarController {
         let storeNavController = UINavigationController(rootViewController: storeViewController)
         let profileNavController = UINavigationController(rootViewController: profileViewController)
 
-        storeNavController.title = Constants.titleStore
-        shopingCartViewContoller.title = Constants.titleCart
-        profileNavController.title = Constants.titleProfile
-
         setViewControllers(
             [storeNavController, shopingCartViewContoller, profileNavController],
             animated: true
         )
+        storeNavController.tabBarItem = UITabBarItem(
+            title: Constants.titleStore,
+            image: .one,
+            selectedImage: .selectOne
+        )
+        shopingCartViewContoller.tabBarItem = UITabBarItem(
+            title: Constants.titleCart,
+            image: .two,
+            selectedImage: .selectTwo
+        )
+        profileNavController.tabBarItem = UITabBarItem(
+            title: Constants.titleProfile,
+            image: .there,
+            selectedImage: .selectedThere
+        )
+        tabBar.tintColor = .systemPink
+        tabBar.unselectedItemTintColor = .black
     }
 }
