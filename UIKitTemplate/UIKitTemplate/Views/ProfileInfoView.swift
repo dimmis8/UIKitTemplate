@@ -196,22 +196,22 @@ class ProfileInfoView: UIView {
         saveButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
     }
 
-    @objc func nextFirstResponderForNumberTextField() {
+    @objc private func nextFirstResponderForNumberTextField() {
         sizeTextField.becomeFirstResponder()
     }
 
-    @objc func nextFirstResponderForNumberBirthdayField() {
+    @objc private func nextFirstResponderForNumberBirthdayField() {
         let dateFormater = DateFormatter()
         dateFormater.dateFormat = Constants.dateFormat
         birthdayTextField.text = dateFormater.string(from: pickerDate.date)
         emailTextField.becomeFirstResponder()
     }
 
-    @objc func nextFirstResponderForNumberSizeField() {
+    @objc private func nextFirstResponderForNumberSizeField() {
         birthdayTextField.becomeFirstResponder()
     }
 
-    @objc func saveInfo() {
+    @objc private func saveInfo() {
         delegate?.saveInfo()
     }
 }

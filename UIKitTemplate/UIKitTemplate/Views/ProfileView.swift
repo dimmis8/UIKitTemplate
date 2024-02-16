@@ -41,7 +41,7 @@ final class ProfileView: UIView {
         return view
     }()
 
-    private let cardLogo: UIImageView = {
+    private let cardLogoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = .logoCard
@@ -65,7 +65,7 @@ final class ProfileView: UIView {
         return view
     }()
 
-    private let qrImage: UIImageView = {
+    private let qrImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = .qr
@@ -73,7 +73,7 @@ final class ProfileView: UIView {
         return imageView
     }()
 
-    private let infoImage: UIImageView = {
+    private let infoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = .info
@@ -131,11 +131,11 @@ final class ProfileView: UIView {
     private func loadView() {
         backgroundColor = .white
         addSubview(discontCard)
-        discontCard.addSubview(cardLogo)
+        discontCard.addSubview(cardLogoImageView)
         discontCard.addSubview(qrView)
-        qrView.addSubview(qrImage)
+        qrView.addSubview(qrImageView)
         discontCard.addSubview(infoView)
-        infoView.addSubview(infoImage)
+        infoView.addSubview(infoImageView)
         discontCard.addSubview(discontAmountLabel)
         discontCard.addSubview(discontCardNumberLabel)
         addSubview(personalInfoLabel)
@@ -169,34 +169,34 @@ final class ProfileView: UIView {
             .isActive = true
         discontCard.heightAnchor.constraint(equalToConstant: 180).isActive = true
         // констрейнты лого дисконтной карты
-        cardLogo.leadingAnchor.constraint(equalTo: discontCard.leadingAnchor, constant: 8).isActive = true
-        cardLogo.topAnchor.constraint(equalTo: discontCard.topAnchor, constant: 16).isActive = true
-        cardLogo.widthAnchor.constraint(equalToConstant: 80).isActive = true
-        cardLogo.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        cardLogoImageView.leadingAnchor.constraint(equalTo: discontCard.leadingAnchor, constant: 8).isActive = true
+        cardLogoImageView.topAnchor.constraint(equalTo: discontCard.topAnchor, constant: 16).isActive = true
+        cardLogoImageView.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        cardLogoImageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
         // констрейнты для фона qr
         qrView.topAnchor.constraint(equalTo: discontCard.topAnchor, constant: 13).isActive = true
         qrView.trailingAnchor.constraint(equalTo: discontCard.trailingAnchor, constant: -13).isActive = true
         qrView.heightAnchor.constraint(equalToConstant: 30).isActive = true
         qrView.widthAnchor.constraint(equalToConstant: 30).isActive = true
         // констрейнты для qr
-        qrImage.centerXAnchor.constraint(equalTo: qrView.centerXAnchor).isActive = true
-        qrImage.centerYAnchor.constraint(equalTo: qrView.centerYAnchor).isActive = true
-        qrImage.widthAnchor.constraint(equalToConstant: 15.28).isActive = true
-        qrImage.heightAnchor.constraint(equalToConstant: 15.28).isActive = true
+        qrImageView.centerXAnchor.constraint(equalTo: qrView.centerXAnchor).isActive = true
+        qrImageView.centerYAnchor.constraint(equalTo: qrView.centerYAnchor).isActive = true
+        qrImageView.widthAnchor.constraint(equalToConstant: 15.28).isActive = true
+        qrImageView.heightAnchor.constraint(equalToConstant: 15.28).isActive = true
         // констрейнты для фона info
         infoView.bottomAnchor.constraint(equalTo: discontCard.bottomAnchor, constant: -20).isActive = true
         infoView.trailingAnchor.constraint(equalTo: discontCard.trailingAnchor, constant: -13).isActive = true
         infoView.heightAnchor.constraint(equalToConstant: 30).isActive = true
         infoView.widthAnchor.constraint(equalToConstant: 30).isActive = true
         // констрейнты для info
-        infoImage.centerXAnchor.constraint(equalTo: infoView.centerXAnchor).isActive = true
-        infoImage.centerYAnchor.constraint(equalTo: infoView.centerYAnchor).isActive = true
-        infoImage.widthAnchor.constraint(equalToConstant: 16).isActive = true
-        infoImage.heightAnchor.constraint(equalToConstant: 16).isActive = true
+        infoImageView.centerXAnchor.constraint(equalTo: infoView.centerXAnchor).isActive = true
+        infoImageView.centerYAnchor.constraint(equalTo: infoView.centerYAnchor).isActive = true
+        infoImageView.widthAnchor.constraint(equalToConstant: 16).isActive = true
+        infoImageView.heightAnchor.constraint(equalToConstant: 16).isActive = true
         // констрейнты для лейбла скидки карты
         discontAmountLabel.leadingAnchor.constraint(equalTo: discontCard.leadingAnchor, constant: 14)
             .isActive = true
-        discontAmountLabel.topAnchor.constraint(equalTo: cardLogo.bottomAnchor, constant: 20).isActive = true
+        discontAmountLabel.topAnchor.constraint(equalTo: cardLogoImageView.bottomAnchor, constant: 20).isActive = true
         discontAmountLabel.heightAnchor.constraint(equalToConstant: 19).isActive = true
         discontAmountLabel.widthAnchor.constraint(equalToConstant: 44).isActive = true
         // констрейнты для лейбла номера карты

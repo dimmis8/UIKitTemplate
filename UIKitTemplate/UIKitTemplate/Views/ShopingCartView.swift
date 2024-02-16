@@ -103,6 +103,7 @@ class ShopingCartView: UIView {
 
     private func createItemView(withItems itemMap: [StoreItem: [Characteristics: Int]]) {
         var itemCount = 0
+        makeOrderButton.isHidden = itemMap.isEmpty ? true : false
         for (item, characteristic) in itemMap {
             let viewItem = UIView()
             viewItem.translatesAutoresizingMaskIntoConstraints = false
