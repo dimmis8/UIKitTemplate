@@ -41,6 +41,7 @@ final class StoreViewController: UIViewController {
         let customView = UIView(frame: CGRect(x: 0, y: 0, width: 60, height: 30))
         let cameraButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
         cameraButton.setImage(.camera, for: .normal)
+        cameraButton.addTarget(self, action: #selector(turnOnCamera), for: .touchUpInside)
         let codeBut = UIImageView()
         codeBut.frame = CGRect(x: 30, y: -4, width: 40, height: 40)
         codeBut.image = .code
@@ -73,5 +74,10 @@ final class StoreViewController: UIViewController {
         let storeViewController = ChoiceStoreViewController()
         storeViewController.cart = cart
         navigationController?.pushViewController(storeViewController, animated: true)
+    }
+
+    @objc private func turnOnCamera() {
+        let imagePicker = ImagePicker()
+        imagePicker.showImagePicker(in: self, complition: nil)
     }
 }
