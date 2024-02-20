@@ -20,6 +20,11 @@ final class FeedViewController: UIViewController {
 
     private let tableView = UITableView()
     private lazy var feedView = FeedView()
+    private var refreshControl: UIRefreshControl {
+        let refrash = UIRefreshControl()
+        refrash.addTarget(self, action: #selector(handleRefresh(_:)), for: .valueChanged)
+        return refrash
+    }
 
     // MARK: - Life Cycle
 
@@ -63,6 +68,13 @@ final class FeedViewController: UIViewController {
         tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+
+        tableView.addSubview(refreshControl)
+    }
+
+    @objc private func handleRefresh(_ sender: UIRefreshControl) {
+        tableView.backgroundColor = .white
+        sender.endRefreshing()
     }
 }
 

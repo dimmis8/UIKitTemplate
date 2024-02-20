@@ -137,6 +137,7 @@ final class StoryViewCell: UITableViewCell {
     // MARK: - Private Methods
 
     private func createView() {
+        contentView.backgroundColor = .white
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.showsHorizontalScrollIndicator = false
         contentView.addSubview(scrollView)

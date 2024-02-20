@@ -12,6 +12,8 @@
 		0A9D77AD2B71282000774B49 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D77AC2B71282000774B49 /* FeedViewController.swift */; };
 		0A9D77B22B71282100774B49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D77B12B71282100774B49 /* Assets.xcassets */; };
 		0A9D77B52B71282100774B49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D77B32B71282100774B49 /* LaunchScreen.storyboard */; };
+		0AB4F54A2B85314F0036AE13 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB4F5492B85314F0036AE13 /* Data+Extension.swift */; };
+		0AB4F54C2B853EC70036AE13 /* NotificationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB4F54B2B853EC70036AE13 /* NotificationViewCell.swift */; };
 		0AB957052B84D323004128A3 /* RecomendationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB957042B84D323004128A3 /* RecomendationViewCell.swift */; };
 		0AFF20E22B8388A900AA02CB /* RMLinkTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF20E12B8388A900AA02CB /* RMLinkTabBarController.swift */; };
 		0AFF20E42B8389D500AA02CB /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF20E32B8389D500AA02CB /* NotificationsViewController.swift */; };
@@ -33,6 +35,8 @@
 		0A9D77B12B71282100774B49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A9D77B42B71282100774B49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A9D77B62B71282100774B49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AB4F5492B85314F0036AE13 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
+		0AB4F54B2B853EC70036AE13 /* NotificationViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewCell.swift; sourceTree = "<group>"; };
 		0AB957042B84D323004128A3 /* RecomendationViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendationViewCell.swift; sourceTree = "<group>"; };
 		0AFF20E12B8388A900AA02CB /* RMLinkTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMLinkTabBarController.swift; sourceTree = "<group>"; };
 		0AFF20E32B8389D500AA02CB /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				0AFF20F22B83BAAB00AA02CB /* SourceOfInformation.swift */,
+				0AB4F5492B85314F0036AE13 /* Data+Extension.swift */,
 				0A9D77A72B71282000774B49 /* UIKitTemplate */,
 				0A9D77A62B71282000774B49 /* Products */,
 			);
@@ -108,6 +113,7 @@
 			children = (
 				0AFF20E32B8389D500AA02CB /* NotificationsViewController.swift */,
 				0AFF20EC2B838D0100AA02CB /* NotificationView.swift */,
+				0AB4F54B2B853EC70036AE13 /* NotificationViewCell.swift */,
 			);
 			path = NotificationScreen;
 			sourceTree = "<group>";
@@ -238,9 +244,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AFF20E62B838A2E00AA02CB /* ProfileViewController.swift in Sources */,
+				0AB4F54A2B85314F0036AE13 /* Data+Extension.swift in Sources */,
 				0AB957052B84D323004128A3 /* RecomendationViewCell.swift in Sources */,
 				0AFF20EF2B838D5200AA02CB /* FeedView.swift in Sources */,
 				0AFF20F12B83B9C700AA02CB /* StoryViewCell.swift in Sources */,
+				0AB4F54C2B853EC70036AE13 /* NotificationViewCell.swift in Sources */,
 				0AFF20E42B8389D500AA02CB /* NotificationsViewController.swift in Sources */,
 				0AFF20ED2B838D0100AA02CB /* NotificationView.swift in Sources */,
 				0AFF20E22B8388A900AA02CB /* RMLinkTabBarController.swift in Sources */,
