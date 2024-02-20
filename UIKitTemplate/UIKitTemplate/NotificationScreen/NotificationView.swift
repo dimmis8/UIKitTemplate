@@ -1,10 +1,10 @@
-// NotificationViev.swift
+// NotificationView.swift
 // Copyright © RoadMap. All rights reserved.
 
 import UIKit
 
 /// Экран уведомлений
-final class NotificationViev: UIView {
+final class NotificationView: UIView {
     // MARK: - Initializers
 
     override init(frame: CGRect) {

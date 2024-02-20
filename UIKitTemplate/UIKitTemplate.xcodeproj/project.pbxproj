@@ -12,12 +12,17 @@
 		0A9D77AD2B71282000774B49 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D77AC2B71282000774B49 /* FeedViewController.swift */; };
 		0A9D77B22B71282100774B49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D77B12B71282100774B49 /* Assets.xcassets */; };
 		0A9D77B52B71282100774B49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D77B32B71282100774B49 /* LaunchScreen.storyboard */; };
+		0AB957052B84D323004128A3 /* RecomendationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB957042B84D323004128A3 /* RecomendationViewCell.swift */; };
 		0AFF20E22B8388A900AA02CB /* RMLinkTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF20E12B8388A900AA02CB /* RMLinkTabBarController.swift */; };
 		0AFF20E42B8389D500AA02CB /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF20E32B8389D500AA02CB /* NotificationsViewController.swift */; };
 		0AFF20E62B838A2E00AA02CB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF20E52B838A2E00AA02CB /* ProfileViewController.swift */; };
 		0AFF20EB2B838C8200AA02CB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF20EA2B838C8200AA02CB /* ProfileView.swift */; };
-		0AFF20ED2B838D0100AA02CB /* NotificationViev.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF20EC2B838D0100AA02CB /* NotificationViev.swift */; };
+		0AFF20ED2B838D0100AA02CB /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF20EC2B838D0100AA02CB /* NotificationView.swift */; };
 		0AFF20EF2B838D5200AA02CB /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF20EE2B838D5200AA02CB /* FeedView.swift */; };
+		0AFF20F12B83B9C700AA02CB /* StoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF20F02B83B9C700AA02CB /* StoryViewCell.swift */; };
+		0AFF20F32B83BAAB00AA02CB /* SourceOfInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF20F22B83BAAB00AA02CB /* SourceOfInformation.swift */; };
+		0AFF20F82B849E4F00AA02CB /* PostViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF20F62B849E4F00AA02CB /* PostViewCell.swift */; };
+		0AFF20F92B849E4F00AA02CB /* PostViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AFF20F72B849E4F00AA02CB /* PostViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,12 +33,17 @@
 		0A9D77B12B71282100774B49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A9D77B42B71282100774B49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A9D77B62B71282100774B49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AB957042B84D323004128A3 /* RecomendationViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendationViewCell.swift; sourceTree = "<group>"; };
 		0AFF20E12B8388A900AA02CB /* RMLinkTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMLinkTabBarController.swift; sourceTree = "<group>"; };
 		0AFF20E32B8389D500AA02CB /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		0AFF20E52B838A2E00AA02CB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0AFF20EA2B838C8200AA02CB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = UIKitTemplate/ProfileView.swift; sourceTree = SOURCE_ROOT; };
-		0AFF20EC2B838D0100AA02CB /* NotificationViev.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViev.swift; sourceTree = "<group>"; };
+		0AFF20EC2B838D0100AA02CB /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		0AFF20EE2B838D5200AA02CB /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		0AFF20F02B83B9C700AA02CB /* StoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewCell.swift; sourceTree = "<group>"; };
+		0AFF20F22B83BAAB00AA02CB /* SourceOfInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceOfInformation.swift; sourceTree = "<group>"; };
+		0AFF20F62B849E4F00AA02CB /* PostViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewCell.swift; sourceTree = "<group>"; };
+		0AFF20F72B849E4F00AA02CB /* PostViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +60,7 @@
 		0A9D779C2B71282000774B49 = {
 			isa = PBXGroup;
 			children = (
+				0AFF20F22B83BAAB00AA02CB /* SourceOfInformation.swift */,
 				0A9D77A72B71282000774B49 /* UIKitTemplate */,
 				0A9D77A62B71282000774B49 /* Products */,
 			);
@@ -69,9 +80,9 @@
 				0AFF20E12B8388A900AA02CB /* RMLinkTabBarController.swift */,
 				0A9D77A82B71282000774B49 /* AppDelegate.swift */,
 				0A9D77AA2B71282000774B49 /* SceneDelegate.swift */,
-				0AFF20E92B838C2E00AA02CB /* ProfileScreen */,
-				0AFF20E82B838C1B00AA02CB /* NotificationScreen */,
 				0AFF20E72B838C1000AA02CB /* FeedScreen */,
+				0AFF20E82B838C1B00AA02CB /* NotificationScreen */,
+				0AFF20E92B838C2E00AA02CB /* ProfileScreen */,
 				0A9D77B12B71282100774B49 /* Assets.xcassets */,
 				0A9D77B32B71282100774B49 /* LaunchScreen.storyboard */,
 				0A9D77B62B71282100774B49 /* Info.plist */,
@@ -84,6 +95,10 @@
 			children = (
 				0A9D77AC2B71282000774B49 /* FeedViewController.swift */,
 				0AFF20EE2B838D5200AA02CB /* FeedView.swift */,
+				0AFF20F02B83B9C700AA02CB /* StoryViewCell.swift */,
+				0AB957042B84D323004128A3 /* RecomendationViewCell.swift */,
+				0AFF20F62B849E4F00AA02CB /* PostViewCell.swift */,
+				0AFF20F72B849E4F00AA02CB /* PostViewCell.xib */,
 			);
 			path = FeedScreen;
 			sourceTree = "<group>";
@@ -92,7 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				0AFF20E32B8389D500AA02CB /* NotificationsViewController.swift */,
-				0AFF20EC2B838D0100AA02CB /* NotificationViev.swift */,
+				0AFF20EC2B838D0100AA02CB /* NotificationView.swift */,
 			);
 			path = NotificationScreen;
 			sourceTree = "<group>";
@@ -166,6 +181,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AFF20F92B849E4F00AA02CB /* PostViewCell.xib in Resources */,
 				0A9D77B52B71282100774B49 /* LaunchScreen.storyboard in Resources */,
 				0A9D77B22B71282100774B49 /* Assets.xcassets in Resources */,
 			);
@@ -222,14 +238,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AFF20E62B838A2E00AA02CB /* ProfileViewController.swift in Sources */,
+				0AB957052B84D323004128A3 /* RecomendationViewCell.swift in Sources */,
 				0AFF20EF2B838D5200AA02CB /* FeedView.swift in Sources */,
+				0AFF20F12B83B9C700AA02CB /* StoryViewCell.swift in Sources */,
 				0AFF20E42B8389D500AA02CB /* NotificationsViewController.swift in Sources */,
-				0AFF20ED2B838D0100AA02CB /* NotificationViev.swift in Sources */,
+				0AFF20ED2B838D0100AA02CB /* NotificationView.swift in Sources */,
 				0AFF20E22B8388A900AA02CB /* RMLinkTabBarController.swift in Sources */,
+				0AFF20F82B849E4F00AA02CB /* PostViewCell.swift in Sources */,
 				0A9D77AD2B71282000774B49 /* FeedViewController.swift in Sources */,
 				0A9D77A92B71282000774B49 /* AppDelegate.swift in Sources */,
 				0AFF20EB2B838C8200AA02CB /* ProfileView.swift in Sources */,
 				0A9D77AB2B71282000774B49 /* SceneDelegate.swift in Sources */,
+				0AFF20F32B83BAAB00AA02CB /* SourceOfInformation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

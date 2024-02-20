@@ -13,7 +13,7 @@ final class NotificationsViewController: UIViewController {
 
     // MARK: - Private Properties
 
-    private lazy var notificationView = NotificationViev()
+    private lazy var notificationView = NotificationView()
 
     // MARK: - Life Cycle
 
