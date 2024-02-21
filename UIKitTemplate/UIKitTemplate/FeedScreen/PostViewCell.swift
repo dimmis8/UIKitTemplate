@@ -40,19 +40,19 @@ final class PostViewCell: UITableViewCell {
     // MARK: - Public Methods
 
     func loadPost(_ post: Post) {
-        pageControl.numberOfPages = post.photos.count
-        avatarImageView.image = post.avatar
-        userLoginLabel.text = post.nickname
+        pageControl.numberOfPages = post.photoNames.count
+        avatarImageView.image = UIImage(named: post.avatarName)
+        userLoginLabel.text = post.nickName
         likeCountLabel.text = "Нравится: \(post.likesNumber)"
         let boldAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.boldSystemFont(ofSize: 11)]
-        let attributedString = NSMutableAttributedString(string: post.nickname + ": " + post.description)
-        attributedString.addAttributes(boldAttributes, range: NSRange(location: 0, length: post.nickname.count + 1))
+        let attributedString = NSMutableAttributedString(string: post.nickName + ": " + post.description)
+        attributedString.addAttributes(boldAttributes, range: NSRange(location: 0, length: post.nickName.count + 1))
         descriptionLabel.attributedText = attributedString
 
         var currentPhotoNumber = 0
-        for photo in post.photos {
+        for photo in post.photoNames {
             let imageView = UIImageView()
-            imageView.image = photo
+            imageView.image = UIImage(named: photo)
             imageView.translatesAutoresizingMaskIntoConstraints = false
             scrollView.addSubview(imageView)
 
@@ -65,7 +65,7 @@ final class PostViewCell: UITableViewCell {
                 constant: CGFloat(currentPhotoNumber * Constants.postWidth)
             ).isActive = true
 
-            if currentPhotoNumber == post.photos.count - 1 {
+            if currentPhotoNumber == post.photoNames.count - 1 {
                 imageView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
             }
             currentPhotoNumber += 1

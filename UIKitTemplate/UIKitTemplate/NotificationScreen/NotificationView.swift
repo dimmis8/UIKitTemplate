@@ -3,7 +3,7 @@
 
 import UIKit
 
-/// Экран уведомлений
+/// Вью уведомлений
 final class NotificationView: UIView {
     // MARK: - Initializers
 

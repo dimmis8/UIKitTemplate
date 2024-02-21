@@ -3,7 +3,7 @@
 
 import UIKit
 
-/// Экран ленты
+/// Экран ленты новостей
 final class FeedViewController: UIViewController {
     // MARK: - Constants
 
@@ -13,23 +13,24 @@ final class FeedViewController: UIViewController {
         static let postViewCellIdentifier = "PostViewCell"
     }
 
-    // MARK: - Private Properties
-
-    private let contentType: [ContentType] = [.stories, .firstPost, .recommendations, .posts]
-    private let sourceOfInformation = SourceOfInformation()
+    // MARK: - Visual Components
 
     private let tableView = UITableView()
-    private lazy var feedView = FeedView()
+    private let feedView = FeedView()
     private var refreshControl: UIRefreshControl {
         let refrash = UIRefreshControl()
-        refrash.addTarget(self, action: #selector(handleRefresh(_:)), for: .valueChanged)
+        refrash.addTarget(self, action: #selector(refreshHandle(_:)), for: .valueChanged)
         return refrash
     }
+
+    // MARK: - Private Properties
+
+    private let contentTypes: [ContentType] = [.stories, .firstPost, .recommendations, .posts]
+    private let sourceOfInformation = SourceOfInformation()
 
     // MARK: - Life Cycle
 
     override func loadView() {
-        super.loadView()
         view = feedView
     }
 
@@ -47,9 +48,9 @@ final class FeedViewController: UIViewController {
     }
 
     private func configureTableView() {
-        tableView.register(StoryViewCell.self, forCellReuseIdentifier: Constants.storyViewCellIdentifier)
+        tableView.register(StoriesViewCell.self, forCellReuseIdentifier: Constants.storyViewCellIdentifier)
         tableView.register(
-            RecomendationViewCell.self,
+            RecomendationsViewCell.self,
             forCellReuseIdentifier: Constants.recomendationViewCellIdentifier
         )
         tableView.register(
@@ -72,7 +73,7 @@ final class FeedViewController: UIViewController {
         tableView.addSubview(refreshControl)
     }
 
-    @objc private func handleRefresh(_ sender: UIRefreshControl) {
+    @objc private func refreshHandle(_ sender: UIRefreshControl) {
         tableView.backgroundColor = .white
         sender.endRefreshing()
     }
@@ -98,11 +99,11 @@ extension FeedViewController {
 
 extension FeedViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        contentType.count
+        contentTypes.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch contentType[section] {
+        switch contentTypes[section] {
         case .stories, .firstPost, .recommendations:
             return 1
         case .posts:
@@ -111,13 +112,13 @@ extension FeedViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch contentType[indexPath.section] {
+        switch contentTypes[indexPath.section] {
         case .stories:
             guard let cell = tableView
                 .dequeueReusableCell(
                     withIdentifier: Constants.storyViewCellIdentifier,
                     for: indexPath
-                ) as? StoryViewCell
+                ) as? StoriesViewCell
             else { return UITableViewCell() }
             cell.loadStories(sourceOfInformation.getStories())
             cell.loadUserPhoto(sourceOfInformation.getUserProfilePhoto())
@@ -141,7 +142,7 @@ extension FeedViewController: UITableViewDataSource {
                 .dequeueReusableCell(
                     withIdentifier: Constants.recomendationViewCellIdentifier,
                     for: indexPath
-                ) as? RecomendationViewCell
+                ) as? RecomendationsViewCell
             else { return UITableViewCell() }
             cell.loadRecomendation(sourceOfInformation.getRecomendations())
             return cell

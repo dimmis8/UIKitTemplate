@@ -24,10 +24,18 @@ final class NotificationsViewController: UIViewController {
         label.font = .init(name: "Verdana", size: 14)
         return label
     }()
+    
+    let headerLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .init(name: "Verdana-Bold", size: 17)
+        label.textColor = .black
+        return label
+    }()
 
     private let notificationsGroups: [NotificationsGroups] = [.today, .thisWeek]
     private let tableView = UITableView()
-    private lazy var notificationView = NotificationView()
+    private let notificationView = NotificationView()
     private var refreshControl: UIRefreshControl {
         let refrash = UIRefreshControl()
         refrash.addTarget(self, action: #selector(handleRefresh(_:)), for: .valueChanged)
@@ -41,7 +49,6 @@ final class NotificationsViewController: UIViewController {
     // MARK: - Life Cycle
 
     override func loadView() {
-        super.loadView()
         view = notificationView
     }
 
@@ -142,7 +149,7 @@ extension NotificationsViewController: UITableViewDataSource {
         commit editingStyle: UITableViewCell.EditingStyle,
         forRowAt indexPath: IndexPath
     ) {
-        sourceOfInformation.notification[notificationsGroups[indexPath.section]]?.remove(at: indexPath.row)
+        sourceOfInformation.notifications[notificationsGroups[indexPath.section]]?.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .left)
     }
 }
@@ -151,24 +158,20 @@ extension NotificationsViewController: UITableViewDataSource {
 
 extension NotificationsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        headerView.backgroundColor = .white
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .init(name: "Verdana-Bold", size: 17)
-        label.textColor = .black
         switch notificationsGroups[section] {
         case .today:
-            label.text = Constants.todayHeader
+            headerLabel.text = Constants.todayHeader
         case .thisWeek:
-            label.text = Constants.thisWeekHeader
+            headerLabel.text = Constants.thisWeekHeader
         }
-        headerView.addSubview(label)
+        let headerView = UIView()
+        headerView.backgroundColor = .white
+        headerView.addSubview(headerLabel)
 
-        label.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 12).isActive = true
-        label.trailingAnchor.constraint(equalTo: headerView.trailingAnchor).isActive = true
-        label.topAnchor.constraint(equalTo: headerView.topAnchor).isActive = true
-        label.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        headerLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 12).isActive = true
+        headerLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor).isActive = true
+        headerLabel.topAnchor.constraint(equalTo: headerView.topAnchor).isActive = true
+        headerLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
         return headerView
     }
 }

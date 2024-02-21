@@ -7,12 +7,11 @@ import UIKit
 final class ProfileViewController: UIViewController {
     // MARK: - Private Properties
 
-    private lazy var profileView = ProfileView()
+    private let profileView = ProfileView()
 
     // MARK: - Life Cycle
 
     override func loadView() {
-        super.loadView()
         view = profileView
     }
 }

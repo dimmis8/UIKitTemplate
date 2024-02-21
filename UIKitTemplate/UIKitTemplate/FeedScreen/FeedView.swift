@@ -3,7 +3,7 @@
 
 import UIKit
 
-/// Экран ленты
+/// Вью ленты новостей
 final class FeedView: UIView {
     // MARK: - Initializers
 

@@ -14,14 +14,20 @@
 		0A9D77B52B71282100774B49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D77B32B71282100774B49 /* LaunchScreen.storyboard */; };
 		0AB4F54A2B85314F0036AE13 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB4F5492B85314F0036AE13 /* Data+Extension.swift */; };
 		0AB4F54C2B853EC70036AE13 /* NotificationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB4F54B2B853EC70036AE13 /* NotificationViewCell.swift */; };
-		0AB957052B84D323004128A3 /* RecomendationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB957042B84D323004128A3 /* RecomendationViewCell.swift */; };
+		0AB4F54F2B861F9A0036AE13 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB4F54E2B861F9A0036AE13 /* Story.swift */; };
+		0AB4F5512B861FDE0036AE13 /* Recomendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB4F5502B861FDE0036AE13 /* Recomendation.swift */; };
+		0AB4F5532B861FF60036AE13 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB4F5522B861FF60036AE13 /* Post.swift */; };
+		0AB4F5552B8620110036AE13 /* NotificationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB4F5542B8620110036AE13 /* NotificationApp.swift */; };
+		0AB4F5572B862EA20036AE13 /* RecomendationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB4F5562B862EA20036AE13 /* RecomendationView.swift */; };
+		0AB4F5592B8635DF0036AE13 /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB4F5582B8635DF0036AE13 /* StoryView.swift */; };
+		0AB957052B84D323004128A3 /* RecomendationsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB957042B84D323004128A3 /* RecomendationsViewCell.swift */; };
 		0AFF20E22B8388A900AA02CB /* RMLinkTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF20E12B8388A900AA02CB /* RMLinkTabBarController.swift */; };
 		0AFF20E42B8389D500AA02CB /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF20E32B8389D500AA02CB /* NotificationsViewController.swift */; };
 		0AFF20E62B838A2E00AA02CB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF20E52B838A2E00AA02CB /* ProfileViewController.swift */; };
 		0AFF20EB2B838C8200AA02CB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF20EA2B838C8200AA02CB /* ProfileView.swift */; };
 		0AFF20ED2B838D0100AA02CB /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF20EC2B838D0100AA02CB /* NotificationView.swift */; };
 		0AFF20EF2B838D5200AA02CB /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF20EE2B838D5200AA02CB /* FeedView.swift */; };
-		0AFF20F12B83B9C700AA02CB /* StoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF20F02B83B9C700AA02CB /* StoryViewCell.swift */; };
+		0AFF20F12B83B9C700AA02CB /* StoriesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF20F02B83B9C700AA02CB /* StoriesViewCell.swift */; };
 		0AFF20F32B83BAAB00AA02CB /* SourceOfInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF20F22B83BAAB00AA02CB /* SourceOfInformation.swift */; };
 		0AFF20F82B849E4F00AA02CB /* PostViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF20F62B849E4F00AA02CB /* PostViewCell.swift */; };
 		0AFF20F92B849E4F00AA02CB /* PostViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AFF20F72B849E4F00AA02CB /* PostViewCell.xib */; };
@@ -37,14 +43,20 @@
 		0A9D77B62B71282100774B49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AB4F5492B85314F0036AE13 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		0AB4F54B2B853EC70036AE13 /* NotificationViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewCell.swift; sourceTree = "<group>"; };
-		0AB957042B84D323004128A3 /* RecomendationViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendationViewCell.swift; sourceTree = "<group>"; };
+		0AB4F54E2B861F9A0036AE13 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
+		0AB4F5502B861FDE0036AE13 /* Recomendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recomendation.swift; sourceTree = "<group>"; };
+		0AB4F5522B861FF60036AE13 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		0AB4F5542B8620110036AE13 /* NotificationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationApp.swift; sourceTree = "<group>"; };
+		0AB4F5562B862EA20036AE13 /* RecomendationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendationView.swift; sourceTree = "<group>"; };
+		0AB4F5582B8635DF0036AE13 /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
+		0AB957042B84D323004128A3 /* RecomendationsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendationsViewCell.swift; sourceTree = "<group>"; };
 		0AFF20E12B8388A900AA02CB /* RMLinkTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMLinkTabBarController.swift; sourceTree = "<group>"; };
 		0AFF20E32B8389D500AA02CB /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		0AFF20E52B838A2E00AA02CB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0AFF20EA2B838C8200AA02CB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = UIKitTemplate/ProfileView.swift; sourceTree = SOURCE_ROOT; };
 		0AFF20EC2B838D0100AA02CB /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		0AFF20EE2B838D5200AA02CB /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
-		0AFF20F02B83B9C700AA02CB /* StoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewCell.swift; sourceTree = "<group>"; };
+		0AFF20F02B83B9C700AA02CB /* StoriesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesViewCell.swift; sourceTree = "<group>"; };
 		0AFF20F22B83BAAB00AA02CB /* SourceOfInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceOfInformation.swift; sourceTree = "<group>"; };
 		0AFF20F62B849E4F00AA02CB /* PostViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewCell.swift; sourceTree = "<group>"; };
 		0AFF20F72B849E4F00AA02CB /* PostViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostViewCell.xib; sourceTree = "<group>"; };
@@ -64,8 +76,8 @@
 		0A9D779C2B71282000774B49 = {
 			isa = PBXGroup;
 			children = (
-				0AFF20F22B83BAAB00AA02CB /* SourceOfInformation.swift */,
 				0AB4F5492B85314F0036AE13 /* Data+Extension.swift */,
+				0AB4F54D2B861F540036AE13 /* Models */,
 				0A9D77A72B71282000774B49 /* UIKitTemplate */,
 				0A9D77A62B71282000774B49 /* Products */,
 			);
@@ -95,13 +107,27 @@
 			path = UIKitTemplate;
 			sourceTree = "<group>";
 		};
+		0AB4F54D2B861F540036AE13 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0AFF20F22B83BAAB00AA02CB /* SourceOfInformation.swift */,
+				0AB4F54E2B861F9A0036AE13 /* Story.swift */,
+				0AB4F5502B861FDE0036AE13 /* Recomendation.swift */,
+				0AB4F5522B861FF60036AE13 /* Post.swift */,
+				0AB4F5542B8620110036AE13 /* NotificationApp.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		0AFF20E72B838C1000AA02CB /* FeedScreen */ = {
 			isa = PBXGroup;
 			children = (
 				0A9D77AC2B71282000774B49 /* FeedViewController.swift */,
 				0AFF20EE2B838D5200AA02CB /* FeedView.swift */,
-				0AFF20F02B83B9C700AA02CB /* StoryViewCell.swift */,
-				0AB957042B84D323004128A3 /* RecomendationViewCell.swift */,
+				0AFF20F02B83B9C700AA02CB /* StoriesViewCell.swift */,
+				0AB4F5582B8635DF0036AE13 /* StoryView.swift */,
+				0AB957042B84D323004128A3 /* RecomendationsViewCell.swift */,
+				0AB4F5562B862EA20036AE13 /* RecomendationView.swift */,
 				0AFF20F62B849E4F00AA02CB /* PostViewCell.swift */,
 				0AFF20F72B849E4F00AA02CB /* PostViewCell.xib */,
 			);
@@ -245,17 +271,23 @@
 			files = (
 				0AFF20E62B838A2E00AA02CB /* ProfileViewController.swift in Sources */,
 				0AB4F54A2B85314F0036AE13 /* Data+Extension.swift in Sources */,
-				0AB957052B84D323004128A3 /* RecomendationViewCell.swift in Sources */,
+				0AB957052B84D323004128A3 /* RecomendationsViewCell.swift in Sources */,
+				0AB4F5592B8635DF0036AE13 /* StoryView.swift in Sources */,
 				0AFF20EF2B838D5200AA02CB /* FeedView.swift in Sources */,
-				0AFF20F12B83B9C700AA02CB /* StoryViewCell.swift in Sources */,
+				0AFF20F12B83B9C700AA02CB /* StoriesViewCell.swift in Sources */,
+				0AB4F5552B8620110036AE13 /* NotificationApp.swift in Sources */,
 				0AB4F54C2B853EC70036AE13 /* NotificationViewCell.swift in Sources */,
 				0AFF20E42B8389D500AA02CB /* NotificationsViewController.swift in Sources */,
+				0AB4F54F2B861F9A0036AE13 /* Story.swift in Sources */,
 				0AFF20ED2B838D0100AA02CB /* NotificationView.swift in Sources */,
 				0AFF20E22B8388A900AA02CB /* RMLinkTabBarController.swift in Sources */,
 				0AFF20F82B849E4F00AA02CB /* PostViewCell.swift in Sources */,
 				0A9D77AD2B71282000774B49 /* FeedViewController.swift in Sources */,
 				0A9D77A92B71282000774B49 /* AppDelegate.swift in Sources */,
+				0AB4F5512B861FDE0036AE13 /* Recomendation.swift in Sources */,
 				0AFF20EB2B838C8200AA02CB /* ProfileView.swift in Sources */,
+				0AB4F5532B861FF60036AE13 /* Post.swift in Sources */,
+				0AB4F5572B862EA20036AE13 /* RecomendationView.swift in Sources */,
 				0A9D77AB2B71282000774B49 /* SceneDelegate.swift in Sources */,
 				0AFF20F32B83BAAB00AA02CB /* SourceOfInformation.swift in Sources */,
 			);

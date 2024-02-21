@@ -15,13 +15,12 @@ final class NotificationViewCell: UITableViewCell {
 
     // MARK: - Visual Components
 
-    private let profilePhoto: UIImageView = {
+    private let profilePhotoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.cornerRadius = 20
         imageView.clipsToBounds = true
-        imageView.image = .djigan
         return imageView
     }()
 
@@ -48,9 +47,24 @@ final class NotificationViewCell: UITableViewCell {
     // MARK: - Public Methods
 
     func loadNotification(_ notification: NotificationApp) {
-        profilePhoto.image = notification.avatar
+        profilePhotoImageView.image = UIImage(named: notification.avatarImageName)
+        setDecriptionText(notification)
+        if let image = notification.photoPostName {
+            addImage(withName: image)
+        } else {
+            addButton()
+        }
+    }
 
-        // Работа с описанием
+    // MARK: - Private Methods
+
+    private func createView() {
+        backgroundColor = .white
+        contentView.addSubview(profilePhotoImageView)
+        contentView.addSubview(descriptionLabel)
+    }
+
+    private func setDecriptionText(_ notification: NotificationApp) {
         let timeInterval = Date().timeIntervalSince(notification.dateOfNotification)
         let daysAgo = Int(timeInterval / Constants.secondsInOneDay)
         let boldAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.boldSystemFont(ofSize: 12)]
@@ -71,48 +85,62 @@ final class NotificationViewCell: UITableViewCell {
             )
         )
         descriptionLabel.attributedText = attributedString
-
-        // Работа с изображением или кнопкой:
-        if let image = notification.photo {
-            let photoImageView: UIImageView = {
-                let imageView = UIImageView()
-                imageView.contentMode = .scaleAspectFill
-                imageView.translatesAutoresizingMaskIntoConstraints = false
-                imageView.clipsToBounds = true
-                imageView.image = image
-                return imageView
-            }()
-            contentView.addSubview(photoImageView)
-            photoImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive = true
-            photoImageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
-            photoImageView.widthAnchor.constraint(equalTo: photoImageView.heightAnchor).isActive = true
-            photoImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12).isActive = true
-            descriptionLabel.trailingAnchor.constraint(equalTo: photoImageView.leadingAnchor, constant: -9)
-                .isActive = true
-        } else {
-            let buttonSubscribe: UIButton = {
-                let button = UIButton()
-                button.translatesAutoresizingMaskIntoConstraints = false
-                button.setTitle(Constants.subscribeButtonText, for: .normal)
-                button.setTitleColor(.white, for: .normal)
-                button.titleLabel?.font = .init(name: "Verdana-Bold", size: 12)
-                button.layer.cornerRadius = 8
-                button.backgroundColor = .systemBlue
-                return button
-            }()
-            buttonSubscribe.addTarget(self, action: #selector(changeSubscribeStatus(sender:)), for: .touchUpInside)
-            contentView.addSubview(buttonSubscribe)
-            buttonSubscribe.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
-            buttonSubscribe.heightAnchor.constraint(equalToConstant: 30).isActive = true
-            buttonSubscribe.widthAnchor.constraint(equalToConstant: 140).isActive = true
-            buttonSubscribe.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12)
-                .isActive = true
-            descriptionLabel.trailingAnchor.constraint(equalTo: buttonSubscribe.leadingAnchor, constant: -9)
-                .isActive = true
-        }
     }
 
-    @objc private func changeSubscribeStatus(sender: UIButton) {
+    private func addImage(withName name: String) {
+        let photoImageView: UIImageView = {
+            let imageView = UIImageView()
+            imageView.contentMode = .scaleAspectFill
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            imageView.clipsToBounds = true
+            imageView.image = UIImage(named: name)
+            return imageView
+        }()
+        contentView.addSubview(photoImageView)
+        photoImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive = true
+        photoImageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        photoImageView.widthAnchor.constraint(equalTo: photoImageView.heightAnchor).isActive = true
+        photoImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12).isActive = true
+        descriptionLabel.trailingAnchor.constraint(equalTo: photoImageView.leadingAnchor, constant: -9)
+            .isActive = true
+    }
+
+    private func addButton() {
+        let buttonSubscribe: UIButton = {
+            let button = UIButton()
+            button.translatesAutoresizingMaskIntoConstraints = false
+            button.setTitle(Constants.subscribeButtonText, for: .normal)
+            button.setTitleColor(.white, for: .normal)
+            button.titleLabel?.font = .init(name: "Verdana-Bold", size: 12)
+            button.layer.cornerRadius = 8
+            button.backgroundColor = .systemBlue
+            return button
+        }()
+        buttonSubscribe.addTarget(self, action: #selector(changeSubscribeStatusHandler(sender:)), for: .touchUpInside)
+        contentView.addSubview(buttonSubscribe)
+        buttonSubscribe.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
+        buttonSubscribe.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        buttonSubscribe.widthAnchor.constraint(equalToConstant: 140).isActive = true
+        buttonSubscribe.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12)
+            .isActive = true
+        descriptionLabel.trailingAnchor.constraint(equalTo: buttonSubscribe.leadingAnchor, constant: -9)
+            .isActive = true
+    }
+
+    private func setConstraints() {
+        profilePhotoImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12).isActive = true
+        profilePhotoImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive = true
+        profilePhotoImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5).isActive = true
+        profilePhotoImageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        profilePhotoImageView.widthAnchor.constraint(equalTo: profilePhotoImageView.heightAnchor).isActive = true
+
+        descriptionLabel.leadingAnchor.constraint(equalTo: profilePhotoImageView.trailingAnchor, constant: 7)
+            .isActive = true
+        descriptionLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 2).isActive = true
+        descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -2).isActive = true
+    }
+
+    @objc private func changeSubscribeStatusHandler(sender: UIButton) {
         if sender.titleLabel?.text == Constants.subscribeButtonText {
             sender.setTitle(Constants.subscribedButtonText, for: .normal)
             sender.setTitleColor(.lightGray, for: .normal)
@@ -125,25 +153,5 @@ final class NotificationViewCell: UITableViewCell {
             sender.backgroundColor = .systemBlue
             sender.layer.borderWidth = 0
         }
-    }
-
-    // MARK: - Private Methods
-
-    private func createView() {
-        backgroundColor = .white
-        contentView.addSubview(profilePhoto)
-        contentView.addSubview(descriptionLabel)
-    }
-
-    private func setConstraints() {
-        profilePhoto.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12).isActive = true
-        profilePhoto.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5).isActive = true
-        profilePhoto.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5).isActive = true
-        profilePhoto.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        profilePhoto.widthAnchor.constraint(equalTo: profilePhoto.heightAnchor).isActive = true
-
-        descriptionLabel.leadingAnchor.constraint(equalTo: profilePhoto.trailingAnchor, constant: 7).isActive = true
-        descriptionLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 2).isActive = true
-        descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -2).isActive = true
     }
 }
