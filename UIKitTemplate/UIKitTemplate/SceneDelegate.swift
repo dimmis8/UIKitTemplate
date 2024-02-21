@@ -12,12 +12,20 @@ import UIKit
 /// SceneDelegate class
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
+    let rmLinkTabBarController = RMLinkTabBarController()
 
     func scene(
         _ scene: UIScene,
-        willConnectTo _: UISceneSession,
-        options _: UIScene.ConnectionOptions
+        willConnectTo session: UISceneSession,
+        options connectionOptions: UIScene.ConnectionOptions
     ) {
-        guard (scene as? UIWindowScene) != nil else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        createRootViewController(windowScene)
+    }
+
+    private func createRootViewController(_ windowScene: UIWindowScene) {
+        window = UIWindow(windowScene: windowScene)
+        window?.rootViewController = rmLinkTabBarController
+        window?.makeKeyAndVisible()
     }
 }
