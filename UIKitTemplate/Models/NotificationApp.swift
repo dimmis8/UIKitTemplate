@@ -6,7 +6,7 @@ import Foundation
 /// Уведомления
 struct NotificationApp {
     /// Ник пользователя
-    let nickname: String
+    let nickName: String
     /// Имя аватарки пользователя
     let avatarImageName: String
     /// Имя фото поста

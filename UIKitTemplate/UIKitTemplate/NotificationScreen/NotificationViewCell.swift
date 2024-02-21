@@ -63,30 +63,30 @@ final class NotificationViewCell: UITableViewCell {
         contentView.addSubview(profilePhotoImageView)
         contentView.addSubview(descriptionLabel)
     }
-
+    
     private func setDecriptionText(_ notification: NotificationApp) {
         let timeInterval = Date().timeIntervalSince(notification.dateOfNotification)
         let daysAgo = Int(timeInterval / Constants.secondsInOneDay)
         let boldAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.boldSystemFont(ofSize: 12)]
         let attributedString = NSMutableAttributedString(
-            string: notification.nickname + ": " + notification
+            string: notification.nickName + ": " + notification
                 .description + " \(daysAgo)д."
         )
         let grayAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.lightGray]
         attributedString.addAttributes(
             boldAttributes,
-            range: NSRange(location: 0, length: notification.nickname.count + 1)
+            range: NSRange(location: 0, length: notification.nickName.count + 1)
         )
         attributedString.addAttributes(
             grayAttributes,
             range: NSRange(
-                location: notification.nickname.count + 2 + notification.description.count,
+                location: notification.nickName.count + 2 + notification.description.count,
                 length: " \(daysAgo)д.".count
             )
         )
         descriptionLabel.attributedText = attributedString
     }
-
+    
     private func addImage(withName name: String) {
         let photoImageView: UIImageView = {
             let imageView = UIImageView()
@@ -104,7 +104,7 @@ final class NotificationViewCell: UITableViewCell {
         descriptionLabel.trailingAnchor.constraint(equalTo: photoImageView.leadingAnchor, constant: -9)
             .isActive = true
     }
-
+    
     private func addButton() {
         let buttonSubscribe: UIButton = {
             let button = UIButton()
@@ -134,12 +134,11 @@ final class NotificationViewCell: UITableViewCell {
         profilePhotoImageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
         profilePhotoImageView.widthAnchor.constraint(equalTo: profilePhotoImageView.heightAnchor).isActive = true
 
-        descriptionLabel.leadingAnchor.constraint(equalTo: profilePhotoImageView.trailingAnchor, constant: 7)
-            .isActive = true
+        descriptionLabel.leadingAnchor.constraint(equalTo: profilePhotoImageView.trailingAnchor, constant: 7).isActive = true
         descriptionLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 2).isActive = true
         descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -2).isActive = true
     }
-
+    
     @objc private func changeSubscribeStatusHandler(sender: UIButton) {
         if sender.titleLabel?.text == Constants.subscribeButtonText {
             sender.setTitle(Constants.subscribedButtonText, for: .normal)

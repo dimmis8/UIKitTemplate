@@ -86,14 +86,14 @@ struct SourceOfInformation {
     var notifications: [NotificationsGroups: [NotificationApp]] = [
         .today: [
             NotificationApp(
-                nickname: "garlic13",
+                nickName: "garlic13",
                 avatarImageName: "djigan",
                 photoPostName: "sea",
                 description: "упомянул(-а) вас в комментарии: \"тож на чиле?)00)\"",
                 dateOfNotification: Date.dateFromCustomString(customString: "20/02/2024")
             ),
             NotificationApp(
-                nickname: "garlic13",
+                nickName: "garlic13",
                 avatarImageName: "djigan",
                 photoPostName: "sea",
                 description: "упомянул(-а) вас в комментарии: \"согласен!\"",
@@ -102,42 +102,42 @@ struct SourceOfInformation {
         ],
         .thisWeek: [
             NotificationApp(
-                nickname: "garlic13",
+                nickName: "garlic13",
                 avatarImageName: "djigan",
                 photoPostName: "sea",
                 description: "упомянул(-а) вас в комментарии: \"Это где?\"",
                 dateOfNotification: Date.dateFromCustomString(customString: "18/02/2024")
             ),
             NotificationApp(
-                nickname: "illomio",
+                nickName: "illomio",
                 avatarImageName: "gigachad",
                 photoPostName: nil,
                 description: "появился(-ась) в RMLink. Вы можете быть знакомы",
                 dateOfNotification: Date.dateFromCustomString(customString: "18/02/2024")
             ),
             NotificationApp(
-                nickname: "garlic13",
+                nickName: "garlic13",
                 avatarImageName: "djigan",
                 photoPostName: nil,
                 description: "подписался(-ась) на ваши новости",
                 dateOfNotification: Date.dateFromCustomString(customString: "15/02/2024")
             ),
             NotificationApp(
-                nickname: "garlic13",
+                nickName: "garlic13",
                 avatarImageName: "djigan",
                 photoPostName: "seaAnother",
                 description: "понравился ваш комментарий: \"Супер фото\"",
                 dateOfNotification: Date.dateFromCustomString(customString: "14/02/2024")
             ),
             NotificationApp(
-                nickname: "sunsay",
+                nickName: "sunsay",
                 avatarImageName: "monro",
                 photoPostName: nil,
                 description: "появился(-ась) в RMLink. Вы можете быть знакомы",
                 dateOfNotification: Date.dateFromCustomString(customString: "13/02/2024")
             ),
             NotificationApp(
-                nickname: "voznyak",
+                nickName: "voznyak",
                 avatarImageName: "voznyak",
                 photoPostName: nil,
                 description: "появился(-ась) в RMLink. Вы можете быть знакомы",
