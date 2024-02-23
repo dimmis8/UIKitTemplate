@@ -20,7 +20,7 @@ final class ProfilePostViewCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        createView()
+        createViews()
         setConstraints()
     }
 
@@ -36,7 +36,7 @@ final class ProfilePostViewCell: UICollectionViewCell {
 
     // MARK: - Private Methods
 
-    private func createView() {
+    private func createViews() {
         backgroundColor = .white
         contentView.addSubview(imageView)
     }

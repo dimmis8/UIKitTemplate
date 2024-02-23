@@ -74,6 +74,8 @@ final class ProfilePostsViewCell: UITableViewCell {
     }
 }
 
+// MARK: - Подписание на делегата колекшн вью для расчета размера ячеек
+
 extension ProfilePostsViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(
         _ collectionView: UICollectionView,
@@ -85,11 +87,9 @@ extension ProfilePostsViewCell: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension ProfilePostsViewCell: UICollectionViewDataSource {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        1
-    }
+// MARK: - Подписание на дата сорс колекшен вью
 
+extension ProfilePostsViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         posts.count
     }

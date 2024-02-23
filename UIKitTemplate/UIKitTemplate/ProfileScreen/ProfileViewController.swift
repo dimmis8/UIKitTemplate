@@ -11,6 +11,7 @@ final class ProfileViewController: UIViewController {
         static let profileViewCellIdentifier = "ProfileViewCell"
         static let storyViewCellIdentifier = "StoryViewCell"
         static let profilePostsViewCellIdentifier = "ProfilePostsViewCell"
+        static let verdanaBoldFontName = "Verdana-Bold"
     }
 
     // MARK: - Visual Components
@@ -18,7 +19,7 @@ final class ProfileViewController: UIViewController {
     private let titleView: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .init(name: "Verdana-Bold", size: 22)
+        label.font = .init(name: Constants.verdanaBoldFontName, size: 22)
         return label
     }()
 

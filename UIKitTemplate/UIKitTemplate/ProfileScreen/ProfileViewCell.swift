@@ -13,6 +13,9 @@ final class ProfileViewCell: UITableViewCell {
         static let postsCountLabelText = "публикации"
         static let changeProfileButtonText = "Изменить"
         static let shareProfileButtonText = "Поделиться профилем"
+        static let labelFontSize: CGFloat = 11
+        static let infoFontSize: CGFloat = 14
+        static let profilePhotoHeigh: CGFloat = 80
     }
 
     // MARK: - Visual Components
@@ -21,7 +24,7 @@ final class ProfileViewCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.layer.cornerRadius = 40
+        imageView.layer.cornerRadius = Constants.profilePhotoHeigh / 2
         imageView.clipsToBounds = true
         return imageView
     }()
@@ -46,7 +49,7 @@ final class ProfileViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = Constants.subscribeLabelText
-        label.font = .systemFont(ofSize: 11)
+        label.font = .systemFont(ofSize: Constants.labelFontSize)
         label.textAlignment = .center
         return label
     }()
@@ -55,7 +58,7 @@ final class ProfileViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = Constants.subscribersLabelText
-        label.font = .systemFont(ofSize: 11)
+        label.font = .systemFont(ofSize: Constants.labelFontSize)
         label.textAlignment = .center
         return label
     }()
@@ -64,7 +67,7 @@ final class ProfileViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = Constants.postsCountLabelText
-        label.font = .systemFont(ofSize: 11)
+        label.font = .systemFont(ofSize: Constants.labelFontSize)
         label.textAlignment = .center
         return label
     }()
@@ -72,7 +75,7 @@ final class ProfileViewCell: UITableViewCell {
     private let subscribeNumberLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .boldSystemFont(ofSize: 14)
+        label.font = .boldSystemFont(ofSize: Constants.infoFontSize)
         label.textAlignment = .center
         return label
     }()
@@ -80,7 +83,7 @@ final class ProfileViewCell: UITableViewCell {
     private let subscribersNumberLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .boldSystemFont(ofSize: 14)
+        label.font = .boldSystemFont(ofSize: Constants.infoFontSize)
         label.textAlignment = .center
         return label
     }()
@@ -88,7 +91,7 @@ final class ProfileViewCell: UITableViewCell {
     private let postsCountNumberLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .boldSystemFont(ofSize: 14)
+        label.font = .boldSystemFont(ofSize: Constants.infoFontSize)
         label.textAlignment = .center
         return label
     }()
@@ -96,14 +99,14 @@ final class ProfileViewCell: UITableViewCell {
     private let profileUserNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .boldSystemFont(ofSize: 14)
+        label.font = .boldSystemFont(ofSize: Constants.infoFontSize)
         return label
     }()
 
     private let discriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 14)
+        label.font = .systemFont(ofSize: Constants.infoFontSize)
         return label
     }()
 
@@ -112,7 +115,7 @@ final class ProfileViewCell: UITableViewCell {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(.systemBlue, for: .normal)
         button.contentHorizontalAlignment = .left
-        button.titleLabel?.font = .systemFont(ofSize: 14)
+        button.titleLabel?.font = .systemFont(ofSize: Constants.infoFontSize)
         return button
     }()
 
@@ -121,7 +124,7 @@ final class ProfileViewCell: UITableViewCell {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(Constants.changeProfileButtonText, for: .normal)
         button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = .boldSystemFont(ofSize: 11)
+        button.titleLabel?.font = .boldSystemFont(ofSize: Constants.labelFontSize)
         button.backgroundColor = .systemGray6
         button.layer.cornerRadius = 7
         return button
@@ -132,7 +135,7 @@ final class ProfileViewCell: UITableViewCell {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(Constants.shareProfileButtonText, for: .normal)
         button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = .boldSystemFont(ofSize: 11)
+        button.titleLabel?.font = .boldSystemFont(ofSize: Constants.labelFontSize)
         button.backgroundColor = .systemGray6
         button.layer.cornerRadius = 7
         return button
@@ -226,8 +229,8 @@ final class ProfileViewCell: UITableViewCell {
         profilePhotoImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 27).isActive = true
         profilePhotoImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -120).isActive = true
         profilePhotoImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15).isActive = true
-        profilePhotoImageView.widthAnchor.constraint(equalToConstant: 80).isActive = true
-        profilePhotoImageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        profilePhotoImageView.widthAnchor.constraint(equalToConstant: Constants.profilePhotoHeigh).isActive = true
+        profilePhotoImageView.heightAnchor.constraint(equalToConstant: Constants.profilePhotoHeigh).isActive = true
     }
 
     private func setAddStoryButtontConstraints() {
