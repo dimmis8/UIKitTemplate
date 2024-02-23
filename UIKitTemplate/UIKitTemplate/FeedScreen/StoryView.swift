@@ -10,6 +10,7 @@ final class StoryView: UIView {
     enum Constants {
         static let yourStoryText = "Ваша история"
         static let storyWithSpasingWeight = 86
+        static let borderRadius: CGFloat = 63
     }
 
     // MARK: - Visual Components
@@ -31,11 +32,18 @@ final class StoryView: UIView {
         return label
     }()
 
+    private let borderView: UIImageView = {
+        let borderView = UIImageView()
+        borderView.contentMode = .scaleAspectFill
+        borderView.translatesAutoresizingMaskIntoConstraints = false
+        return borderView
+    }()
+
     // MARK: - Initializers
 
-    init(avatarName: String, nickName: String, status: ViewingStatus) {
+    init(avatarName: String, description: String, status: StatusOfStory) {
         super.init(frame: CGRect())
-        loadView(avatarName: avatarName, nickName: nickName, status: status)
+        loadView(avatarName: avatarName, description: description, status: status)
         createConstraints()
     }
 
@@ -45,14 +53,12 @@ final class StoryView: UIView {
 
     // MARK: - Private Methods
 
-    private func loadView(avatarName: String, nickName: String, status: ViewingStatus) {
+    private func loadView(avatarName: String, description: String, status: StatusOfStory) {
         imageView.image = UIImage(named: avatarName)
-        label.text = nickName
+        label.text = description
         addSubview(imageView)
         addSubview(label)
-        if status == .isNotViewed {
-            createBorder()
-        }
+        createStoryBorder(status)
     }
 
     private func createConstraints() {
@@ -67,18 +73,20 @@ final class StoryView: UIView {
         label.widthAnchor.constraint(equalToConstant: 74).isActive = true
     }
 
-    private func createBorder() {
-        let borderView: UIImageView = {
-            let borderView = UIImageView()
-            borderView.contentMode = .scaleAspectFill
-            borderView.translatesAutoresizingMaskIntoConstraints = false
-            borderView.image = .newStory
-            return borderView
-        }()
+    private func createStoryBorder(_ status: StatusOfStory) {
         addSubview(borderView)
         borderView.centerXAnchor.constraint(equalTo: imageView.centerXAnchor).isActive = true
         borderView.centerYAnchor.constraint(equalTo: imageView.centerYAnchor).isActive = true
-        borderView.heightAnchor.constraint(equalToConstant: 63).isActive = true
-        borderView.widthAnchor.constraint(equalToConstant: 63).isActive = true
+        switch status {
+        case .isNotViewed:
+            borderView.image = .newStory
+            borderView.heightAnchor.constraint(equalToConstant: Constants.borderRadius).isActive = true
+        case .profileStory:
+            borderView.image = .profileStoryBorder
+            borderView.heightAnchor.constraint(equalToConstant: Constants.borderRadius + 4).isActive = true
+        default:
+            break
+        }
+        borderView.widthAnchor.constraint(equalTo: borderView.heightAnchor).isActive = true
     }
 }

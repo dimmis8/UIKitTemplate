@@ -24,7 +24,7 @@ final class NotificationsViewController: UIViewController {
         label.font = .init(name: "Verdana", size: 14)
         return label
     }()
-    
+
     let headerLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false

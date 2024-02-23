@@ -56,7 +56,6 @@ final class StoriesViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         createView()
-        setConstraints()
     }
 
     required init?(coder: NSCoder) {
@@ -65,30 +64,31 @@ final class StoriesViewCell: UITableViewCell {
 
     // MARK: - Public Methods
 
-    func loadUserPhoto(_ photo: UIImage) {
-        profilePhotoImageView.image = photo
+    func loadUserPhoto(_ photoName: String) {
+        profilePhotoImageView.image = UIImage(named: photoName)
+        scrollView.addSubview(profilePhotoImageView)
+        scrollView.addSubview(yourStoryLabel)
+        scrollView.addSubview(addStoryButtont)
     }
 
-    func loadStories(_ storiesMap: [ViewingStatus: [Story]]) {
-        let numberOfStories = (storiesMap[.isViewed]?.count ?? 0) + (storiesMap[.isNotViewed]?.count ?? 0)
-        var currentStoryNumber = 0
+    func loadStories(_ storiesMap: [StatusOfStory: [Story]]) {
+        var isProfileStory = false
+        setScrollViewConstraints()
+        if profilePhotoImageView.image != nil {
+            setAddProfileStoryConstraints()
+        } else {
+            isProfileStory = true
+        }
 
+        let numberOfStories = (storiesMap[.isViewed]?.count ?? 0) + (storiesMap[.isNotViewed]?.count ?? 0) +
+            (storiesMap[.profileStory]?.count ?? 0)
+        var currentStoryNumber = 0
         for (status, stories) in storiesMap.sorted(by: { $0.key.rawValue > $1.key.rawValue }) {
             for story in stories {
-                let storyView = StoryView(avatarName: story.photoName, nickName: story.nickName, status: status)
+                let storyView = StoryView(avatarName: story.photoName, description: story.description, status: status)
                 storyView.translatesAutoresizingMaskIntoConstraints = false
                 scrollView.addSubview(storyView)
-
-                storyView.leadingAnchor.constraint(
-                    equalTo: scrollView.leadingAnchor,
-                    constant: CGFloat(94 + Int(currentStoryNumber) * Constants.storyWithSpasingWeight)
-                ).isActive = true
-                storyView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
-                storyView.heightAnchor.constraint(equalToConstant: 70).isActive = true
-                storyView.widthAnchor.constraint(equalToConstant: 74).isActive = true
-                if currentStoryNumber == numberOfStories - 1 {
-                    storyView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
-                }
+                setConstraintsForStory(storyView, currentStoryNumber, numberOfStories, isProfileStory)
                 currentStoryNumber += 1
             }
         }
@@ -101,20 +101,39 @@ final class StoriesViewCell: UITableViewCell {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.showsHorizontalScrollIndicator = false
         contentView.addSubview(scrollView)
-        scrollView.addSubview(profilePhotoImageView)
-        scrollView.addSubview(yourStoryLabel)
-        scrollView.addSubview(addStoryButtont)
     }
 
-    private func setConstraints() {
-        scrollView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
-        scrollView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        scrollView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        scrollView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+    private func setConstraintsForStory(
+        _ storyView: StoryView,
+        _ currentStoryNumber: Int,
+        _ numberOfStories: Int,
+        _ isProfileStory: Bool
+    ) {
+        switch isProfileStory {
+        case true where currentStoryNumber == 0:
+            storyView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 10).isActive = true
+        case true:
+            storyView.leadingAnchor.constraint(
+                equalTo: scrollView.leadingAnchor,
+                constant: CGFloat(Int(currentStoryNumber) * Constants.storyWithSpasingWeight)
+            ).isActive = true
+        case false:
+            storyView.leadingAnchor.constraint(
+                equalTo: scrollView.leadingAnchor,
+                constant: CGFloat(94 + Int(currentStoryNumber) * Constants.storyWithSpasingWeight)
+            ).isActive = true
+        }
+        storyView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 2).isActive = true
+        storyView.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        storyView.widthAnchor.constraint(equalToConstant: 74).isActive = true
+        if currentStoryNumber == numberOfStories - 1 {
+            storyView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
+        }
+    }
 
+    private func setAddProfileStoryConstraints() {
         profilePhotoImageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 12).isActive = true
-        profilePhotoImageView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 2).isActive = true
+        profilePhotoImageView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 4).isActive = true
         profilePhotoImageView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
         profilePhotoImageView.heightAnchor.constraint(equalToConstant: 60).isActive = true
         profilePhotoImageView.widthAnchor.constraint(equalTo: profilePhotoImageView.heightAnchor).isActive = true
@@ -128,5 +147,13 @@ final class StoriesViewCell: UITableViewCell {
         addStoryButtont.bottomAnchor.constraint(equalTo: profilePhotoImageView.bottomAnchor).isActive = true
         addStoryButtont.heightAnchor.constraint(equalToConstant: 20).isActive = true
         addStoryButtont.widthAnchor.constraint(equalTo: addStoryButtont.heightAnchor).isActive = true
+    }
+
+    private func setScrollViewConstraints() {
+        scrollView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        scrollView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        scrollView.heightAnchor.constraint(equalToConstant: 80).isActive = true
     }
 }

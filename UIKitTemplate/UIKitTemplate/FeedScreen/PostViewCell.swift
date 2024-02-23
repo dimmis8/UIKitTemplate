@@ -5,12 +5,6 @@ import UIKit
 
 /// Ячейка с постом
 final class PostViewCell: UITableViewCell {
-    // MARK: - Constants
-
-    enum Constants {
-        static let postWidth = 375
-    }
-
     // MARK: - Private Properties
 
     private let scrollView = UIScrollView()
@@ -50,30 +44,32 @@ final class PostViewCell: UITableViewCell {
         descriptionLabel.attributedText = attributedString
 
         var currentPhotoNumber = 0
+        var lastAnchor: NSLayoutXAxisAnchor = scrollView.leadingAnchor
         for photo in post.photoNames {
             let imageView = UIImageView()
             imageView.image = UIImage(named: photo)
+            imageView.contentMode = .scaleToFill
             imageView.translatesAutoresizingMaskIntoConstraints = false
             scrollView.addSubview(imageView)
 
             imageView.heightAnchor.constraint(equalToConstant: 239).isActive = true
-            imageView.widthAnchor.constraint(equalToConstant: 375).isActive = true
+            imageView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
             imageView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
             imageView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
             imageView.leadingAnchor.constraint(
-                equalTo: scrollView.leadingAnchor,
-                constant: CGFloat(currentPhotoNumber * Constants.postWidth)
+                equalTo: lastAnchor
             ).isActive = true
 
             if currentPhotoNumber == post.photoNames.count - 1 {
-                imageView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
+                scrollView.trailingAnchor.constraint(equalTo: imageView.trailingAnchor).isActive = true
             }
+            lastAnchor = imageView.trailingAnchor
             currentPhotoNumber += 1
         }
     }
 
-    func loadUserPhoto(_ photo: UIImage) {
-        userImageView.image = photo
+    func loadUserPhoto(_ photoName: String) {
+        userImageView.image = UIImage(named: photoName)
     }
 
     // MARK: - Private Methods
@@ -101,7 +97,6 @@ final class PostViewCell: UITableViewCell {
 
     private func setConstraints() {
         scrollView.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 10).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: likeCountLabel.bottomAnchor, constant: -38).isActive = true
         scrollView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         scrollView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         scrollView.heightAnchor.constraint(equalToConstant: 239).isActive = true

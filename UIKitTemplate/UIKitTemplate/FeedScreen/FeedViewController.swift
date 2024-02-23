@@ -120,22 +120,22 @@ extension FeedViewController: UITableViewDataSource {
                     for: indexPath
                 ) as? StoriesViewCell
             else { return UITableViewCell() }
+            cell.loadUserPhoto(sourceOfInformation.getUserProfilePhotoName())
             cell.loadStories(sourceOfInformation.getStories())
-            cell.loadUserPhoto(sourceOfInformation.getUserProfilePhoto())
             return cell
         case .firstPost:
             guard let cell = tableView
                 .dequeueReusableCell(withIdentifier: Constants.postViewCellIdentifier, for: indexPath) as? PostViewCell
             else { return UITableViewCell() }
             cell.loadPost(sourceOfInformation.getPosts()[indexPath.row])
-            cell.loadUserPhoto(sourceOfInformation.getUserProfilePhoto())
+            cell.loadUserPhoto(sourceOfInformation.getUserProfilePhotoName())
             return cell
         case .posts:
             guard let cell = tableView
                 .dequeueReusableCell(withIdentifier: Constants.postViewCellIdentifier, for: indexPath) as? PostViewCell
             else { return UITableViewCell() }
             cell.loadPost(sourceOfInformation.getPosts()[indexPath.row + 1])
-            cell.loadUserPhoto(sourceOfInformation.getUserProfilePhoto())
+            cell.loadUserPhoto(sourceOfInformation.getUserProfilePhotoName())
             return cell
         case .recommendations:
             guard let cell = tableView
