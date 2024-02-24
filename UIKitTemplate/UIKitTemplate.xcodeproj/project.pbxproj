@@ -26,6 +26,7 @@
 		0AB4F5632B8741F00036AE13 /* ProfilePostsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB4F5622B8741F00036AE13 /* ProfilePostsViewCell.swift */; };
 		0AB4F5652B8744C90036AE13 /* ProfilePostViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB4F5642B8744C90036AE13 /* ProfilePostViewCell.swift */; };
 		0AB4F5672B8786CF0036AE13 /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB4F5662B8786CF0036AE13 /* BrowserViewController.swift */; };
+		0AB4F5742B8A52350036AE13 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB4F5732B8A52350036AE13 /* StoryViewController.swift */; };
 		0AB957052B84D323004128A3 /* RecomendationsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB957042B84D323004128A3 /* RecomendationsViewCell.swift */; };
 		0AFF20E22B8388A900AA02CB /* RMLinkTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF20E12B8388A900AA02CB /* RMLinkTabBarController.swift */; };
 		0AFF20E42B8389D500AA02CB /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFF20E32B8389D500AA02CB /* NotificationsViewController.swift */; };
@@ -61,6 +62,7 @@
 		0AB4F5622B8741F00036AE13 /* ProfilePostsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePostsViewCell.swift; sourceTree = "<group>"; };
 		0AB4F5642B8744C90036AE13 /* ProfilePostViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePostViewCell.swift; sourceTree = "<group>"; };
 		0AB4F5662B8786CF0036AE13 /* BrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BrowserViewController.swift; path = UIKitTemplate/BrowserScreen/BrowserViewController.swift; sourceTree = SOURCE_ROOT; };
+		0AB4F5732B8A52350036AE13 /* StoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
 		0AB957042B84D323004128A3 /* RecomendationsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendationsViewCell.swift; sourceTree = "<group>"; };
 		0AFF20E12B8388A900AA02CB /* RMLinkTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMLinkTabBarController.swift; sourceTree = "<group>"; };
 		0AFF20E32B8389D500AA02CB /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 		0A9D779C2B71282000774B49 = {
 			isa = PBXGroup;
 			children = (
+				0AB4F5732B8A52350036AE13 /* StoryViewController.swift */,
 				0AB4F5492B85314F0036AE13 /* Data+Extension.swift */,
 				0A9D77A72B71282000774B49 /* UIKitTemplate */,
 				0A9D77A62B71282000774B49 /* Products */,
@@ -307,6 +310,7 @@
 				0AB4F5552B8620110036AE13 /* NotificationApp.swift in Sources */,
 				0AB4F55F2B872A620036AE13 /* ProfileInfo.swift in Sources */,
 				0AB4F54C2B853EC70036AE13 /* NotificationViewCell.swift in Sources */,
+				0AB4F5742B8A52350036AE13 /* StoryViewController.swift in Sources */,
 				0AFF20E42B8389D500AA02CB /* NotificationsViewController.swift in Sources */,
 				0AB4F54F2B861F9A0036AE13 /* Story.swift in Sources */,
 				0AFF20ED2B838D0100AA02CB /* NotificationView.swift in Sources */,

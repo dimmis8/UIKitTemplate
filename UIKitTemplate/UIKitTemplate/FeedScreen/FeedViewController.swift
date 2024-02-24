@@ -120,8 +120,10 @@ extension FeedViewController: UITableViewDataSource {
                     for: indexPath
                 ) as? StoriesViewCell
             else { return UITableViewCell() }
+            cell.controller = self
             cell.loadUserPhoto(sourceOfInformation.getUserProfilePhotoName())
             cell.loadStories(sourceOfInformation.getStories())
+
             return cell
         case .firstPost:
             guard let cell = tableView

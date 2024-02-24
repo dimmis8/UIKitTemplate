@@ -146,6 +146,7 @@ extension ProfileViewController: UITableViewDataSource {
                     for: indexPath
                 ) as? StoriesViewCell
             else { return UITableViewCell() }
+            cell.controller = self
             cell.loadStories(sourceOfProfileInfo.getStories())
             return cell
         case .profileImages:

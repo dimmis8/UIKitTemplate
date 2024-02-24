@@ -51,6 +51,10 @@ final class StoriesViewCell: UITableViewCell {
 
     private let scrollView = UIScrollView()
 
+    // MARK: - Public Properties
+
+    var controller: UIViewController?
+
     // MARK: - Initializers
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -85,7 +89,13 @@ final class StoriesViewCell: UITableViewCell {
         var currentStoryNumber = 0
         for (status, stories) in storiesMap.sorted(by: { $0.key.rawValue > $1.key.rawValue }) {
             for story in stories {
-                let storyView = StoryView(avatarName: story.photoName, description: story.description, status: status)
+                guard let controller = controller else { return }
+                let storyView = StoryView(
+                    avatarName: story.photoName,
+                    description: story.description,
+                    status: status,
+                    controller: controller
+                )
                 storyView.translatesAutoresizingMaskIntoConstraints = false
                 scrollView.addSubview(storyView)
                 setConstraintsForStory(storyView, currentStoryNumber, numberOfStories, isProfileStory)
