@@ -43,15 +43,6 @@
                                     <segue destination="9VW-JR-3Yy" kind="show" id="uaP-Si-dla"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXN-lr-TUV">
-                                <rect key="frame" x="170" y="431" width="54" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="VFL"/>
-                                <connections>
-                                    <segue destination="pO6-7m-Qlx" kind="show" id="foQ-xD-siS"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tQc-Vo-DfH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -113,7 +104,6 @@
         <!--Storyboard Constraints View Controller-->
         <scene sceneID="oeY-jO-yFo">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="G5U-Om-dtl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="1vs-ap-dJ2" customClass="StoryboardConstraintsViewController" customModule="UIKitTemplate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e46-W6-GFt">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -177,6 +167,7 @@
                         <outlet property="yellowView" destination="04s-h5-zbe" id="3Xx-7r-urx"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G5U-Om-dtl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="489" y="-468"/>
         </scene>
@@ -204,10 +195,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

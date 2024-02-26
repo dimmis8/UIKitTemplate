@@ -16,7 +16,6 @@
 		0AB4F56A2B892D790036AE13 /* StoryboardConstraintsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB4F5692B892D790036AE13 /* StoryboardConstraintsViewController.swift */; };
 		0AB4F56C2B894AFB0036AE13 /* StackConstraintsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB4F56B2B894AFB0036AE13 /* StackConstraintsViewController.swift */; };
 		0AB4F56E2B89F4100036AE13 /* LayoutAnchorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB4F56D2B89F4100036AE13 /* LayoutAnchorViewController.swift */; };
-		0AB4F5702B8A073C0036AE13 /* VFLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB4F56F2B8A073C0036AE13 /* VFLViewController.swift */; };
 		0AB4F5722B8A44CA0036AE13 /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB4F5712B8A44CA0036AE13 /* ColorView.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +31,6 @@
 		0AB4F5692B892D790036AE13 /* StoryboardConstraintsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardConstraintsViewController.swift; sourceTree = "<group>"; };
 		0AB4F56B2B894AFB0036AE13 /* StackConstraintsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackConstraintsViewController.swift; sourceTree = "<group>"; };
 		0AB4F56D2B89F4100036AE13 /* LayoutAnchorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutAnchorViewController.swift; sourceTree = "<group>"; };
-		0AB4F56F2B8A073C0036AE13 /* VFLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VFLViewController.swift; sourceTree = "<group>"; };
 		0AB4F5712B8A44CA0036AE13 /* ColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,7 +71,6 @@
 				0AB4F5692B892D790036AE13 /* StoryboardConstraintsViewController.swift */,
 				0AB4F56B2B894AFB0036AE13 /* StackConstraintsViewController.swift */,
 				0AB4F56D2B89F4100036AE13 /* LayoutAnchorViewController.swift */,
-				0AB4F56F2B8A073C0036AE13 /* VFLViewController.swift */,
 				0A9D77AE2B71282000774B49 /* Main.storyboard */,
 				0A9D77B12B71282100774B49 /* Assets.xcassets */,
 				0A9D77B32B71282100774B49 /* LaunchScreen.storyboard */,
@@ -201,7 +198,6 @@
 				0AB4F56A2B892D790036AE13 /* StoryboardConstraintsViewController.swift in Sources */,
 				0AB4F56C2B894AFB0036AE13 /* StackConstraintsViewController.swift in Sources */,
 				0A9D77AD2B71282000774B49 /* ChooseConstraintsViewController.swift in Sources */,
-				0AB4F5702B8A073C0036AE13 /* VFLViewController.swift in Sources */,
 				0AB4F5722B8A44CA0036AE13 /* ColorView.swift in Sources */,
 				0A9D77A92B71282000774B49 /* AppDelegate.swift in Sources */,
 				0AB4F56E2B89F4100036AE13 /* LayoutAnchorViewController.swift in Sources */,
