@@ -49,6 +49,8 @@ final class BrowserViewController: UIViewController {
         let forwardButtonItem = UIBarButtonItem(systemItem: .fastForward)
         let spacer = UIBarButtonItem(systemItem: .flexibleSpace)
         let refreshButtonItem = UIBarButtonItem(systemItem: .refresh)
+        toolbar.frame.size.width = 200
+        toolbar.frame.size.height = 300
         toolbar.items = [backButtonItem, forwardButtonItem, spacer, refreshButtonItem]
         backButtonItem.action = #selector(backAction)
         forwardButtonItem.action = #selector(forwardAction)
