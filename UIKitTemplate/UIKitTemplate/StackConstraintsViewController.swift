@@ -32,6 +32,8 @@ final class StackConstraintsViewController: UIViewController {
         return grayView
     }()
 
+    // MARK: - Private Properties
+    
     private var stackView = UIStackView()
 
     // MARK: - Life Cycle
@@ -42,15 +44,6 @@ final class StackConstraintsViewController: UIViewController {
         createConstraints()
     }
 
-//    override func viewWillLayoutSubviews() {
-//        super.viewWillLayoutSubviews()
-//    }
-
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-//        redView.layer.cornerRadius = stackView.bounds.width * 0.9
-//        yellowView.layer.cornerRadius = UIScreen.main.bounds.width / 2 * 0.34146 * 0.8
-//        greenView.layer.cornerRadius = UIScreen.main.bounds.width / 2 * 0.34146 * 0.8
-    }
 
     // MARK: - Private Methods
 

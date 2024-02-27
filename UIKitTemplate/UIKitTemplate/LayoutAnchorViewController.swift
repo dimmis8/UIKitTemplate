@@ -34,18 +34,12 @@ final class LayoutAnchorViewController: UIViewController {
         grayView.backgroundColor = .darkGray
         return grayView
     }()
-
-    // MARK: - Private Properties
-
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
         createConstraints()
-        redView.layer.cornerRadius = view.frame.width / 2
-        yellowView.layer.cornerRadius = view.frame.width / 2
-        greenView.layer.cornerRadius = view.frame.width / 2
     }
 
     override func viewWillLayoutSubviews() {
