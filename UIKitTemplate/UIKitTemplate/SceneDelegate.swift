@@ -9,8 +9,7 @@
 //
 import UIKit
 
-/// SceneDelegate class
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(
